@@ -1,0 +1,118 @@
+﻿<Page x:Class="GUI.Pages.AdminProfile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GUI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminProfile">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Label Content="::. Välkommen Bosse .::" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
+            <Label x:Name="Tb_date_today" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
+
+        </StackPanel>
+
+        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" FontFamily="Agency FB" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0">
+                            <Label Content="Totalt antal vanliga böcker :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Row="1" Grid.Column="0">
+                            <Label Content="Totalt antal E-Bok :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="1" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_konto" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+
+
+                        <StackPanel Grid.Row="2" Grid.Column="0">
+                            <Label Content="Antal seminarie :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="2" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_skill_broms" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="3" Grid.Column="0">
+                            <Label Content="Antal vanliga böcker utlånad :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="3" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_motor" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="4" Grid.Column="0">
+                            <Label Content="Antal e-böcker utlånad :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="4" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_Kaross" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+
+                        <StackPanel Grid.Row="5" Grid.Column="0">
+                            <Label Content="Antal staff :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="5" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_Vindruta" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="6" Grid.Column="0">
+                            <Label Content="Antal Admin:" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
+
+                        </StackPanel>
+                        <StackPanel Grid.Row="6" Grid.Column="1">
+                            <Label x:Name="TB_Total_mekanik_wheel" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+
+                        </StackPanel>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        </Grid>
+
+    </Grid>
+</Page>
