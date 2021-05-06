@@ -1,9 +1,6 @@
 ﻿using GUI.Login;
 using GUI.Staff;
 using GUI.Pages;
-using Logic;
-using Logic.Entities;
-using Logic.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,21 +33,6 @@ namespace GUI.Home
 
 
             InitializeComponent();
-            AddItemBT.BorderBrush = default;
-            AddUser_Admin.BorderBrush = default;
-
-            Sing_out_bt.Content = $"Logga ut [{ _GCU[0].ToString() }]";
-            
-           if(_GCU[0].Equals(Enum.GetName(typeof(IUserDataAccess.TypeOfUser), 1))) 
-            { 
-               
-                //Sp_case_page.Visibility = Visibility.Collapsed;
-                Uri adminprofil = new Uri("/Admin/AdminProfile.xaml", UriKind.Relative);
-                Menubar_frame.Source = adminprofil;
-            }
-            //else { Admin_Panel.Visibility = Visibility.Collapsed; /*Sp_case_page.Visibility = Visibility.Visible;*/}
-
-           
 
             
         }
@@ -89,10 +71,6 @@ namespace GUI.Home
             search_obj.Show();
             var mainwin = Application.Current.MainWindow;
             mainwin.Hide();
-
-
-
-
             Search_box.Text = searchboxtxt;
 
         }

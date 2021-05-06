@@ -1,5 +1,4 @@
-﻿using Logic;
-using Logic.Entities;
+﻿
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +21,7 @@ namespace GUI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow, IUserDataAccess
+    public partial class MainWindow : NavigationWindow
     {
 
         public MainWindow()
@@ -34,7 +33,7 @@ namespace GUI
 
         static MainWindow()
         {
-            IUserDataAccess.DefaultUser();        
+   
       
 
         }

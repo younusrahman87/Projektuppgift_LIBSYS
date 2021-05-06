@@ -1,7 +1,4 @@
-﻿using Logic;
-using Logic.Entities;
-using Logic.Vehicle;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,10 +18,7 @@ namespace GUI.Pages
     /// </summary>
     public partial class AdminProfile : Page
     {
-        private Dictionary<string, Components> _komponentdb;
-        private Dictionary<string, VehicleCase> _casedb;
-        private Dictionary<string, Mechanic> _mechanicdb;
-        private Dictionary<string, User> _userdb;
+
         private Dictionary<string, string> _regdb;
         public AdminProfile()
         {

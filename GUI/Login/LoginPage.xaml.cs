@@ -1,8 +1,4 @@
 ﻿using GUI.Home;
-using Logic;
-using Logic.DAL;
-using Logic.Entities;
-using Logic.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -49,34 +45,10 @@ namespace GUI.Login
         private void Login_Click(object sender, RoutedEventArgs e)
         {
 
-            string username = this.tbUsernam.Text;
-            string password = this.pbPassword.Password;
 
 
+            NavigationService.Navigate(new HomePage());
 
-            bool successful = IUserDataAccess.LoginCheck(username, password).Item1;
-
-
-            if (successful)
-            {
-                _loginService = IUserDataAccess.LoginCheck(username, password).Item2;
-                HomePage._GCU[0] = _loginService.GetCurrentUser(username).Item1;  // username
-                HomePage._GCU[1] = _loginService.GetCurrentUser(username).Item2; // userid
-                HomePage._GCU[2] = _loginService.GetCurrentUser(username).Item3; // userObj
-                HomePage._GCU[3] = _loginService.GetCurrentUser(username).Item4; // mekanic Obj
-
-               
-
-                NavigationService.Navigate(new HomePage());
-
-            }
-            else
-            {
-                Eror_msg.Content = "Inloggning misslyckades";
-                this.tbUsernam.Clear();
-                this.pbPassword.Clear();
-
-            }
         }
     }
 }
