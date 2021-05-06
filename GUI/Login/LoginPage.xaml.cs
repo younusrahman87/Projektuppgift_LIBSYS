@@ -1,4 +1,5 @@
 ﻿using GUI.Home;
+using GUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Logic;
 
 namespace GUI.Login
 {
@@ -25,7 +27,7 @@ namespace GUI.Login
 
         public LoginPage()
         {
- 
+
             InitializeComponent();
             this.tbUsernam.Focus();
 
@@ -50,5 +52,14 @@ namespace GUI.Login
             NavigationService.Navigate(new HomePage());
 
         }
+
+
+        private void ButtonTest_Click(object sender, RoutedEventArgs e)
+        {
+            var test = new Test();
+            test.NewMethod();
+        }
     }
 }
+    
+

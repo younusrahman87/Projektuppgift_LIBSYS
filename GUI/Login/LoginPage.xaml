@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="1080"
       Title="LoginPage">
     <StackPanel>
-        <Grid Height="528" Width="1078">
+        <Grid x:Name="ListBoxText" Height="528" Width="1078">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="8*"/>
@@ -104,6 +104,7 @@
             <Label x:Name="Eror_msg" Content="" Foreground="White" FontFamily="Agency FB" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20"/>
 
         </StackPanel>
+        <Button x:Name="ButtonTest" Content="Button" Click="ButtonTest_Click"/>
 
     </StackPanel>
 
