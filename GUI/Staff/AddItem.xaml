@@ -225,6 +225,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
 
 
                     </Grid.RowDefinitions>
@@ -318,7 +319,21 @@
                         </TextBox>
                     </StackPanel>
 
-                    <!--####################### vänster del ######################-->
+                    <StackPanel Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,5,0,10">
+                        <Button x:Name="bt_add_book" Content="Lägga till . ." Width="97" Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Margin="0,0,10,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="bt_add_book_Click">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FFB13030" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+
+                    </StackPanel>
+
+
+
+                        <!--####################### vänster del ######################-->
 
 
 
@@ -339,15 +354,7 @@
         <!-- Längsner row. För visa error message och lägga till knapp -->
         <Grid Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Top">
             <Label x:Name="Error_msg" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Agency FB" FontSize="20" FontWeight="Bold" FontStyle="Normal"/>
-            <Button x:Name="bt_add_book" Content="Lägga till . ." Width="97" Visibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Margin="0,0,30,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="bt_add_book_Click">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="#FFB13030" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-
+            
         </Grid>
     </Grid>
 </Page>
