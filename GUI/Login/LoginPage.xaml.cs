@@ -59,6 +59,13 @@ namespace GUI.Login
             var test = new Test();
             test.NewMethod();
         }
+
+
+        private void Search_BT_Click(object sender, RoutedEventArgs e)
+        {
+            if (SearchDetailsFount.Visibility == Visibility.Collapsed) { SearchDetailsFount.Visibility = Visibility.Visible; logoimage.Visibility = Visibility.Collapsed; }
+            else { SearchDetailsFount.Visibility = Visibility.Collapsed; logoimage.Visibility = Visibility.Visible; }
+        }
     }
 }
     
