@@ -15,173 +15,150 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition/>
-                        <RowDefinition/>
-
-                    </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <GroupBox  Grid.Column="1" Header=" Användare information " BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Agency FB" FontSize="20" Width="400">
-                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                    <RowDefinition/>
-                                </Grid.RowDefinitions>
-                                <StackPanel Grid.Row="0">
-                                    <Grid Height="132" Width="380">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="1*"/>
-                                            <RowDefinition Height="1*"/>
-                                            <RowDefinition Height="1*"/>
-                                            <RowDefinition Height="1*"/>
-                                        </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <GroupBox  Grid.Column="1" Header=" Användare information " BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Agency FB" FontSize="20" Width="400">
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Grid.Row="0">
+                                <Grid Height="132" Width="380">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                        <RowDefinition Height="1*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <!-- Här delat vänstersida -->
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Row="0" Grid.Column="0">
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition/>
-                                            <!-- Här delat vänstersida -->
+                                            <ColumnDefinition Width="113*"/>
+                                            <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Grid Grid.Row="0" Grid.Column="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="113*"/>
-                                                <ColumnDefinition Width="37*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label Content="Användares namn :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
-                                        </Grid>
-                                        <Grid Grid.Row="0" Grid.Column="1">
-                                            <Label x:Name="tb_username" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                                        </Grid>
-
-
-                                        <Grid Grid.Row="1" Grid.Column="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="113*"/>
-                                                <ColumnDefinition Width="37*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label Content="Användares E-mail :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
-                                        </Grid>
-                                        <Grid Grid.Row="1" Grid.Column="1">
-                                            <Label x:Name="tb_useremail" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                                        </Grid>
-
-
-
-
-
-                                        <Grid Grid.Row="2" Grid.Column="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="113*"/>
-                                                <ColumnDefinition Width="37*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label Content="Användares födelsedatum :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
-                                        </Grid>
-                                        <Grid Grid.Row="2" Grid.Column="1">
-                                            <Label x:Name="tb_userbirth" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                                        </Grid>
-
-
-
-
-                                        <Grid Grid.Row="3" Grid.Column="0">
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="113*"/>
-                                                <ColumnDefinition Width="37*"/>
-                                            </Grid.ColumnDefinitions>
-                                            <Label Content="Total Lånade böcker : " Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
-                                        </Grid>
-                                        <Grid Grid.Row="3" Grid.Column="1">
-                                            <Label x:Name="tb_resignmentdate" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
-                                        </Grid>
-
-
-
-
+                                        <Label Content="Användares namn :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
                                     </Grid>
-                                </StackPanel>
-
-                            </Grid>
-                        </GroupBox>
-                    </StackPanel>
-
-                    <!--######################################Start################################################-->
-                    <StackPanel Grid.Row="1">
+                                    <Grid Grid.Row="0" Grid.Column="1">
+                                        <Label x:Name="tb_username" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                    </Grid>
 
 
-                        <GroupBox Header="Ändra lössenord" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Agency FB" FontSize="20">
-
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-
-
-                                </Grid.RowDefinitions>
+                                    <Grid Grid.Row="1" Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="113*"/>
+                                            <ColumnDefinition Width="37*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Användares E-mail :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1" Grid.Column="1">
+                                        <Label x:Name="tb_useremail" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                    </Grid>
 
 
 
 
 
-
-
-                                <StackPanel Grid.Row="0" Margin="5,5,5,5">
-                                    <TextBox x:Name="tb_OLDPass" Text="-- Gammla Lössenord --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
-                                        <TextBox.Background>
-                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                <GradientStop Color="Black"/>
-                                                <GradientStop Color="#FFB13030" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </StackPanel>
-
-
-                                <StackPanel Grid.Row="1" Margin="5,5,5,5">
-                                    <TextBox x:Name="tb_Newpass" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
-                                        <TextBox.Background>
-                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                <GradientStop Color="Black"/>
-                                                <GradientStop Color="#FF434343" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </StackPanel>
-
-
-                                <StackPanel Grid.Row="2" Margin="5,5,5,5">
-                                    <TextBox x:Name="tb_Newpassagain" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
-                                        <TextBox.Background>
-                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                <GradientStop Color="Black"/>
-                                                <GradientStop Color="#FF434343" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </TextBox.Background>
-                                    </TextBox>
-                                </StackPanel>
-
-                                <StackPanel Grid.Row="3" Height="30" HorizontalAlignment="Left" Margin="275,0,0,5" Width="80">
-                                    <Button x:Name="Bt_change" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
-                                        <Button.Background>
-                                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                                <GradientStop Color="Black"/>
-                                                <GradientStop Color="#FF1B9F47" Offset="1"/>
-                                            </LinearGradientBrush>
-                                        </Button.Background>
-                                    </Button>
-                                </StackPanel>
+                                    <Grid Grid.Row="2" Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="113*"/>
+                                            <ColumnDefinition Width="37*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Användares födelsedatum :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2" Grid.Column="1">
+                                        <Label x:Name="tb_userbirth" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                    </Grid>
 
 
 
 
-                                <!-- change work status-->
+                                    <Grid Grid.Row="3" Grid.Column="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="113*"/>
+                                            <ColumnDefinition Width="37*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Content="Total Lånade böcker : " Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3" Grid.Column="1">
+                                        <Label x:Name="tb_resignmentdate" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                    </Grid>
+
+
+
+
+                                </Grid>
+                            </StackPanel>
+
+                        </Grid>
+                    </GroupBox>
+
+                    <GroupBox Header="Ändra lössenord" Margin="0,10,0,0" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Agency FB" FontSize="20" Width="400">
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+
+
+                            <StackPanel Grid.Row="0" Margin="5,5,5,0">
+                                <TextBox x:Name="tb_OLDPass" Text="-- Gammla Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
+                                    <TextBox.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FFB13030" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </TextBox.Background>
+                                </TextBox>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="1" Margin="5,5,5,0">
+                                <TextBox x:Name="tb_Newpass" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
+                                    <TextBox.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FF434343" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </TextBox.Background>
+                                </TextBox>
+                            </StackPanel>
+
+
+                            <StackPanel Grid.Row="2" Margin="5,5,5,0">
+                                <TextBox x:Name="tb_Newpassagain" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" FontSize="16" >
+                                    <TextBox.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FF434343" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </TextBox.Background>
+                                </TextBox>
+                            </StackPanel>
+
+                            <StackPanel Grid.Row="3" Height="30" HorizontalAlignment="Right" Margin="0,5,8,10" Width="80">
+                                <Button x:Name="Bt_change" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FF1B9F47" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+
+
+
+
+                            <!-- change work status-->
 
 
 
@@ -190,26 +167,21 @@
 
 
 
-                                <!-- här slut delat row ärande 1-->
-                            </Grid>
-                        </GroupBox>
+                            <!-- här slut delat row ärande 1-->
+                        </Grid>
+                    </GroupBox>
+                </StackPanel>
+
+                <!--######################################Start################################################-->
 
 
 
-
-                    </StackPanel>
-
+                <!--######################################################################################-->
 
 
 
+                <StackPanel Height="368" VerticalAlignment="Top"/>
 
-
-                    <!--######################################################################################-->
-
-
-
-                    <StackPanel Grid.Row="2"/>
-                </Grid>
             </Grid>
 
             <StackPanel Grid.Column="1">
