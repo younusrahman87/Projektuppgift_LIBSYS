@@ -80,20 +80,18 @@
 
                     <!-- användare typ -->
                     <StackPanel  x:Name="Sp_sc_usertype" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_usertype"   TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBox.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="Black"/>
-                                    <GradientStop Color="#FF434343" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.Background>
-                        </TextBox>
+                        <ComboBox x:Name="cb_sc_choose_user_typ" Width="350" Height="35" Text="-- Välj Användare Typ --" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_choose_user_typ_SelectionChanged">
+                            <ComboBoxItem FontFamily="Agency FB" Content="Vanlig Användare" FontSize="14"/>
+                            <ComboBoxItem FontFamily="Agency FB" Content="Personal" FontSize="14"/>
+                            <ComboBoxItem FontFamily="Agency FB" Content="Admin" FontSize="14"/>
+
+                        </ComboBox>
                     </StackPanel>
 
 
                     <!-- User name -->
-                    <StackPanel  x:Name="Sp_sc_namn" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_namn"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  x:Name="Sp_sc_firstname" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_firstname" Text="--Fornamn--" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -105,8 +103,8 @@
 
 
                     <!-- Book_Author -->
-                    <StackPanel  x:Name="Sp_sc_adress" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_adress"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  x:Name="Sp_sc_lastname" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_lastname" Text="--Efternamn--"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -119,8 +117,8 @@
 
 
                     <!-- Birth day -->
-                    <StackPanel  x:Name="Sp_sc_Birth" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_birth"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  x:Name="Sp_sc_email" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_email"  TextWrapping="Wrap" Text="--Email--" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -131,23 +129,26 @@
                     </StackPanel>
 
                     <!-- user email -->
-                    <StackPanel  x:Name="Sp_sc_email" Grid.Row="5" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_email"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <TextBox.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="Black"/>
-                                    <GradientStop Color="#FF434343" Offset="1"/>
-                                </LinearGradientBrush>
-                            </TextBox.Background>
-                        </TextBox>
+                    <StackPanel  x:Name="Sp_sc_pasword" Grid.Row="5" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <PasswordBox  x:Name="tb_sc_password"  Visibility="Visible"  Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Black">
+
+                        </PasswordBox>
                     </StackPanel>
 
 
 
 
                     <!-- user password -->
-                    <StackPanel  x:Name="Sp_sc_password" Grid.Row="6" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_password"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  x:Name="Sp_sc_card" Grid.Row="6" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <ComboBox x:Name="cb_sc_card_have" Width="350" Height="35" Text="-- Användare har kort --" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_choose_user_typ_SelectionChanged">
+                            <ComboBoxItem FontFamily="Agency FB" Content="Ja" FontSize="14"/>
+                            <ComboBoxItem FontFamily="Agency FB" Content="Nej" FontSize="14"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel x:Name="sp_sc_Jobtitle" Visibility="Collapsed" Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_Jobtitle" CharacterCasing="Upper" Text="-- Job Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                            <!--PreviewKeyDown="textBox_PreviewKeyDown"-->
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -224,6 +225,7 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
 
 
                     </Grid.RowDefinitions>
@@ -240,11 +242,11 @@
                         </ComboBox>
                     </StackPanel>
 
-
-                    <!-- Namn -->
+            <!--########### höger sida ##########-->
+                    <!-- Forname -->
 
                     <StackPanel  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-                        <TextBox x:Name="tb_Namn" Text="-- Användare Namn --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox x:Name="tb_firstname" Text="-- Förnamn --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -257,7 +259,18 @@
                     <!-- Fordon Modell -->
 
                     <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-                        <TextBox x:Name="tb_adress" Text="-- Adress --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox x:Name="tb_lastname" Text="-- Efternamn --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                        <TextBox x:Name="tb_email" CharacterCasing="Upper" Text="-- E-Mail --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -268,34 +281,23 @@
                     </StackPanel>
 
 
-                    <!-- Mobil nr -->
+                    <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                        <PasswordBox  x:Name="tb_password"  Visibility="Visible"  Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Black">
 
-                    <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
-                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="9*"/>
-                                <ColumnDefinition Width="1*"/>
-                            </Grid.ColumnDefinitions>
-                            <StackPanel Grid.Column="0">
-                                <TextBox x:Name="tb_mekanik_birt" Text="-- Ange födelsedatum --" TextWrapping="Wrap" Width="322" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" IsReadOnly="True" BorderBrush="White" HorizontalAlignment="Left" >
-                                    <TextBox.Background>
-                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                            <GradientStop Color="Black"/>
-                                            <GradientStop Color="#FF434343" Offset="1"/>
-                                        </LinearGradientBrush>
-                                    </TextBox.Background>
-                                </TextBox>
-                            </StackPanel>
-                            <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <DatePicker x:Name="DP_User_birth" Width="28" Height="25" Background="{x:Null}" BorderBrush="{x:Null}" FirstDayOfWeek="Monday" DisplayDate="2020-11-08" SelectedDateFormat="Long"></DatePicker>
-                            </StackPanel>
-                        </Grid>
+                        </PasswordBox>
                     </StackPanel>
 
-                    <!-- email -->
 
-                    <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-                        <TextBox x:Name="tb_email" CharacterCasing="Upper" Text="-- E-Mail --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                    <StackPanel x:Name="Sp_cb_card_have" Visibility="Collapsed" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
+                        <ComboBox x:Name="cb_card_have" Width="350" Height="35" Text="-- Användare har kort --" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                            <ComboBoxItem FontFamily="Agency FB" Content="Ja" FontSize="14"/>
+                            <ComboBoxItem FontFamily="Agency FB" Content="Nej" FontSize="14"/>
+                        </ComboBox>
+
+                    </StackPanel>
+
+                    <StackPanel x:Name="sp_Jobtitle" Visibility="Visible" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_Jobtitle" CharacterCasing="Upper" Text="-- Job Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <!--PreviewKeyDown="textBox_PreviewKeyDown"-->
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -306,13 +308,20 @@
                         </TextBox>
                     </StackPanel>
 
-                    <!-- Välj Drivsmedel -->
 
-                    <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-                        <PasswordBox  x:Name="tb_password"  Visibility="Visible"  Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Black">
 
-                        </PasswordBox>
+
+                    <StackPanel x:Name="SP_Button" Visibility="Collapsed" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,5,5">
+                        <Button x:Name="bt_add_user" Content="Lägga till . ." Width="97"  HorizontalAlignment="Right" Height="35" Margin="0,0,5,5" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" >
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF1B9F47" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
+
 
                     <!--####################### vänster del ######################-->
 
@@ -335,15 +344,6 @@
         <!-- Längsner row. För visa error message och lägga till knapp -->
         <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Label x:Name="Error_msg" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Agency FB" FontSize="20" FontWeight="Bold" FontStyle="Normal"/>
-            <Button x:Name="bt_add_user" Content="Lägga till . ." Width="97" Visibility="Hidden" HorizontalAlignment="Right" Height="35" Margin="0,0,30,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" >
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="#FFB13030" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
-
         </Grid>
     </Grid>
 </Page>
