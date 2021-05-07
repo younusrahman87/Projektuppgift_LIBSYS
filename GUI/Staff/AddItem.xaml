@@ -8,16 +8,17 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddItem">
 
-    <Grid>
+    <Grid Margin="0,0,0,10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="103*"/>
             <ColumnDefinition Width="97*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.ColumnSpan="2">
+        <Grid Grid.ColumnSpan="2" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -34,7 +35,7 @@
                         <RowDefinition Height="2*"/>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="2*"/>
 
 
                     </Grid.RowDefinitions>
@@ -79,7 +80,7 @@
 
 
                     <!-- Book typ -->
-                    <StackPanel  x:Name="Sp_sc_BookType" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_BookType" Grid.Row="1" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_BookType"   TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -92,7 +93,7 @@
 
 
                     <!-- Book Title -->
-                    <StackPanel  x:Name="Sp_sc_Book_Title" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_Book_Title" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_Book_Title"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -105,7 +106,7 @@
 
 
                     <!-- Book_Author -->
-                    <StackPanel  x:Name="Sp_sc_Author" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_Author" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_Author"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -119,7 +120,7 @@
 
 
                     <!-- Book_Language -->
-                    <StackPanel  x:Name="Sp_sc_Language" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_Language" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_Language"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -131,7 +132,7 @@
                     </StackPanel>
 
                     <!-- Book_PublicationDate -->
-                    <StackPanel  x:Name="Sp_sc_PublicationDate" Grid.Row="5" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_PublicationDate" Grid.Row="5" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_PublicationDate"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -146,7 +147,7 @@
 
 
                     <!-- E-bok ISBN -->
-                    <StackPanel  x:Name="Sp_sc_E_bokISBN" Grid.Row="6" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                    <StackPanel  x:Name="Sp_sc_E_bokISBN" Grid.Row="6" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,0">
                         <TextBox x:Name="tb_sc_E_bokISBN"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -165,8 +166,8 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
 
-                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left">
-                                <Button x:Name="Bt_remove_case" Content="Ta bort" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="0,5,0,5">
+                                <Button x:Name="Bt_mekanik" Content="Tabort" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -176,7 +177,7 @@
                                 </Button>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="95,0,0,0">
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="95,5,0,5">
                                 <Button x:Name="Bt_edit_mekanik" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -215,7 +216,7 @@
 
 
             <!--############################ Här börjar höger tabel #######-->
-            <GroupBox Header="Lägga till böcker" Grid.Column="1" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Agency FB" FontSize="14" Margin="5,0,0,0">
+            <GroupBox Header="Lägga till böcker" Grid.Column="1" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" FontFamily="Agency FB" FontSize="14" Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
@@ -231,7 +232,7 @@
 
                     <!-- Välj Typ book -->
 
-                    <StackPanel  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <StackPanel  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,0">
                         <ComboBox x:Name="cb_choose_book_typ" Width="350" Height="35" Text="-- Välj bok typ --" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_choose_book_typ_SelectionChanged">
                             <ComboBoxItem FontFamily="Agency FB" Content="Bok" FontSize="14"/>
                             <ComboBoxItem FontFamily="Agency FB" Content="E-Bok" FontSize="14"/>
@@ -242,7 +243,7 @@
 
                     <!-- Book title -->
 
-                    <StackPanel  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <StackPanel  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,0">
                         <TextBox x:Name="tb_Booktitel" Text="-- Boktitel --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -255,7 +256,7 @@
 
                     <!-- Fordon Modell -->
 
-                    <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,0">
                         <TextBox x:Name="tb_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -269,7 +270,7 @@
 
                     <!-- Språk -->
 
-                    <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,0">
                         <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -306,7 +307,7 @@
 
                     <!-- E-book -->
 
-                    <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
+                    <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,10">
                         <TextBox x:Name="tb_Ebook" Text="-- E-bok ISBN --" Visibility="Visible" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -336,9 +337,9 @@
             </GroupBox>
         </Grid>
         <!-- Längsner row. För visa error message och lägga till knapp -->
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Top">
             <Label x:Name="Error_msg" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Agency FB" FontSize="20" FontWeight="Bold" FontStyle="Normal"/>
-            <Button x:Name="bt_add_book" Content="Lägga till . ." Width="97" Visibility="Hidden" HorizontalAlignment="Right" Height="35" Margin="0,0,30,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="bt_add_book_Click">
+            <Button x:Name="bt_add_book" Content="Lägga till . ." Width="97" Visibility="Hidden" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Margin="0,0,30,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="bt_add_book_Click">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
