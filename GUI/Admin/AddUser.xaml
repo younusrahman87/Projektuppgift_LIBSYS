@@ -309,7 +309,7 @@
                     <!-- Välj Drivsmedel -->
 
                     <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10">
-                        <PasswordBox  x:Name="tb_password"  Visibility="Visible"  Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Black"> 
+                        <PasswordBox  x:Name="tb_password"  Visibility="Visible"  Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="Black">
 
                         </PasswordBox>
                     </StackPanel>
