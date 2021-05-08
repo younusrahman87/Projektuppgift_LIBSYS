@@ -100,12 +100,56 @@ namespace GUI.Admin
 
 
         }
-
+        librarysystemdbContext _db = new librarysystemdbContext();
         private void bt_add_user_Click(object sender, RoutedEventArgs e)
         {
+            UserDb user = new UserDb();
 
-          
-         
+           
+            //------------------------------------------------------Lägga till
+
+            /*
+            user.FirstName = "Hans";
+            user.LastName = "Johansson";
+            user.Email = "Hans@gmail.com";
+            user.LibraryCard = true;
+            user.Password = "Kula89776623";
+            user.Id = 101;
+            _db.UserDbs.Add(user);
+            _db.SaveChanges();
+            */
+
+
+
+            //------------------------------------------------------ta bort
+            //var obj = _db.UserDbs.Find(101);
+
+            //_db.UserDbs.Remove(obj);
+            //_db.SaveChanges();
+
+
+            //---------------------------------------------------------Ändra 
+
+           /*
+            var obj = _db.UserDbs.Find(101);
+            obj.FirstName = "Janne";
+            obj.LastName = "sson";
+            obj.Email = "vafan@gmail.com";
+            obj.LibraryCard =false;
+            obj.Password = "hejhopp";
+            _db.UserDbs.Update(obj);
+            _db.SaveChanges();
+
+           */
+
+
+
+
+
+
+
+
+
         }
     }
 }
