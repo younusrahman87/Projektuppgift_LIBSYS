@@ -312,7 +312,7 @@
 
 
                     <StackPanel x:Name="SP_Button" Visibility="Collapsed" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5,5,5,5">
-                        <Button x:Name="bt_add_user" Content="Lägga till . ." Width="97"  HorizontalAlignment="Right" Height="35" Margin="0,0,5,5" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" >
+                        <Button x:Name="bt_add_user" Click="bt_add_user_Click" Content="Lägga till . ." Width="97"  HorizontalAlignment="Right" Height="35" Margin="0,0,5,5" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" Foreground="White" BorderBrush="Black" >
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>

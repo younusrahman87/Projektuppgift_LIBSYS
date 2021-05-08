@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI.Models;
+using Logic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -97,6 +99,13 @@ namespace GUI.Admin
             else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Jobtitle")) { _sender.Text = JobTitle; }
 
 
+        }
+
+        private void bt_add_user_Click(object sender, RoutedEventArgs e)
+        {
+
+          
+         
         }
     }
 }
