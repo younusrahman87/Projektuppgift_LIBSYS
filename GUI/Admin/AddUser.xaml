@@ -60,7 +60,7 @@
 
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,5,5,5">
-                                <Button x:Name="search_bt"  HorizontalAlignment="Right" Width="35" Height="35" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsDefault="True"  >
+                                <Button Click="search_bt_Click" x:Name="search_bt"  HorizontalAlignment="Right" Width="35" Height="35" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsDefault="True"  >
                                     <Button.RenderTransform>
                                         <TransformGroup>
                                             <ScaleTransform/>
@@ -91,7 +91,7 @@
 
                     <!-- User name -->
                     <StackPanel  x:Name="Sp_sc_firstname" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_firstname" Text="--Fornamn--" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox x:Name="tb_sc_firstname" Text="--Fornamn--" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -104,7 +104,7 @@
 
                     <!-- Book_Author -->
                     <StackPanel  x:Name="Sp_sc_lastname" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_lastname" Text="--Efternamn--"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox x:Name="tb_sc_lastname" Text="--Efternamn--"  TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -118,7 +118,7 @@
 
                     <!-- Birth day -->
                     <StackPanel  x:Name="Sp_sc_email" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
-                        <TextBox x:Name="tb_sc_email"  TextWrapping="Wrap" Text="--Email--" Width="350" Height="35" HorizontalContentAlignment="Center" IsReadOnly="True" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBox x:Name="tb_sc_email" IsReadOnly="True"  TextWrapping="Wrap" Text="--Email--" Width="350" Height="35" HorizontalContentAlignment="Center"  VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>
@@ -162,12 +162,13 @@
                     <StackPanel x:Name="Bt_Add_remove_mekanik" Grid.Row="7" Visibility="Visible">
                         <Grid x:Name="Sp_SC_bt_add_remove"   HorizontalAlignment="Center" Width="350" Height="38">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="175*"/>
+                                <ColumnDefinition Width="54*"/>
+                                <ColumnDefinition Width="121*"/>
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left">
-                                <Button x:Name="Bt_remove_case" Content="Ta bort" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
+                                <Button Click="Bt_remove_case_Click" x:Name="Bt_remove_case" Content="Ta bort" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -177,8 +178,8 @@
                                 </Button>
                             </StackPanel>
 
-                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="95,0,0,0">
-                                <Button x:Name="Bt_edit_mekanik" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="41,0,0,0">
+                                <Button Click="Bt_edit_mekanik_Click" x:Name="Bt_edit_mekanik" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"   >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
