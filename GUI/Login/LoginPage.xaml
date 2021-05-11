@@ -124,7 +124,7 @@
                                         </Style>
                                     </TextBox.Resources>
                                 </TextBox>
-                                <Button HorizontalAlignment="Left" Width="42" BorderThickness="0" Background="Transparent" Margin="298,9,0,10" IsDefault="True" Click="Search_BT_Click">
+                                <Button HorizontalAlignment="Left" Width="25" BorderThickness="0" Background="Transparent" Margin="298,9,0,10" IsDefault="True" Click="Search_BT_Click">
                                     <Image Source="/Image/Search.png" Width="114"/>
                                 </Button>
                             </Grid>
@@ -148,7 +148,7 @@
                                     <ColumnDefinition Width="146*"/>
                                 </Grid.ColumnDefinitions>
                                 <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Margin="0,0,0,31" Grid.RowSpan="2" VerticalAlignment="Center">
-                                    <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj bok --" Width="420" Height="30" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,15,0,10">
+                                    <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Background="#FFD10A0A" Text="-- Välj bok --" Width="420" Height="30" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Margin="0,15,0,10">
                                         <ComboBox.Resources>
                                             <!--to make the border corner round-->
                                             <Style TargetType="{x:Type Border}">

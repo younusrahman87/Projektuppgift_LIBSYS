@@ -45,6 +45,7 @@ namespace GUI.Home
 
             if(Converted_to_Bt.Content.Equals(Bt_name_bok))
             {
+                Usermenu.Visibility = Visibility.Collapsed;
                 if (Bookmenu.Visibility == Visibility.Visible) { Bookmenu.Visibility = Visibility.Collapsed; return; }
                 Bookmenu.Visibility = Visibility.Visible;
                 return;
@@ -52,6 +53,7 @@ namespace GUI.Home
 
             else if (Converted_to_Bt.Content.Equals(Bt_name_user))
             {
+                Bookmenu.Visibility = Visibility.Collapsed;
                 if (Usermenu.Visibility == Visibility.Visible) { Usermenu.Visibility = Visibility.Collapsed; return; }
                 Usermenu.Visibility = Visibility.Visible;
                 return;
@@ -79,6 +81,10 @@ namespace GUI.Home
         {
             NavigationService.Navigate(new LoginPage());
         }
+
+
+
+
 
         private void AddItemBT_Click(object sender, RoutedEventArgs e)
         {
