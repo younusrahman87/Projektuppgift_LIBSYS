@@ -7,251 +7,111 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1080"
       Title="HomePage">
-    <Page.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundBorderButton" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
-        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
-        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
-        <Style x:Key="RoundTextbox" TargetType="{x:Type TextBox}">
-            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="AllowDrop" Value="true"/>
-            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
-            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="border" CornerRadius="3" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
-                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <MultiTrigger>
-                    <MultiTrigger.Conditions>
-                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
-                        <Condition Property="IsSelectionActive" Value="false"/>
-                    </MultiTrigger.Conditions>
-                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
-                </MultiTrigger>
-            </Style.Triggers>
-        </Style>
-    </Page.Resources>
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
-    <Grid HorizontalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0">
-            <Grid MinHeight="60" HorizontalAlignment="Right" Height="35" Width="1081">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="4*"/>
-
-                </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
 
 
+        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="37">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0" Margin="0,0,0,24">
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
-                    <Button x:Name="Sing_out_bt" Content="logga ut" Foreground="#FFA2A2A2" Margin="0,0,0,6" Click="Sing_out_Click" FontWeight="Bold" FontFamily="Agency FB" FontSize="14" BorderThickness="5,5,0,0" Background="{x:Null}">
-                        <Button.BorderBrush>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black"/>
-                                <GradientStop Color="#FF1B9F47" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Button.BorderBrush>
-                    </Button>
-
-                </Grid>
-
-
-
-                <Grid HorizontalAlignment="Left" Width="642" Grid.ColumnSpan="4" Margin="154,0,0,0" Height="36" VerticalAlignment="Top">
-                    <Grid.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Grid.Background>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="25*"/>
-                        <ColumnDefinition Width="8*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button x:Name="Profil_bt" Content="- Profil - " Foreground="#FFA2A2A2" FontWeight="Bold" Click="Profil_bt_Click" HorizontalContentAlignment="Center" Height="36" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="14" BorderThickness="0,5,0,0" HorizontalAlignment="Left" Width="155" Background="{x:Null}" BorderBrush="Green" />
-
-                </Grid>
-
-
-
-                <!--<Grid x:Name="Sp_case_page" Visibility="Visible" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,24">
-                    <Button x:Name="Assignments_bt" Content="- Dina Uppdrag -" Foreground="#FFA2A2A2" FontWeight="Bold" Click="Assignments_bt_Click" HorizontalAlignment="Center" Width="155" FontFamily="Agency FB" FontSize="14" BorderThickness="0,5,0,0" VerticalAlignment="Center" Height="36" Background="{x:Null}" BorderBrush="{x:Null}"/>
-
-                </Grid>-->
-
-
-                <Grid x:Name="Sp_Additem_Staff" Visibility="Visible" Grid.Column="2" HorizontalAlignment="Center" Margin="0,0,0,24">
-
-                    <Button x:Name="AddItemBT" Content="- Lägga till Böcker -" Foreground="#FFA2A2A2" FontWeight="Bold" Click="AddItemBT_Click" HorizontalContentAlignment="Center" Height="36" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="14" BorderThickness="0,5,0,0" HorizontalAlignment="Left" Width="155" Background="{x:Null}" BorderBrush="Green" />
-
-                </Grid>
-
-                <Grid x:Name="Sp_AddUser_Admin" Visibility="Visible" Grid.Column="3" HorizontalAlignment="Left" Margin="0,0,0,24">
-                    <Button x:Name="AddUser_Admin" Content="- Lägga till Användare -" Foreground="#FFA2A2A2" FontWeight="Bold" Click="add_User_Click" HorizontalContentAlignment="Center" Height="36" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="14" BorderThickness="0,5,0,0" HorizontalAlignment="Left" Width="155" Background="{x:Null}" BorderBrush= "Green" />
-
-                </Grid>
-
-
-
-
-
-
-
-
-
-
-                <Grid Grid.Column="3">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="8*"/>
-                            <ColumnDefinition Width="1*"/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Column="0">
-                            <TextBox x:Name="Search_box" Text="-- SMART SÖK --" TextWrapping="Wrap" Width="285" Height="36" VerticalAlignment="Top" Foreground="#FFA2A2A2" HorizontalContentAlignment="Center" BorderThickness="5,0,5,0" FontFamily="Agency FB" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right" VerticalContentAlignment="Center"  GotFocus="Search_box_got_focuse" LostFocus="Search_box_lost_focuse"  >
-                                <TextBox.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="Black"/>
-                                        <GradientStop Color="#FF434343" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </TextBox.Background>
-                                <TextBox.BorderBrush>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="Black"/>
-                                        <GradientStop Color="#FFA31010" Offset="1"/>
-                                    </LinearGradientBrush>
-                                </TextBox.BorderBrush>
-                            </TextBox>
-                        </StackPanel>
-                        <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="69" Height="34">
-                            <StackPanel.Background>
-                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                    <GradientStop Color="Black"/>
-                                    <GradientStop Color="#FF434343" Offset="1"/>
-                                </LinearGradientBrush>
-                            </StackPanel.Background>
-                            <Button x:Name="Bt_Search" Content="Sök" Foreground="White" FontWeight="Bold" FontFamily="Agency FB" Click="Search_BT_Click" Width="40" Height="22" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,7,0,0">
-                                <Button.Background>
-                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="Black"/>
-                                        <GradientStop Color="#FFAE0F0F" Offset="1"/>
-                                        <GradientStop Color="#FF4F2B06" Offset="0.455"/>
-                                    </LinearGradientBrush>
-                                </Button.Background>
-                            </Button>
-
-                        </StackPanel>
-
-
-                    </Grid>
-
-
-
-                </Grid>
-
-
-
-
-
+            <Ellipse Height="36" Width="36" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="/Image/profile1.jpg" Stretch="UniformToFill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Grid Grid.Column="1" Margin="15,0,0,0" Width="76">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Staromlynski" Foreground="White"/>
+                <TextBlock Grid.Row="1" Text="PREMIUM USER" Foreground="White"/>
             </Grid>
+        </Grid>
+
+
+        <!--här börja search-->
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="644,0,0,0" Height="44" Width="245">
+
+            <TextBox x:Name="searchbox" Padding="25,0,0,0" VerticalContentAlignment="Center" Text="" FontSize="10" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" GotFocus="SearchBox_GotFocus"  LostFocus="searchBox_LostFocus" BorderThickness="0">
+                <TextBox.Resources>
+                    <!--to make the border corner round-->
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
+            <!--Search Button-->
+            <Button HorizontalAlignment="Left" Width="35" BorderThickness="0" Background="Transparent" Margin="210,0,0,0" IsDefault="True">
+                <Image Source="/Image/Search.png"/>
+            </Button>
+        </Grid>
 
 
 
+
+
+
+
+        <!--här börjar menu-->
+
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="15,0,909,0"  VerticalAlignment="Center" Grid.ColumnSpan="2" Height="289" >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
+                <Image Source="/Image/Book.png" Width="30" Margin="5,0,5,0"/>
+
+                <Button x:Name="BookMenuBT" BorderThickness="0" Content="Böcker" Foreground="White" FontWeight="Bold" Click="MenuBT_Click" HorizontalContentAlignment="Center" Height="41" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14" Width="67" Background="{x:Null}" />
+            </StackPanel>
+
+            <ToolBarPanel x:Name="Bookmenu"  HorizontalAlignment="Right"  Visibility="Visible"  Width="110" Margin="0,0,5,0">
+                <Button x:Name="AddItemBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" Width="109" Background="{x:Null}" Click="AddItemBT_Click" />
+
+                <Button x:Name="ChangeitemBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold"  HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeitemBT_Click"/>
+
+            </ToolBarPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,15,0,0">
+                <Image Source="/Image/Users.png" Width="30" Margin="5,0,5,0"/>
+                <Button x:Name="UserBT" BorderThickness="0" Content="Användare" Foreground="White" FontWeight="Bold" Click="MenuBT_Click"  HorizontalContentAlignment="Center" Height="41" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14" Width="85" Background="{x:Null}"/>
+            </StackPanel>
+
+
+
+            <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Visible" Width="110" Margin="0,0,5,0" Height="99">
+                <Button x:Name="AdduserBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AdduserBT_Click"/>
+
+                <Button x:Name="ChangeuserBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeuserBT_Click"/>
+
+            </ToolBarPanel>
 
         </StackPanel>
-        <StackPanel Grid.Row="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Bottom" Margin='15,0,0,20'>
+            <Image Source="/Image/Exit.png" Width="30" Margin="5,0,5,0"/>
+            <Button x:Name="ExitUser" BorderThickness="0" Content=" Logut " Foreground="White" FontWeight="Bold" Click="ExitUser_Click"  HorizontalContentAlignment="Center" Height="41" VerticalAlignment="Top" FontFamily="Segoe UI" Width="85" Background="{x:Null}"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
             <Frame x:Name="Menubar_frame" Content="Frame" Height="563" Source="/User/Profile.xaml"/>
         </StackPanel>
+
+
     </Grid>
+
 
 
 

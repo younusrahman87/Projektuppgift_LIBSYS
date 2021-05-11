@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image\book.png" />
+    <None Remove="Image\Exit.png" />
+    <None Remove="Image\profile1.jpg" />
+    <None Remove="Image\Search.png" />
+    <None Remove="Image\Users.png" />
     <None Remove="load.gif" />
     <None Remove="Login\Login-02.png" />
     <None Remove="Login\pngegg.png" />
@@ -14,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5">
@@ -27,6 +33,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Image\book.png" />
+    <Resource Include="Image\Exit.png" />
+    <Resource Include="Image\profile1.jpg" />
+    <Resource Include="Image\Search.png" />
+    <Resource Include="Image\Users.png" />
     <Resource Include="load.gif" />
     <Resource Include="Login\Login-02.png" />
     <Resource Include="Login\pngegg.png" />
