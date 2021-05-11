@@ -19,17 +19,19 @@
         </Grid.ColumnDefinitions>
 
 
-        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="37">
+        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Ellipse Height="36" Width="36" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="/Image/profile1.jpg" Stretch="UniformToFill"/>
-                </Ellipse.Fill>
-            </Ellipse>
+            <Button Background="Transparent" BorderThickness="0" Click="ProfilButton_Click">
+                <Ellipse Height="36" Width="36" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Image/profile1.jpg" Stretch="UniformToFill"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Button>
             <Grid Grid.Column="1" Margin="15,0,0,0" Width="76">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -44,7 +46,7 @@
         <!--här börja search-->
         <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="644,0,0,0" Height="44" Width="245">
 
-            <TextBox x:Name="searchbox" Padding="25,0,0,0" VerticalContentAlignment="Center" Text="" FontSize="10" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" GotFocus="SearchBox_GotFocus"  LostFocus="searchBox_LostFocus" BorderThickness="0">
+            <TextBox x:Name="searchbox" Padding="20,0,35,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="" FontSize="13" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" GotFocus="SearchBox_GotFocus"  LostFocus="searchBox_LostFocus" BorderThickness="0" Margin="-53,0,0,0">
                 <TextBox.Resources>
                     <!--to make the border corner round-->
                     <Style TargetType="{x:Type Border}">
@@ -54,7 +56,7 @@
             </TextBox>
 
             <!--Search Button-->
-            <Button HorizontalAlignment="Left" Width="25" BorderThickness="0" Background="Transparent" Margin="210,0,0,0" IsDefault="True">
+            <Button HorizontalAlignment="Left" Width="25" BorderThickness="0" Background="Transparent" Margin="210,0,0,0" IsDefault="True" Click="SearchButton_Click">
                 <Image Source="/Image/Search.png"/>
             </Button>
         </Grid>

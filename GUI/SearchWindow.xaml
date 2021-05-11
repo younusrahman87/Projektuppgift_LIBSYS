@@ -12,7 +12,7 @@
             <GradientStop Color="#FF434343" Offset="0"/>
         </LinearGradientBrush>
     </Window.Background>
-    <GroupBox Header="Sök" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Agency FB" FontSize="20" Width="377" Height="501">
+    <GroupBox Header="Sök" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Vani" FontSize="20" Width="377" Height="501">
 
         <Grid x:Name="FindBok">
             <Grid.RowDefinitions>
@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
-                <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj bok --" Width="350" Height="35" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_borrowed_book_SelectionChanged" >
+                <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj bok --" Width="350" Height="35" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_borrowed_book_SelectionChanged" >
                 </ComboBox>
             </StackPanel>
 

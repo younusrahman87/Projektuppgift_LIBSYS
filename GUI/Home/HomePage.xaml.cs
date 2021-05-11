@@ -107,5 +107,19 @@ namespace GUI.Home
         {
             Menubar_frame.Navigate(new ChangeRemoveUser());
         }
+
+        private void ProfilButton_Click(object sender, RoutedEventArgs e)
+        {
+            Menubar_frame.Navigate(new Profile());
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            SearchWindow search_obj = new SearchWindow();
+
+            search_obj.Show();
+            var mainwin = Application.Current.MainWindow;
+            mainwin.Hide();
+        }
     }
 }

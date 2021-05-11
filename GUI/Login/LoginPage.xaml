@@ -116,7 +116,12 @@
 
                             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Height="44" Width="340">
 
-                                <TextBox x:Name="searchbox" Padding="25,0,0,0" VerticalContentAlignment="Center" FontSize="10" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" BorderThickness="0" Margin="10,0,0,0" GotFocus="SearchBox_GotFocus" LostFocus="searchBox_LostFocus">
+                                
+                                
+                                
+                                
+                                
+                                <TextBox x:Name="searchbox" Padding="20,0,45,0"  VerticalContentAlignment="Center" FontSize="13" HorizontalContentAlignment="Center" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" BorderThickness="0" Margin="10,0,0,0" GotFocus="SearchBox_GotFocus" LostFocus="searchBox_LostFocus">
                                     <TextBox.Resources>
                                         <!--to make the border corner round-->
                                         <Style TargetType="{x:Type Border}">
