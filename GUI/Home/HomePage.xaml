@@ -74,7 +74,7 @@
                 <Button x:Name="BookMenuBT" BorderThickness="0" Content="Böcker" Foreground="White" FontWeight="Bold" Click="MenuBT_Click" HorizontalContentAlignment="Center" Height="41" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14" Width="67" Background="{x:Null}" />
             </StackPanel>
 
-            <ToolBarPanel x:Name="Bookmenu"  HorizontalAlignment="Right"  Visibility="Visible"  Width="110" Margin="0,0,5,0">
+            <ToolBarPanel x:Name="Bookmenu"  HorizontalAlignment="Right"  Visibility="Collapsed"  Width="110" Margin="0,0,5,0">
                 <Button x:Name="AddItemBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" Width="109" Background="{x:Null}" Click="AddItemBT_Click" />
 
                 <Button x:Name="ChangeitemBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold"  HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeitemBT_Click"/>
@@ -90,7 +90,7 @@
 
 
 
-            <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Visible" Width="110" Margin="0,0,5,0" Height="99">
+            <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="99">
                 <Button x:Name="AdduserBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AdduserBT_Click"/>
 
                 <Button x:Name="ChangeuserBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeuserBT_Click"/>

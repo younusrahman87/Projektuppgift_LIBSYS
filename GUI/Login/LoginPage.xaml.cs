@@ -23,14 +23,14 @@ namespace GUI.Login
     public partial class LoginPage : Page
     {
         private dynamic _loginService;
-
+        string search_text = "Skriv title, författare eller annat sökord";
 
         public LoginPage()
         {
 
             InitializeComponent();
             this.tbUsernam.Focus();
-
+            searchbox.Text = search_text;
 
 
         }
@@ -59,6 +59,20 @@ namespace GUI.Login
             else { SearchDetailsFount.Visibility = Visibility.Collapsed; logoimage.Visibility = Visibility.Visible; }
 
             
+
+        }
+
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (searchbox.Text == search_text) searchbox.Text = string.Empty; return;
+
+            searchbox.Text = search_text;
+        }
+
+        private void searchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (searchbox.Text == string.Empty) searchbox.Text = search_text; return;
+
 
         }
 
