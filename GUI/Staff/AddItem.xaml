@@ -99,7 +99,7 @@
                     <!-- Språk -->
 
                     <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,5,10,0">
-                        <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse" TextChanged="tb_Language_TextChanged">
                             <TextBox.Background>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black"/>

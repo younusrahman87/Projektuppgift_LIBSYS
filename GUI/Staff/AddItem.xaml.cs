@@ -82,6 +82,9 @@ namespace GUI.Staff
 
         }
 
+        private void tb_Language_TextChanged(object sender, TextChangedEventArgs e)
+        {
 
+        }
     }
 }
