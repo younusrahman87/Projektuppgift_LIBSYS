@@ -18,7 +18,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="1" Margin="437,0,-40,7" VerticalAlignment="Center" Height="45" Width="45">
-                <Button x:Name="Shoutdown_BT"  Width="45" Height="45" Click="Shoutdown_BT_Click" HorizontalAlignment="Right" BorderBrush="{x:Null}" >
+                <Button x:Name="Shoutdown_BT"  Width="45" Height="45" Click="Shoutdown_BT_Click" HorizontalAlignment="Right" BorderThickness="0" BorderBrush="{x:Null}" >
                     <Button.Background>
                         <ImageBrush ImageSource="/Login/shoutdown.png"/>
                     </Button.Background>
@@ -73,7 +73,7 @@
 
                     </StackPanel>
                     <StackPanel Grid.Row="4" Margin="0,0,0,20">
-                        <Button x:Name="Login_BT" HorizontalAlignment="Right" Width="37" Height="34" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Login_Click" IsDefault="True">
+                        <Button x:Name="Login_BT" HorizontalAlignment="Right" Width="37" Height="34" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" Click="Login_Click" BorderThickness="0" IsDefault="True">
                             <Button.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>

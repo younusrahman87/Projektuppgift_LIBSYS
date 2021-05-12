@@ -42,10 +42,10 @@
                                             <ColumnDefinition Width="113*"/>
                                             <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Content="Användares namn :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                        <Label Content="Användares namn :" Foreground="White" FontSize="14" Grid.ColumnSpan="2"/>
                                     </Grid>
                                     <Grid Grid.Row="0" Grid.Column="1">
-                                        <Label x:Name="tb_username" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                        <Label x:Name="tb_username" Content="Hittarde inge info" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                                     </Grid>
 
 
@@ -54,10 +54,10 @@
                                             <ColumnDefinition Width="113*"/>
                                             <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Content="Användares E-mail :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                        <Label Content="Användares E-mail :" Foreground="White" FontSize="14" Grid.ColumnSpan="2"/>
                                     </Grid>
                                     <Grid Grid.Row="1" Grid.Column="1">
-                                        <Label x:Name="tb_useremail" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                        <Label x:Name="tb_useremail" Content="Hittarde inge info" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                                     </Grid>
 
 
@@ -69,10 +69,10 @@
                                             <ColumnDefinition Width="113*"/>
                                             <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Content="Användares födelsedatum :" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                        <Label Content="Användares födelsedatum :" Foreground="White" FontSize="14" Grid.ColumnSpan="2"/>
                                     </Grid>
                                     <Grid Grid.Row="2" Grid.Column="1">
-                                        <Label x:Name="tb_userbirth" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                        <Label x:Name="tb_userbirth" Content="Hittarde inge info" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                                     </Grid>
 
 
@@ -83,10 +83,10 @@
                                             <ColumnDefinition Width="113*"/>
                                             <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Label Content="Total Lånade böcker : " Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+                                        <Label Content="Total Lånade böcker : " Foreground="White" FontSize="14" Grid.ColumnSpan="2"/>
                                     </Grid>
                                     <Grid Grid.Row="3" Grid.Column="1">
-                                        <Label x:Name="tb_resignmentdate" Content="Hittarde inge info" Foreground="White" FontSize="16" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                                        <Label x:Name="tb_resignmentdate" Content="Hittarde inge info" Foreground="White" FontSize="14" HorizontalAlignment="Right" Margin="0,0,10,0"/>
                                     </Grid>
 
 
@@ -98,7 +98,7 @@
                         </Grid>
                     </GroupBox>
 
-                    <GroupBox Header="Ändra lössenord" Margin="0,10,0,0" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="15" Width="400">
+                    <GroupBox Header="Ändra lössenord" Margin="0,70,0,0" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="15" Width="400">
 
                         <Grid>
                             <Grid.RowDefinitions>
@@ -110,7 +110,7 @@
 
 
                             <StackPanel Grid.Row="0" Margin="5,5,5,0">
-                                <TextBox x:Name="tb_OLDPass" Text="-- Ange gammla lössenord --"  TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                                <TextBox x:Name="tb_OLDPass" Text="-- Ange gammla lössenord --"  TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                     <TextBox.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -122,7 +122,7 @@
 
 
                             <StackPanel Grid.Row="1" Margin="5,5,5,0">
-                                <TextBox x:Name="tb_Newpass" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                                <TextBox x:Name="tb_Newpass" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                     <TextBox.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -134,7 +134,7 @@
 
 
                             <StackPanel Grid.Row="2" Margin="5,5,5,0">
-                                <TextBox x:Name="tb_Newpassagain" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                                <TextBox x:Name="tb_Newpassagain" Text="-- Nya Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                     <TextBox.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -145,7 +145,7 @@
                             </StackPanel>
 
                             <StackPanel Grid.Row="3" Height="30" HorizontalAlignment="Right" Margin="0,5,8,10" Width="80">
-                                <Button x:Name="Bt_change" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center" Foreground="White"  FontSize="14"   >
+                                <Button x:Name="Bt_change" Content="Ändra" Height="30" Width="80" HorizontalAlignment="Center"  VerticalAlignment="Bottom" VerticalContentAlignment="Bottom" Foreground="White"  FontSize="14"   >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -205,7 +205,7 @@
                         </Grid.RowDefinitions>
 
                         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
-                            <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj lånade böcker --" Width="350" Height="35" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_borrowed_book_SelectionChanged" >
+                            <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj lånade böcker --" Width="350" Height="35" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14"  HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" SelectionChanged="cb_borrowed_book_SelectionChanged" >
                             </ComboBox>
                         </StackPanel>
 
@@ -214,7 +214,7 @@
 
                         <!-- Fordonreg ärande 1-->
                         <StackPanel Grid.Row="1" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_BookID" Text="-- Bok Id --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_BookID" Text="-- Bok Id --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -228,7 +228,7 @@
 
                         <!-- fordontyp ärande 1-->
                         <StackPanel Grid.Row="2" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_oldpassword" Text="-- Bok Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" Grid.Row="0">
+                            <TextBox x:Name="tb_oldpassword" Text="-- Bok Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" Grid.Row="0">
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -238,7 +238,7 @@
                             </TextBox>
 
 
-                            <TextBox x:Name="tb_newpassword" Text="-- Bok Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" Grid.Row="1">
+                            <TextBox x:Name="tb_newpassword" Text="-- Bok Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" Grid.Row="1">
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -250,7 +250,7 @@
 
                         <!-- fordonmärke ärande 1-->
                         <StackPanel Grid.Row="3" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_book_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_book_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -263,7 +263,7 @@
 
                         <!-- fordonmodel ärande 1-->
                         <StackPanel Grid.Row="4" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -278,7 +278,7 @@
 
                         <!-- fordonärandenummer ärande 1-->
                         <StackPanel Grid.Row="5" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_PublicationDate" Text="-- Publiceringsdatum --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_PublicationDate" Text="-- Publiceringsdatum --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -291,7 +291,7 @@
 
                         <!-- Fordon issu-->
                         <StackPanel Grid.Row="6" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_Ebook" Text="-- E-bok ISBN --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_Ebook" Text="-- E-bok ISBN --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
@@ -303,7 +303,7 @@
 
 
                         <StackPanel Grid.Row="7" Margin="5,5,5,5">
-                            <TextBox x:Name="tb_return" Text="-- E-bok ISBN --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                            <TextBox x:Name="tb_return" Text="-- E-bok ISBN --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
                                 <TextBox.Background>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="Black"/>
