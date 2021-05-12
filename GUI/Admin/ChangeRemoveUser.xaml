@@ -18,14 +18,13 @@
         </Grid.RowDefinitions>
 
         <!--this is för tabb button top-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch"   >
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch"  Margin="10,0,0,0" >
             <Button Content="ID" Height="20" Width="150" Background="Transparent" Foreground="White" FontFamily="Vani" FontSize="14" BorderThickness="0,0,2,1"/>
             <Button Content="Förnamn" Height="20" Width="130" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
             <Button Content="Efternamn" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
             <Button Content="E-mail" Height="20" Width="156"  Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
             <Button Content="LibraryCard" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="JobTitle" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="Button1" Height="20" Width="150" Background="Transparent" BorderThickness="0,0,2,0" Foreground="White"  FontFamily="Vani" FontSize="14"/>
+            <Button Content="JobTitle" Height="20" Width="141" Background="Transparent" BorderThickness="0,0,0,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
         </StackPanel>
 
 

@@ -25,7 +25,7 @@
                 </Button>
             </StackPanel>
 
-            <Label Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Center" Content="Biblieotket" Foreground="White" FontFamily="Agency FB" FontWeight="Bold"  FontSize="20"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Top"  HorizontalAlignment="Center" Content="Sneakers" Foreground="White" FontFamily="Engravers MT" FontWeight="Bold"  FontSize="20"/>
 
 
             <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -37,8 +37,8 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="1*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="171" Height="33">
-                        <TextBlock Text="Användare E-mail" TextWrapping="Wrap" HorizontalAlignment="Center" Width="115" Foreground="White" FontSize="18" FontFamily="Agency FB" FontWeight="Bold" Height="26">
+                    <StackPanel Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="170" Height="22">
+                        <TextBlock Text="Användare E-mail" TextWrapping="Wrap" HorizontalAlignment="Center"  Width="129" Foreground="White" FontSize="18" FontFamily="Bahnschrift SemiLight SemiCondensed" FontWeight="Bold" Height="22">
                             <TextBlock.TextDecorations>
                                 <TextDecoration/>
                             </TextBlock.TextDecorations>
@@ -54,8 +54,8 @@
                             </TextBox.BorderBrush>
                         </TextBox>
                     </StackPanel>
-                    <StackPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <TextBlock Text="Lösenord" TextWrapping="Wrap" HorizontalAlignment="Center" Width="64" Foreground="White" FontSize="18" FontFamily="Agency FB" FontWeight="Bold" Height="28">
+                    <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                        <TextBlock Text="Lösenord" TextWrapping="Wrap" HorizontalAlignment="Center" Width="67" Foreground="White" FontSize="18" FontFamily="Bahnschrift SemiLight SemiCondensed" FontWeight="Bold" Height="28">
                             <TextBlock.TextDecorations>
                                 <TextDecoration/>
                             </TextBlock.TextDecorations>
@@ -116,11 +116,11 @@
 
                             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Height="44" Width="340">
 
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                                 <TextBox x:Name="searchbox" Padding="20,0,45,0"  VerticalContentAlignment="Center" FontSize="13" HorizontalContentAlignment="Center" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" BorderThickness="0" Margin="10,0,0,0" GotFocus="SearchBox_GotFocus" LostFocus="searchBox_LostFocus">
                                     <TextBox.Resources>
                                         <!--to make the border corner round-->

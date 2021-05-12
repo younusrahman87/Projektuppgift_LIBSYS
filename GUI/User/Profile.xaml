@@ -16,7 +16,7 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-                    <GroupBox  Grid.Column="1" Header=" Användare information " BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Vani" FontSize="20" Width="400">
+                    <GroupBox  Grid.Column="1" Header=" Användare information " BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Vani" FontSize="15" Width="400">
                         <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
@@ -98,7 +98,7 @@
                         </Grid>
                     </GroupBox>
 
-                    <GroupBox Header="Ändra lössenord" Margin="0,10,0,0" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="20" Width="400">
+                    <GroupBox Header="Ändra lössenord" Margin="0,10,0,0" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="15" Width="400">
 
                         <Grid>
                             <Grid.RowDefinitions>
@@ -110,7 +110,7 @@
 
 
                             <StackPanel Grid.Row="0" Margin="5,5,5,0">
-                                <TextBox x:Name="tb_OLDPass" Text="-- Gammla Lössenord --" TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
+                                <TextBox x:Name="tb_OLDPass" Text="-- Ange gammla lössenord --"  TextWrapping="Wrap" Width="375" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Foreground="White" IsReadOnly="True" FontSize="16" >
                                     <TextBox.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -187,7 +187,7 @@
             <StackPanel Grid.Column="1">
 
 
-                <GroupBox Header="Lånade Böcker" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="20">
+                <GroupBox Header="Lånade Böcker" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" FontFamily="Vani" FontSize="15">
 
                     <Grid>
                         <Grid.RowDefinitions>

@@ -44,7 +44,7 @@
 
 
         <!--här börja search-->
-        <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="644,0,0,0" Height="44" Width="245">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="644,0,0,0" Height="40" Width="245">
 
             <TextBox x:Name="searchbox" Padding="20,0,35,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Text="" FontSize="13" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" GotFocus="SearchBox_GotFocus"  LostFocus="searchBox_LostFocus" BorderThickness="0" Margin="-53,0,0,0">
                 <TextBox.Resources>
