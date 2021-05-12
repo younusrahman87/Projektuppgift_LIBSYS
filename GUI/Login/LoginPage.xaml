@@ -49,10 +49,12 @@
                             <TextBox.BorderBrush>
                                 <RadialGradientBrush>
                                     <GradientStop Color="Black" Offset="0"/>
+                                    
                                     <GradientStop Color="#FF4C4B4B" Offset="1"/>
                                 </RadialGradientBrush>
                             </TextBox.BorderBrush>
                         </TextBox>
+                        
                     </StackPanel>
                     <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                         <TextBlock Text="Lösenord" TextWrapping="Wrap" HorizontalAlignment="Center" Width="67" Foreground="White" FontSize="18" FontFamily="Bahnschrift SemiLight SemiCondensed" FontWeight="Bold" Height="28">

@@ -69,7 +69,8 @@
 
         <!--här börjar menu-->
 
-        <StackPanel Grid.Row="1" Grid.Column="0" Margin="15,0,909,0"  Grid.ColumnSpan="2" Height="289" >
+
+        <StackPanel x:Name="AdminPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,909,206"  Grid.ColumnSpan="2"  Visibility="Collapsed">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="117"  >
                 <Image Source="/Image/Book.png" Width="30" Margin="5,0,5,0"/>
 
@@ -92,10 +93,28 @@
 
 
 
-            <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="99">
+            <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="60">
                 <Button x:Name="AdduserBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AdduserBT_Click"/>
 
                 <Button x:Name="ChangeuserBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeuserBT_Click"/>
+
+            </ToolBarPanel>
+
+
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,15,0,0" Width="131" Height="35">
+                <Image Source="/Image/seminar.png" Width="28" Margin="5,0,5,0" Height="30"/>
+                <Button x:Name="seminarierBT" BorderThickness="0" Content="Seminarier" Foreground="White" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Center" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="14" Width="72" Margin="8,0,0,0" Background="{x:Null}" />
+            </StackPanel>
+
+
+
+            <ToolBarPanel x:Name="seminariermenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="99">
+                <Button x:Name="AddseminarierBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AddseminarierBT_Click"/>
+
+                <Button x:Name="ChangeseminarierBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeseminarierBT_Click"/>
 
             </ToolBarPanel>
 

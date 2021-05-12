@@ -25,6 +25,7 @@ namespace GUI.Home
         string search_text = "Skriv title, författare eller annat sökord";
         string Bt_name_bok = "Böcker";
         string Bt_name_user = "Användare";
+        string bt_seminarier = "Seminarier";
 
 
 
@@ -39,8 +40,8 @@ namespace GUI.Home
 
             var ans = MessageBox.Show(".\n\nDo you want to see admin profile page?", "Hello Developer", MessageBoxButton.YesNo);
 
-            if (ans.ToString() == "Yes") Menubar_frame.Navigate(new AdminProfile());
-            else Menubar_frame.Navigate(new Profile());
+            if (ans.ToString() == "Yes") { Menubar_frame.Navigate(new AdminProfile()); AdminPanel.Visibility = Visibility.Visible; }
+            else { Menubar_frame.Navigate(new Profile()); AdminPanel.Visibility = Visibility.Collapsed; }
 
 
 
@@ -52,6 +53,7 @@ namespace GUI.Home
             BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 2);
             BookMenuBT.BorderBrush = new SolidColorBrush(Colors.Gray);
             UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            seminarierBT.BorderThickness = new Thickness(0, 0, 0, 0);
 
             Button Converted_to_Bt = sender as Button;
 
@@ -60,8 +62,10 @@ namespace GUI.Home
             if(Converted_to_Bt.Content.Equals(Bt_name_bok))
             {
                 Usermenu.Visibility = Visibility.Collapsed;
-                if (Bookmenu.Visibility == Visibility.Visible) { Bookmenu.Visibility = Visibility.Collapsed; 
-                                                                 BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0); return; }
+                seminariermenu.Visibility = Visibility.Collapsed;
+                if (Bookmenu.Visibility == Visibility.Collapsed) 
+                { Bookmenu.Visibility = Visibility.Visible;
+                  return; }
                 Bookmenu.Visibility = Visibility.Visible;
                 return;
             }
@@ -71,11 +75,32 @@ namespace GUI.Home
                 UserBT.BorderThickness = new Thickness(0, 0, 0, 2);
                 UserBT.BorderBrush = new SolidColorBrush(Colors.Gray);
                 BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
+                seminarierBT.BorderThickness = new Thickness(0, 0, 0, 0);
 
                 Bookmenu.Visibility = Visibility.Collapsed;
-                if (Usermenu.Visibility == Visibility.Visible) { Usermenu.Visibility = Visibility.Collapsed; 
-                                                                 UserBT.BorderThickness = new Thickness(0, 0, 0, 0); return; }
+                seminariermenu.Visibility = Visibility.Collapsed;
+                if (Usermenu.Visibility == Visibility.Collapsed) { Usermenu.Visibility = Visibility.Visible; 
+                                                                return; }
                 Usermenu.Visibility = Visibility.Visible;
+                return;
+            }
+
+            else if (Converted_to_Bt.Content.Equals(bt_seminarier))
+            {
+                seminarierBT.BorderThickness = new Thickness(0, 0, 0, 2);
+                seminarierBT.BorderBrush = new SolidColorBrush(Colors.Gray);
+                BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
+                UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
+
+
+                Bookmenu.Visibility = Visibility.Collapsed;
+                Usermenu.Visibility = Visibility.Collapsed;
+                if (seminariermenu.Visibility == Visibility.Collapsed)
+                {
+                    seminariermenu.Visibility = Visibility.Visible;
+
+                }
+
                 return;
             }
 
@@ -134,14 +159,16 @@ namespace GUI.Home
 
             UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
             BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            seminarierBT.BorderThickness = new Thickness(0,0,0,0);
             Usermenu.Visibility = Visibility.Collapsed;
             Bookmenu.Visibility = Visibility.Collapsed;
+            seminariermenu.Visibility = Visibility.Collapsed;
 
 
             var ans = MessageBox.Show(".\n\nDo you want to see admin profile page?", "Hello Developer", MessageBoxButton.YesNo);
 
-            if(ans.ToString() == "Yes") Menubar_frame.Navigate(new AdminProfile());
-            else Menubar_frame.Navigate(new Profile());
+            if (ans.ToString() == "Yes") { Menubar_frame.Navigate(new AdminProfile()); AdminPanel.Visibility = Visibility.Visible; }
+            else { Menubar_frame.Navigate(new Profile()); AdminPanel.Visibility = Visibility.Collapsed; }
 
         }
 
@@ -153,9 +180,21 @@ namespace GUI.Home
             var mainwin = Application.Current.MainWindow;
             UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
             BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            seminarierBT.BorderThickness = new Thickness(0, 0, 0, 0);
             Usermenu.Visibility = Visibility.Collapsed;
             Bookmenu.Visibility = Visibility.Collapsed;
+            seminariermenu.Visibility = Visibility.Collapsed;
             mainwin.Hide();
+        }
+
+        private void AddseminarierBT_Click(object sender, RoutedEventArgs e)
+        {
+            Menubar_frame.Navigate(new AddSeminarier());
+        }
+
+        private void ChangeseminarierBT_Click(object sender, RoutedEventArgs e)
+        {
+            Menubar_frame.Navigate(new ChangeRemoveSeminarier());
         }
     }
 }

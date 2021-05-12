@@ -11,11 +11,14 @@
     <None Remove="Image\Exit.png" />
     <None Remove="Image\profile1.jpg" />
     <None Remove="Image\Search.png" />
+    <None Remove="Image\seminar.png" />
     <None Remove="Image\Users.png" />
     <None Remove="load.gif" />
     <None Remove="Login\Login-02.png" />
+    <None Remove="Login\login.png" />
     <None Remove="Login\pngegg.png" />
     <None Remove="Login\shoutdown.png" />
+    <None Remove="Login\unnamed.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,11 +40,14 @@
     <Resource Include="Image\Exit.png" />
     <Resource Include="Image\profile1.jpg" />
     <Resource Include="Image\Search.png" />
+    <Resource Include="Image\seminar.png" />
     <Resource Include="Image\Users.png" />
     <Resource Include="load.gif" />
     <Resource Include="Login\Login-02.png" />
+    <Resource Include="Login\login.png" />
     <Resource Include="Login\pngegg.png" />
     <Resource Include="Login\shoutdown.png" />
+    <Resource Include="Login\unnamed.png" />
   </ItemGroup>
 
 </Project>
