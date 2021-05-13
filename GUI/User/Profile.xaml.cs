@@ -1,4 +1,5 @@
 ﻿using GUI.Home;
+using GUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,6 @@ namespace GUI.Pages
 
 
             //if (_closedC.Where(x=>x.Value.Mechanic_ID.Equals(HomePage._GCU[1])).Count() > 0) { cb_finshed_case.IsEnabled = true; cb_finshed_case.ItemsSource = _closedC.Where(x => x.Value.Mechanic_ID.Equals(HomePage._GCU[1])).Select(x => x.Key); }
-
 
         }
 
