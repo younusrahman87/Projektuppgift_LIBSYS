@@ -126,7 +126,7 @@
 
         <!-- Längsner row. För visa error message och lägga till knapp -->
 
-        <Label Grid.Row="1" x:Name="Error_msg"  Padding="5,0,15,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="This is a message" Foreground="White" FontFamily="Vani" FontSize="16" FontWeight="Bold" FontStyle="Normal"/>
+        <Label Grid.Row="1" x:Name="MessageDisplay"  Padding="5,0,15,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontFamily="Vani" FontSize="16" FontWeight="Bold" FontStyle="Normal"/>
 
     </Grid>
 </Page>

@@ -19,13 +19,13 @@
 
         </StackPanel>
 
-        <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.5*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
-                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" FontFamily="Agency FB" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
+            <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Agency FB" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>

@@ -31,7 +31,7 @@
 
         <!--this is listview-->
         <StackPanel Grid.Row="1" HorizontalAlignment="Left"  Margin="10,0,0,0">
-            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView">
+            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView" FontSize="13" FontFamily="Vani" FontWeight="Bold" Foreground="White" Padding="10,10,10,10">
             </ListViewItem>
         </StackPanel>
 
@@ -140,7 +140,7 @@
 
             </Grid>
         </StackPanel>
-        <Label x:Name="Error_msg" Grid.Row="2" HorizontalAlignment="Left" Content="This is error Msg" VerticalAlignment="Top" Foreground="White" FontFamily="Vani" FontSize="16" FontStyle="Normal" Height="38" Margin="381,176,0,0" Grid.RowSpan="2"/>
+        <Label x:Name="MessageDisplay" Grid.Row="2" HorizontalAlignment="Left" Content="This is error Msg" VerticalAlignment="Top" Foreground="White" FontFamily="Vani" FontSize="16" FontStyle="Normal" Height="38" Margin="381,176,0,0" Grid.RowSpan="2"/>
 
 
     </Grid>
