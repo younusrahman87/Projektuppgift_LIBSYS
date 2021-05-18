@@ -21,6 +21,19 @@ namespace GUI.Staff
     public partial class AddItem : Page
     {
         public List<CategoryDb> categorys = new List<CategoryDb>();
+        //---------------------------------------------------
+        private readonly string Title = "-- Titel --";
+        private readonly string Author = "-- Författare --";
+        private readonly string Language = "-- Förlag --";
+        private readonly string Price = "-- Pris --";
+        private readonly string ISBN = "-- ISBN --";
+        private readonly string DDC = "-- DDC --";
+
+        private readonly string Error = "** Fel inmatning **";
+        private readonly string Saved = "** Sparad **";
+        //---------------------------------------------------
+
+
         public AddItem()
         {
             InitializeComponent();
@@ -34,22 +47,10 @@ namespace GUI.Staff
             }
             catch (Exception)
             {
-
+                MessageDisplay.Content = "** Kunde inte ladda objekt **";
             }
 
         }
-
-
-        //---------------------------------------------------
-        private readonly string Title = "-- Titel --";
-        private readonly string Author = "-- Författare --";
-        private readonly string Language = "-- Förlag --";
-        private readonly string Price = "-- Pris --";
-        private readonly string ISBN = "-- ISBN --";
-        private readonly string DDC = "-- DDC --";
-
-        private readonly string Messasge = "** Fel inmatning **";
-        //---------------------------------------------------
 
 
 
@@ -60,66 +61,61 @@ namespace GUI.Staff
 
 
         private void bt_add_book_Click(object sender, RoutedEventArgs e)
-        {   
-
-            if (tb_Author.Text == string.Empty)
-            {
-                Error_msg.Content = Messasge;
-                return;
-            }
-            else if(tb_Price.Text == string.Empty)
-            {
-                Error_msg.Content = Messasge;
-                return;
-            }
-            else if(tb_Publisher.Text == string.Empty)
-            {
-                Error_msg.Content = Messasge;
-                return;
-            }
-            else if(tb_Title.Text == string.Empty)
-            {
-                Error_msg.Content = Messasge;
-                return;
-            }
+        {
+            int price = 0;
+            decimal DDC = 0;
 
             CategoryDb categoryItem = (CategoryDb)cb_Category.SelectedItem;
 
-            if(!Int32.TryParse(tb_Price.Text, out int price))
+            if (tb_Author.Text == string.Empty ||
+                tb_Publisher.Text == string.Empty ||
+                tb_Title.Text == string.Empty)
             {
-                Error_msg.Content = Messasge;
+                MessageDisplay.Content = Error;
+                return;
+            }
+            else if(tb_Price.Text == string.Empty || !Int32.TryParse(tb_Price.Text, out price))
+            {
+                MessageDisplay.Content = Error;
                 return;
             }
 
-            decimal DDC = 0;
-
-            if (tb_DDC.Text != null && Decimal.TryParse(tb_DDC.Text, out DDC) == false)
+            else if (tb_DDC.Text == string.Empty && !Decimal.TryParse(tb_DDC.Text, out DDC))
             {
-                Error_msg.Content = Messasge;
+                MessageDisplay.Content = Error;
+                return;
+            }
+            else if (tb_ISBN.Text == string.Empty && tb_ISBN.Text.Length != 17)
+            {
+                MessageDisplay.Content = Error;
                 return;
             }
 
-            if(tb_ISBN.Text != null && tb_ISBN.Text.Length != 17)
+            else
             {
-                Error_msg.Content = Messasge;
-                return;
+                var book = new BookDb
+                {
+                    Price = price,
+                    Title = tb_Title.Text,
+                    Author = tb_Author.Text,
+                    Publisher = tb_Publisher.Text,
+                    CategoryID = categoryItem.ID,
+                    DDC = DDC,
+                    ISBN = tb_ISBN.Text,
+                };
+
+                using var dbContex = new librarysystemdbContext();
+                dbContex.BookDbs.Add(book);
+
+                dbContex.SaveChanges();
+
+                MessageDisplay.Content = Saved;
+
+
             }
 
-            var book = new BookDb
-            {
-                Price = price,
-                Title = tb_Title.Text,
-                Author = tb_Author.Text,
-                Publisher = tb_Publisher.Text,
-                CategoryID = categoryItem.ID,
-                DDC = DDC,
-                ISBN = tb_ISBN.Text,
-            };
 
-            using var dbContex = new librarysystemdbContext();
-            dbContex.BookDbs.Add(book);
 
-            dbContex.SaveChanges();
         }
 
         private void Add_Category_Click(object sender, RoutedEventArgs e)

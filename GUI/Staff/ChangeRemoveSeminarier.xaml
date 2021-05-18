@@ -29,7 +29,7 @@
 
         <!--this is listview-->
         <StackPanel Grid.Row="1" HorizontalAlignment="Left"  Margin="10,0,0,0">
-            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView">
+            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView" FontSize="13" FontFamily="Vani" FontWeight="Bold" Foreground="White" Padding="10,10,10,10">
             </ListViewItem>
         </StackPanel>
 
