@@ -26,18 +26,29 @@ namespace GUI.Staff
             InitializeComponent();
 
             using var dbContex = new librarysystemdbContext();
-            categorys = dbContex.CategoryDbs.ToList();
-            cb_Category.ItemsSource = categorys;
+
+            try
+            {
+                categorys = dbContex.CategoryDbs.ToList();
+                cb_Category.ItemsSource = categorys;
+            }
+            catch (Exception)
+            {
+
+            }
+
         }
 
 
         //---------------------------------------------------
-        private readonly string Title = "-- Boktitel --";
+        private readonly string Title = "-- Titel --";
         private readonly string Author = "-- Författare --";
-        private readonly string Language = "-- Språk --";
-        private readonly string Price = "-- Publiceringsdatum --";
-        private readonly string ISBN = "-- E-bok ISBN --";
-        private readonly string Wrong_msg = "** Fel inmatning **";
+        private readonly string Language = "-- Förlag --";
+        private readonly string Price = "-- Pris --";
+        private readonly string ISBN = "-- ISBN --";
+        private readonly string DDC = "-- DDC --";
+
+        private readonly string Messasge = "** Fel inmatning **";
         //---------------------------------------------------
 
 
@@ -51,24 +62,24 @@ namespace GUI.Staff
         private void bt_add_book_Click(object sender, RoutedEventArgs e)
         {   
 
-            if (tb_Author.Text == null)
+            if (tb_Author.Text == string.Empty)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
-            else if(tb_Price.Text == null)
+            else if(tb_Price.Text == string.Empty)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
-            else if(tb_Publisher.Text == null)
+            else if(tb_Publisher.Text == string.Empty)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
-            else if(tb_Title.Text == null)
+            else if(tb_Title.Text == string.Empty)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
 
@@ -76,7 +87,7 @@ namespace GUI.Staff
 
             if(!Int32.TryParse(tb_Price.Text, out int price))
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
 
@@ -84,13 +95,13 @@ namespace GUI.Staff
 
             if (tb_DDC.Text != null && Decimal.TryParse(tb_DDC.Text, out DDC) == false)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
 
             if(tb_ISBN.Text != null && tb_ISBN.Text.Length != 17)
             {
-                Error_msg.Content = Wrong_msg;
+                Error_msg.Content = Messasge;
                 return;
             }
 
@@ -126,6 +137,7 @@ namespace GUI.Staff
             else if (_sender.Text.Equals(Language)) { _sender.Text = string.Empty; }
             else if (_sender.Text.Equals(Price)) { _sender.Text = string.Empty; }
             else if (_sender.Text.Equals(ISBN)) { _sender.Text = string.Empty; }
+            else if (_sender.Text.Equals(DDC)) { _sender.Text = string.Empty; }
 
 
         }
@@ -137,11 +149,12 @@ namespace GUI.Staff
             var _sender = (TextBox)sender;
 
 
-            if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Booktitel")) { _sender.Text = Title; }
+            if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Title")) { _sender.Text = Title; }
             else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Author")) { _sender.Text = Author; }
-            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Language")) { _sender.Text = Language; }
+            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Publisher")) { _sender.Text = Language; }
             else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Price")) { _sender.Text = Price; }
-            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Ebook")) { _sender.Text = ISBN; }
+            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_ISBN")) { _sender.Text = ISBN; }
+            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_DDC")) { _sender.Text = DDC; }
 
 
         }
