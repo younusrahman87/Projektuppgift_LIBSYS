@@ -21,6 +21,8 @@ namespace GUI.Staff
     public partial class AddItem : Page
     {
         public List<CategoryDb> categorys = new List<CategoryDb>();
+        public List<BookDb> books = new List<BookDb>();
+        public BookDb selectedBook = new BookDb();
         public AddItem()
         {
             InitializeComponent();
@@ -49,24 +51,25 @@ namespace GUI.Staff
 
 
         private void bt_add_book_Click(object sender, RoutedEventArgs e)
-        {   
+        {
+            Error_msg.Content = string.Empty;
 
-            if (tb_Author.Text == null)
+            if (tb_Author.Text == string.Empty)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
             }
-            else if(tb_Price.Text == null)
+            else if(tb_Price.Text == string.Empty)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
             }
-            else if(tb_Publisher.Text == null)
+            else if(tb_Publisher.Text == string.Empty)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
             }
-            else if(tb_Title.Text == null)
+            else if(tb_Title.Text == string.Empty)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
@@ -82,13 +85,13 @@ namespace GUI.Staff
 
             decimal DDC = 0;
 
-            if (tb_DDC.Text != null && Decimal.TryParse(tb_DDC.Text, out DDC) == false)
+            if (tb_DDC.Text != string.Empty && Decimal.TryParse(tb_DDC.Text, out DDC) == false)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
             }
 
-            if(tb_ISBN.Text != null && tb_ISBN.Text.Length != 17)
+            if(tb_ISBN.Text != string.Empty && tb_ISBN.Text.Length != 17)
             {
                 Error_msg.Content = Wrong_msg;
                 return;
@@ -109,6 +112,8 @@ namespace GUI.Staff
             dbContex.BookDbs.Add(book);
 
             dbContex.SaveChanges();
+
+            MessageBox.Show("Bok tillagd!");
         }
 
         private void Add_Category_Click(object sender, RoutedEventArgs e)
@@ -146,8 +151,47 @@ namespace GUI.Staff
 
         }
 
-        private void tb_Language_TextChanged(object sender, TextChangedEventArgs e)
+        private void Bt_remove_case_Click(object sender, RoutedEventArgs e)
         {
+            Error_msg.Content = string.Empty;
+            using var dbContex = new librarysystemdbContext();
+            if (selectedBook != null)
+            {
+                dbContex.BookDbs.Remove(selectedBook);
+                dbContex.SaveChanges();
+                MessageBox.Show("Bok raderad!");
+            }
+            else
+            {
+                Error_msg.Content = Wrong_msg;
+            }
+        }
+
+        private void search_bt_Click(object sender, RoutedEventArgs e)
+        {
+            using var dbContex = new librarysystemdbContext();
+            books = dbContex.BookDbs.ToList();
+            books.ForEach(b => b.Category = categorys.Where(c => c.ID == b.CategoryID).FirstOrDefault());
+            
+            
+            try
+            {
+                selectedBook = books.Where(b => b.Id == int.Parse(tb_sc_search_Boo.Text)).FirstOrDefault();
+            }
+            catch
+            {
+                Error_msg.Content = Wrong_msg;
+                selectedBook = null;
+                return;
+            }
+
+            tb_sc_Category.Text = selectedBook.Category.CategoryName;
+            tb_sc_Title.Text = selectedBook.Title;
+            tb_sc_Author.Text = selectedBook.Author;
+            tb_sc_Publisher.Text = selectedBook.Publisher;
+            tb_sc_Price.Text = selectedBook.Price.ToString();
+            tb_sc_ISBN.Text = selectedBook.ISBN;
+            tb_sc_DDC.Text = selectedBook.DDC.ToString();
 
         }
     }

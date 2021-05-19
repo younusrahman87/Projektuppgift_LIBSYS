@@ -61,7 +61,7 @@
 
                             </StackPanel>
                             <StackPanel Grid.Column="1" Margin="5,5,5,5">
-                                <Button x:Name="search_bt"  HorizontalAlignment="Right" Width="35" Height="25" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsDefault="True"  >
+                                <Button x:Name="search_bt"  HorizontalAlignment="Right" Width="35" Height="25" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsDefault="True" Click="search_bt_Click"  >
                                     <Button.RenderTransform>
                                         <TransformGroup>
                                             <ScaleTransform/>
@@ -180,7 +180,7 @@
                             </Grid.ColumnDefinitions>
 
                             <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left">
-                                <Button x:Name="Bt_remove_case" Content="Ta bort" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
+                                <Button x:Name="Bt_remove_case" Content="Ta bort" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" Click="Bt_remove_case_Click" >
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
