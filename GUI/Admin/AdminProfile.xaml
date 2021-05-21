@@ -25,7 +25,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Agency FB" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
+                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Vani" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -45,7 +45,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="0" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -55,7 +55,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="1" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_konto" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_konto" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -66,7 +66,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="2" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_skill_broms" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_skill_broms" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -75,7 +75,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="3" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_motor" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_motor" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -84,7 +84,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="4" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_Kaross" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_Kaross" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -94,7 +94,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="5" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_Vindruta" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_Vindruta" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
 
@@ -103,7 +103,7 @@
 
                         </StackPanel>
                         <StackPanel Grid.Row="6" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_wheel" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="16"></Label>
+                            <Label x:Name="TB_Total_mekanik_wheel" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
 
                         </StackPanel>
                     </Grid>
