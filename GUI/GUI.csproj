@@ -11,9 +11,11 @@
     <None Remove="Image\book.png" />
     <None Remove="Image\Exit.png" />
     <None Remove="Image\outline_group_white_24dp.png" />
+    <None Remove="Image\Personal.png" />
     <None Remove="Image\profile1.jpg" />
     <None Remove="Image\Search.png" />
     <None Remove="Image\seminar.png" />
+    <None Remove="Image\User.png" />
     <None Remove="load.gif" />
     <None Remove="Login\Login-02.png" />
     <None Remove="Login\login.png" />
@@ -39,8 +41,10 @@
   <ItemGroup>
     <Resource Include="Image\book.png" />
     <Resource Include="Image\Exit.png" />
+    <Resource Include="Image\Personal.png" />
     <Resource Include="Image\profile1.jpg" />
     <Resource Include="Image\Search.png" />
+    <Resource Include="Image\User.png" />
     <Resource Include="load.gif" />
     <Resource Include="Login\Login-02.png" />
     <Resource Include="Login\login.png" />

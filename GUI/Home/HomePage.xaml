@@ -70,7 +70,7 @@
         <!--här börjar menu-->
 
 
-        <StackPanel x:Name="AdminPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,909,206"  Grid.ColumnSpan="2"  Visibility="Collapsed">
+        <StackPanel x:Name="AdminPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,909,206"  Grid.ColumnSpan="2"  Visibility="Visible">
             
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="117"  >
