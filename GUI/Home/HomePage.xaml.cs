@@ -43,11 +43,11 @@ namespace GUI.Home
 
         private void DEMO_Panel()
         {
-            var ans = MessageBox.Show("Log in as Stuff or User?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
+            var ans = MessageBox.Show("Log in as Stuff?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
 
             if (ans.ToString() == "Yes")
             {
-                var PersonalOradmin = MessageBox.Show(".Yes = AdminPanel\n\nNo = PersonalPanel", "Hello Developer", MessageBoxButton.YesNo);
+                var PersonalOradmin = MessageBox.Show("Yes = AdminPanel\n\nNo = PersonalPanel", "Hello Developer", MessageBoxButton.YesNo);
                 if (PersonalOradmin.ToString() == "Yes")
                 {
                     Menubar_frame.Navigate(new AdminProfile());
