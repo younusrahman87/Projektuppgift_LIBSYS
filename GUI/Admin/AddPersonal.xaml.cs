@@ -50,10 +50,10 @@ namespace GUI.Admin
             var _sender = (TextBox)sender;
 
 
-            if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_firstname")) { _sender.Text = Firstname; }
+            if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Firstname")) { _sender.Text = Firstname; }
             else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_lastname")) { _sender.Text = Lastname; }
             else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_email")) { _sender.Text = Email; }
-            else if (_sender.Text.Equals(string.Empty) && _sender.Name.Equals("tb_Jobtitle")) { _sender.Text = JobTitle; }
+
 
 
         }
