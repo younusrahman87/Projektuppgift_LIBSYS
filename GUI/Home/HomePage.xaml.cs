@@ -37,14 +37,39 @@ namespace GUI.Home
             InitializeComponent();
             searchbox.Text = search_text;
 
+            DEMO_Panel();
 
-            var ans = MessageBox.Show(".\n\nDo you want to see admin profile page?", "Hello Developer", MessageBoxButton.YesNo);
+        }
 
-            if (ans.ToString() == "Yes") { Menubar_frame.Navigate(new AdminProfile()); AdminPanel.Visibility = Visibility.Visible; }
-            else { Menubar_frame.Navigate(new Profile()); AdminPanel.Visibility = Visibility.Collapsed; }
+        private void DEMO_Panel()
+        {
+            var ans = MessageBox.Show("Log in as Stuff or User?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
+
+            if (ans.ToString() == "Yes")
+            {
+                var PersonalOradmin = MessageBox.Show(".Yes = AdminPanel\n\nNo = PersonalPanel", "Hello Developer", MessageBoxButton.YesNo);
+                if (PersonalOradmin.ToString() == "Yes")
+                {
+                    Menubar_frame.Navigate(new AdminProfile());
+                    PersonalPanel.Visibility = Visibility.Visible;
+                    AdminPanel.Visibility = Visibility.Visible;
+                    return;
+                }
+
+                Menubar_frame.Navigate(new AdminProfile());
+                PersonalPanel.Visibility = Visibility.Visible;
+                AdminPanel.Visibility = Visibility.Collapsed;
+                return;
 
 
-
+            }
+            else
+            {
+                Menubar_frame.Navigate(new Profile());
+                AdminPanel.Visibility = Visibility.Collapsed;
+                PersonalPanel.Visibility = Visibility.Collapsed;
+                return;
+            }
         }
 
         private void MenuBT_Click(object sender, RoutedEventArgs e)
@@ -165,11 +190,8 @@ namespace GUI.Home
             personalmenu.Visibility = Visibility.Collapsed;
 
 
-            var ans = MessageBox.Show(".\n\nDo you want to see admin profile page?", "Hello Developer", MessageBoxButton.YesNo);
 
-            if (ans.ToString() == "Yes") { Menubar_frame.Navigate(new AdminProfile()); AdminPanel.Visibility = Visibility.Visible; }
-            else { Menubar_frame.Navigate(new Profile()); AdminPanel.Visibility = Visibility.Collapsed; }
-
+            DEMO_Panel();
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)

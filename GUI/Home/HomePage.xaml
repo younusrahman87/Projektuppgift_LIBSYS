@@ -70,65 +70,60 @@
         <!--här börjar menu-->
 
 
-        <StackPanel x:Name="AdminPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,909,206"  Grid.ColumnSpan="2"  Visibility="Visible">
-            
-            
+        <StackPanel x:Name="PersonalPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,0,136"  Visibility="Collapsed">
+
+
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="117"  >
                 <Image Source="/Image/Book.png" Width="30" Margin="5,0,5,0"/>
 
-                <Button x:Name="BookMenuBT"   BorderThickness="0" Content="Böcker" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Center" Height="21" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="14" Width="45" Margin="8,0,0,0" Background="{x:Null}" />
+                <Button x:Name="BookMenuBT"   BorderThickness="0" Content="Böcker" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Left" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="16" Width="51" Margin="8,0,0,0" Background="{x:Null}" />
             </StackPanel>
 
             <ToolBarPanel x:Name="Bookmenu"  HorizontalAlignment="Right"  Visibility="Collapsed"  Width="110" Margin="0,5,5,0">
-                <Button x:Name="AddItemBT" BorderThickness="0" Content="    - Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="25" FontFamily="Segoe UI" Width="110" Background="{x:Null}" Click="AddItemBT_Click" />
+                <Button x:Name="AddItemBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Left" Height="25" FontFamily="Segoe UI" FontSize="13" Width="110" Background="{x:Null}" Click="AddItemBT_Click" />
 
-                <Button x:Name="ChangeitemBT" BorderThickness="0" Content="    - Ändra / Tabort" Foreground="White" FontWeight="Bold"  HorizontalContentAlignment="Left" Height="25" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeitemBT_Click"/>
+                <Button x:Name="ChangeitemBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Medium"  HorizontalContentAlignment="Left" Height="25" FontFamily="Segoe UI" FontSize="13" Width="109" Background="{x:Null}" Click="ChangeitemBT_Click"/>
 
             </ToolBarPanel>
 
+            <StackPanel x:Name="AdminPanel">
 
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,15,0,10" Width="119">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,25,0,10" Width="139">
                 <Image Source="/Image/User.png" Width="30" Margin="5,0,5,0"/>
-                <Button x:Name="UserBT" BorderThickness="0" Content="Användare" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Center" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="14" Width="69" Margin="8,0,0,0" Background="{x:Null}" />
+                <Button x:Name="UserBT" BorderThickness="0" Content="Användare" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Left" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="16" Width="79" Margin="8,0,0,0" Background="{x:Null}" />
             </StackPanel>
 
 
             <ToolBarPanel x:Name="Usermenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="60">
-                <Button x:Name="AdduserBT" BorderThickness="0" Content="    - Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AdduserBT_Click"/>
+                <Button x:Name="AdduserBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="13" Width="109" Background="{x:Null}" Click="AdduserBT_Click"/>
 
-                <Button x:Name="ChangeuserBT" BorderThickness="0" Content="    - Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangeuserBT_Click"/>
+                <Button x:Name="ChangeuserBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="13" Width="109" Background="{x:Null}" Click="ChangeuserBT_Click"/>
 
             </ToolBarPanel>
 
 
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,15,0,0" Width="131" Height="35">
+                    <Image Source="/Image/Personal.png" Width="28" Margin="5,0,5,0" Height="30"/>
+                    <Button x:Name="personalBT" BorderThickness="0" Content="Personal" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Left" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="16" Width="64" Margin="8,0,0,0" Background="{x:Null}" />
+                </StackPanel>
 
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  Margin="0,15,0,0" Width="131" Height="35">
-                <Image Source="/Image/Personal.png" Width="28" Margin="5,0,5,0" Height="30"/>
-                <Button x:Name="personalBT" BorderThickness="0" Content="Personal" Foreground="#00B7FF" FontWeight="Normal" Click="MenuBT_Click" HorizontalContentAlignment="Left" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Bottom" FontFamily="Vani" FontSize="14" Width="72" Margin="8,0,0,0" Background="{x:Null}" />
+                <ToolBarPanel x:Name="personalmenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="99">
+                    <Button x:Name="AddpersonalBT" BorderThickness="0" Content="- Lägga till" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="13" Width="109" Background="{x:Null}" Click="AddpersonalBT_Click"/>
+
+                    <Button x:Name="ChangepersonalBT" BorderThickness="0" Content="- Ändra / Tabort" Foreground="White" FontWeight="Medium" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="13" Width="109" Background="{x:Null}" Click="ChangepersonalBT_Click"/>
+
+                </ToolBarPanel>
             </StackPanel>
-
-
-
-            <ToolBarPanel x:Name="personalmenu" HorizontalAlignment="Right"  Visibility="Collapsed" Width="110" Margin="0,0,5,0" Height="99">
-                <Button x:Name="AddpersonalBT" BorderThickness="0" Content="    - Lägga till" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="30" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="AddpersonalBT_Click"/>
-
-                <Button x:Name="ChangepersonalBT" BorderThickness="0" Content="    - Ändra / Tabort" Foreground="White" FontWeight="Bold" HorizontalContentAlignment="Left" Height="41" FontFamily="Segoe UI" FontSize="11" Width="109" Background="{x:Null}" Click="ChangepersonalBT_Click"/>
-
-            </ToolBarPanel>
 
         </StackPanel>
 
 
 
-
-
-
-            <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Bottom" Margin='15,0,0,20'>
-            <Image Source="/Image/Exit.png" Width="30" Margin="5,0,5,0"/>
-            <Button x:Name="ExitUser" BorderThickness="0" Content="Logga ut" Foreground="White" FontWeight="Normal" Click="ExitUser_Click"  HorizontalContentAlignment="Center" Height="41" VerticalAlignment="Top" FontFamily="Garamond" Width="56" Background="{x:Null}" FontSize="14" Padding="0,5,0,0"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" Height="72" Margin="5,461,0,0">
+            <Image Source="/Image/Exit.png" Width="30" Margin="20,0,5,0" VerticalAlignment="Top"/>
+            <Button x:Name="ExitUser" BorderThickness="0" Content="Logga ut" Foreground="White" FontWeight="Bold" Click="ExitUser_Click"  HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top" FontFamily="Garamond" Width="68" Background="{x:Null}" FontSize="16" Padding="0,5,0,0"/>
         </StackPanel>
 
 
@@ -136,6 +131,7 @@
 
             <Frame x:Name="Menubar_frame" Content="Frame" Height="563" Source="/User/Profile.xaml" NavigationUIVisibility="Hidden" FontWeight="Bold"/>
         </StackPanel>
+        
 
 
     </Grid>
