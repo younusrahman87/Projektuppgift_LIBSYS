@@ -53,7 +53,7 @@
                     <ColumnDefinition Width="4.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Row="0" Grid.Column="0" x:Name="firstName"  TextWrapping="Wrap" Width="400" Height="35" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
+                <TextBox Grid.Row="0" Grid.Column="0" x:Name="id"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -62,7 +62,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <TextBox Grid.Row="1" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="firstName" Grid.Row="1" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -71,7 +71,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <TextBox Grid.Row="2" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="35"  FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="lastName" Grid.Row="2" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24"  FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -93,7 +93,7 @@
                 <!--Här börjar höra fält-->
 
 
-                <TextBox Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBox x:Name="email" IsReadOnly="True" Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -102,16 +102,8 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <TextBox Grid.Row="1" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
 
-                <TextBox Grid.Row="2" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBox x:Name="libraryCard" Grid.Row="1" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -119,6 +111,9 @@
                         </LinearGradientBrush>
                     </TextBox.Background>
                 </TextBox>
+                <PasswordBox x:Name="password" Grid.Row="2" Grid.Column="2"  Width="400" Height="35" FontWeight="Bold" Foreground="Black" FontSize="24"   HorizontalAlignment="Right" VerticalAlignment="Center">
+                   
+                </PasswordBox>
 
                 <Button Click="Button_Click" Content="Spara" Grid.Row="3" Height="30" Width="93" HorizontalAlignment="Right"  Foreground="White" FontWeight="Bold" FontSize="14" Margin="257,4,0,4" Grid.Column="2" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>

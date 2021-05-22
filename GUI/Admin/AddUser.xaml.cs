@@ -93,17 +93,20 @@ namespace GUI.Admin
 
                 if (validation.AvailableEmail(tb_email.Text))
                 {
-                        user.FirstName = tb_firstname.Text;
-                        user.LastName = tb_lastname.Text;
-                        user.Email = tb_email.Text;
-                        if (cb_card_have.SelectedIndex.Equals(0)) { user.LibraryCard = true; }
-                        else { user.LibraryCard = false; }
-                        user.Password = tb_password.Password;
-                        service.AddUser(user);
+                    user.FirstName = tb_firstname.Text;
+                    user.LastName = tb_lastname.Text;
+                    user.Email = tb_email.Text;
+                    if (cb_card_have.SelectedIndex.Equals(0)) { user.LibraryCard = true; }
+                    else { user.LibraryCard = false; }
+                    user.Password = tb_password.Password;
+                    service.AddUser(user);
 
                     MessageBox.Show("Användare är tillagd", "Användare", MessageBoxButton.OK);
                 }
-                MessageBox.Show("Felaktig inmating av email", "Användare", MessageBoxButton.OK);
+                else
+                {
+                    MessageBox.Show("Felaktig inmating av email", "Användare", MessageBoxButton.OK);
+                }
             }
             catch (Exception ex)
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GUI.Models;
+using Logic;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -23,6 +25,10 @@ namespace GUI.Admin
         private readonly string Email = "-- E-Mail --";
         private readonly string JobTitle = "-- Job Title --";
         private readonly string Wrong_msg = "** Fel inmatning **";
+        private FuncService service = new Service();
+        private IValidation validation = new Logic.Validation();
+        private UserDb user { get; set; } = new UserDb();
+        private PersonalDb personal { get; set; } = new PersonalDb();
 
         public AddPersonal()
         {
@@ -58,9 +64,38 @@ namespace GUI.Admin
 
         }
 
-        private void cb_JobTitle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+      
+
+        private void addPersonal_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                //--------------------------------------------------------Valedering av korrekt inmatning saknas
+
+
+                if (validation.AvailableEmail(email.Text))
+                {
+                    personal.FirstName = firstName.Text;
+                    personal.LastName = lastName.Text;
+                    personal.Email = email.Text;
+                    personal.JobTitle = jobTitle.Text;
+                    personal.Password = password.Password;
+                    service.AddPersonal(personal);
+
+                    MessageBox.Show("Personal är tillagd", "Användare", MessageBoxButton.OK);
+                }
+                else
+                {
+                    MessageBox.Show("Felaktig inmating av email", "Användare", MessageBoxButton.OK);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK);
+            }
 
         }
+
+   
     }
 }

@@ -86,6 +86,8 @@ namespace Logic
             personals.FirstName = personal.FirstName;
             personals.LastName = personal.LastName;
             personals.Password = personal.Password;
+            personals.JobTitle = personal.JobTitle;
+
 
 
             _db.PersonalDbs.Update(personals);
