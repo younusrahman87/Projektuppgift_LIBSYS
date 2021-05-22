@@ -17,21 +17,22 @@
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
 
-        <!--this is för tabb button top-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch"  Margin="10,0,0,0" >
-            <Button Content="ID" Height="20" Width="150" Background="Transparent" Foreground="White" FontFamily="Vani" FontSize="14" BorderThickness="0,0,2,1"/>
-            <Button Content="Förnamn" Height="20" Width="130" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="Efternamn" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="E-mail" Height="20" Width="156"  Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="LibraryCard" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="JobTitle" Height="20" Width="141" Background="Transparent" BorderThickness="0,0,0,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-        </StackPanel>
+
 
 
         <!--this is listview-->
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left"  Margin="10,0,0,0">
-            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView" FontSize="13" FontFamily="Vani" FontWeight="Bold" Foreground="White" Padding="10,10,10,10">
-            </ListViewItem>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center"  Margin="0,0,0,187" Grid.RowSpan="2" Width="800">
+            <ListView x:Name="listView" ItemsSource="{Binding UserDb}" SelectionChanged="listView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Header="Förnamn" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn Header="Efternamn" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
+                        <GridViewColumn Header="Lånekort" DisplayMemberBinding="{Binding LibraryCard}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </StackPanel>
 
 
@@ -52,7 +53,7 @@
                     <ColumnDefinition Width="4.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Row="0" Grid.Column="0"   TextWrapping="Wrap" Width="400" Height="35" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
+                <TextBox Grid.Row="0" Grid.Column="0" x:Name="firstName"  TextWrapping="Wrap" Width="400" Height="35" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -79,7 +80,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <Button Content="Ta bort" Grid.Row="3" Grid.Column="0" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
+                <Button Click="Button_Click_1" Content="Ta bort" Grid.Row="3" Grid.Column="0" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -119,7 +120,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <Button Content="Spara" Grid.Row="3" Height="30" Width="93" HorizontalAlignment="Right"  Foreground="White" FontWeight="Bold" FontSize="14" Margin="257,4,0,4" Grid.Column="2" RenderTransformOrigin="0.5,0.5" >
+                <Button Click="Button_Click" Content="Spara" Grid.Row="3" Height="30" Width="93" HorizontalAlignment="Right"  Foreground="White" FontWeight="Bold" FontSize="14" Margin="257,4,0,4" Grid.Column="2" RenderTransformOrigin="0.5,0.5" >
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="1"/>
