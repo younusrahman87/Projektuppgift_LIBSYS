@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
+#nullable disable
 
 namespace GUI.Models
 {
-    public class BookDb
+    public partial class BookDb
     {
+        public int CategoryId { get; set; }
         public string Title { get; set; }
-        public string ISBN { get; set; }
+        public string Isbn { get; set; }
         public string Publisher { get; set; }
         public int Id { get; set; }
         public int Price { get; set; }
-        public decimal DDC { get; set; }
+        public decimal? Ddc { get; set; }
         public string Author { get; set; }
-        public int CategoryID { get; set; }
-        //Navigation
-        public CategoryDb Category { get; set; }
+
+        public virtual CategoryDb Category { get; set; }
     }
 }

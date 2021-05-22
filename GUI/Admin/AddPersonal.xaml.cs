@@ -80,6 +80,7 @@ namespace GUI.Admin
                     personal.Email = email.Text;
                     personal.JobTitle = jobTitle.Text;
                     personal.Password = password.Password;
+                    personal.SocialSecurityNumber = PersonNr.Text;
                     service.AddPersonal(personal);
 
                     MessageBox.Show("Personal är tillagd", "Användare", MessageBoxButton.OK);

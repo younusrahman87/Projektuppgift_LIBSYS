@@ -17,6 +17,8 @@ namespace GUI.Models
         {
         }
 
+        public virtual DbSet<BookDb> BookDbs { get; set; }
+        public virtual DbSet<CategoryDb> CategoryDbs { get; set; }
         public virtual DbSet<PersonalDb> PersonalDbs { get; set; }
         public virtual DbSet<UserDb> UserDbs { get; set; }
 
@@ -32,6 +34,50 @@ namespace GUI.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
+            modelBuilder.Entity<BookDb>(entity =>
+            {
+                entity.ToTable("bookDb");
+
+                entity.Property(e => e.Author)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
+
+                entity.Property(e => e.Ddc)
+                    .HasColumnType("decimal(20, 10)")
+                    .HasColumnName("DDC");
+
+                entity.Property(e => e.Isbn)
+                    .HasMaxLength(17)
+                    .HasColumnName("ISBN");
+
+                entity.Property(e => e.Publisher)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.BookDbs)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__bookDb__Category__72C60C4A");
+            });
+
+            modelBuilder.Entity<CategoryDb>(entity =>
+            {
+                entity.ToTable("CategoryDb");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CategoryName)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
 
             modelBuilder.Entity<PersonalDb>(entity =>
             {
@@ -63,6 +109,11 @@ namespace GUI.Models
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnName("password");
+
+                entity.Property(e => e.SocialSecurityNumber)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("socialSecurityNumber");
             });
 
             modelBuilder.Entity<UserDb>(entity =>
@@ -92,6 +143,11 @@ namespace GUI.Models
                     .IsRequired()
                     .HasMaxLength(100)
                     .HasColumnName("password");
+
+                entity.Property(e => e.SocialSecurityNumber)
+                    .HasMaxLength(255)
+                    .IsUnicode(false)
+                    .HasColumnName("socialSecurityNumber");
             });
 
             OnModelCreatingPartial(modelBuilder);

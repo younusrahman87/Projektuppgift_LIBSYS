@@ -13,5 +13,6 @@ namespace GUI.Models
         public string Password { get; set; }
         public bool LibraryCard { get; set; }
         public int Id { get; set; }
+        public string SocialSecurityNumber { get; set; }
     }
 }
