@@ -118,9 +118,6 @@ namespace GUI.Admin
 
         }
 
-        private void cb_card_have_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+    
     }
 }

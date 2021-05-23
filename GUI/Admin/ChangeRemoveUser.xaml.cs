@@ -29,13 +29,13 @@ namespace GUI.Admin
  
         public ChangeRemoveUser()
         {
-            InitializeComponent();
+           InitializeComponent();
             
-            GetListview();
+          GetListview();
 
         }
       
-        public void  GetListview()
+        public  void  GetListview()
         {
            
             var users = getData.GetUser();
@@ -74,10 +74,13 @@ namespace GUI.Admin
                     user.SocialSecurityNumber = PersonNr.Text;
                     user.Email = email.Text;
                     user.Password = password.Password;
-                    
+                    if (libraryCard.SelectedIndex.Equals(1)) { user.LibraryCard = true; }
+                    else { user.LibraryCard = false; }
                     service.UpdateUser(user);
 
                     MessageBox.Show("Användare är nu uppdaterad", "Användare", MessageBoxButton.OK);
+                    ChangeRemoveUser changeRemoveUser = new ChangeRemoveUser();
+                    this.NavigationService.Navigate(changeRemoveUser);
                 }
             
                 else { MessageBox.Show("Felaktig inmating av email", "Användare", MessageBoxButton.OK); }
@@ -87,9 +90,12 @@ namespace GUI.Admin
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK);
             }
-
-            //Uppdatera Listview
+           
         }
+
+
+
+    
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -101,6 +107,8 @@ namespace GUI.Admin
                     service.RemoveUser(email.Text);
 
                     MessageBox.Show("Användare är nu borttagen", "Användare", MessageBoxButton.OK);
+                    ChangeRemoveUser changeRemoveUser = new ChangeRemoveUser();
+                    this.NavigationService.Navigate(changeRemoveUser);
                 }
                
                 else { MessageBox.Show("Felaktig inmating av email", "Användare", MessageBoxButton.OK); }
@@ -120,12 +128,12 @@ namespace GUI.Admin
             if (libraryCard.SelectedIndex == 1)
             {           
                         user.LibraryCard = false;
-                        service.UpdateUser(user);
+                        
             } 
             else if (libraryCard.SelectedIndex == 2)
             {                       
                         user.LibraryCard = true;
-                        service.UpdateUser(user);
+                    
                       
             }
         }

@@ -50,8 +50,9 @@ namespace Logic
             user.FirstName = users.FirstName;
             user.LastName = users.LastName;
             user.Password = users.Password;
+            user.LibraryCard = users.LibraryCard;
 
-      
+
             _db.UserDbs.Update(user);
             await _db.SaveChangesAsync();
         }
