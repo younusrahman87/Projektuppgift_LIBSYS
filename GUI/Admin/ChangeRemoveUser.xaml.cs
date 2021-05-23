@@ -74,6 +74,7 @@ namespace GUI.Admin
                     user.SocialSecurityNumber = PersonNr.Text;
                     user.Email = email.Text;
                     user.Password = password.Password;
+                    
                     service.UpdateUser(user);
 
                     MessageBox.Show("Användare är nu uppdaterad", "Användare", MessageBoxButton.OK);
@@ -112,6 +113,21 @@ namespace GUI.Admin
 
           //  Uppdatera Listview
           
+        }
+
+        private void libraryCard_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (libraryCard.SelectedIndex == 1)
+            {           
+                        user.LibraryCard = false;
+                        service.UpdateUser(user);
+            } 
+            else if (libraryCard.SelectedIndex == 2)
+            {                       
+                        user.LibraryCard = true;
+                        service.UpdateUser(user);
+                      
+            }
         }
     }
 }

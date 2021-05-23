@@ -114,14 +114,16 @@
                 </TextBox>
 
 
-                <TextBox x:Name="libraryCard" Grid.Row="1" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBox.Background>
+                <ComboBox x:Name="libraryCard" Grid.Row="1" Grid.Column="2"  Width="400" Height="45" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <ComboBoxItem FontFamily="Vani" Content="False" FontSize="14"/>
+                    <ComboBoxItem FontFamily="Vani" Content="True" FontSize="14"/>
+                    <ComboBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
                             <GradientStop Color="#FF434343" Offset="1"/>
                         </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
+                    </ComboBox.Background>
+                </ComboBox>
                 <PasswordBox x:Name="password" Grid.Row="2" Grid.Column="2"  Width="400" Height="35" FontWeight="Bold" Foreground="Black" FontSize="24"   HorizontalAlignment="Right" VerticalAlignment="Center">
 
                 </PasswordBox>
