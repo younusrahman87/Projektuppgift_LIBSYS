@@ -5,143 +5,232 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI.Staff"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="ChangeRemoveBooks">
+      d:DesignHeight="550"
+      Title="ChangeRemoveBooks" Width="901">
 
+    <!--List with books-->
+    <Grid>
+        <StackPanel Grid.Row="0">
+            <GroupBox Header=" Välj bok " Grid.Column="0" BorderThickness="1,1,1,1" Foreground="White" BorderBrush="Black" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="18" Height="446" Width="420">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="348">
+                    <ListBox x:Name="lb_books" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="417" Height="344" SelectionChanged="lb_books_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}" />
+                                        <TextBlock Text="{Binding Author}"/>
+                                        <TextBlock Text="{Binding Id}"/>
+                                    </StackPanel>
 
-
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="5*"/>
-            <RowDefinition Height="0.5*"/>
-        </Grid.RowDefinitions>
-
-        <!--this is för tabb button top-->
-        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Stretch" Margin="9,0,0,0"  >
-            <Button Content="Boktitel" Height="20" Width="150" Background="Transparent" Foreground="White" FontFamily="Vani" FontSize="14" BorderThickness="0,0,2,1"/>
-            <Button Content="Författare" Height="20" Width="130" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="Språk" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="Publiceringsdatum" Height="20" Width="156"  Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="E-bok ISBN" Height="20" Width="156" Background="Transparent" BorderThickness="0,0,2,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
-            <Button Content="Tillgängligt" Height="20" Width="143" Background="Transparent" BorderThickness="0,0,0,1" Foreground="White" FontFamily="Vani" FontSize="14"/>
+                                    <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Id}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </GroupBox>
         </StackPanel>
 
+        <!--Change/remove-->
+        <StackPanel Grid.Row="1">
+            <GroupBox Header=" Ändra eller ta bort " Grid.Column="0" BorderThickness="1,1,1,1" Foreground="White" BorderBrush="Black" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Agency FB" FontSize="18" Height="446" Width="420">
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="348">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="5*"/>
 
-        <!--this is listview-->
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left"  Margin="10,0,0,0">
-            <ListViewItem Background="Transparent" Width="890" Height="290" Content="This is ListView" FontSize="13" FontFamily="Vani" FontWeight="Bold" Foreground="White" Padding="10,10,10,10">
-            </ListViewItem>
-        </StackPanel>
-
-
-        <!--this is allbox-->
-
-        <StackPanel Grid.Row="2" Margin="0,0,0,19" Grid.RowSpan="3">
-            <Grid HorizontalAlignment="Stretch" Height="242" Width="888" Margin="0,0,0,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4.5*"/>
-                    <ColumnDefinition Width="6.5"/>
-                    <ColumnDefinition Width="4.5*"/>
-                </Grid.ColumnDefinitions>
-
-                <TextBox Grid.Row="0" Grid.Column="0"   TextWrapping="Wrap" Width="400" Height="35" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBox Grid.Row="1" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBox Grid.Row="2" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="35"  FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <Button Content="Ta bort" Grid.Row="3" Grid.Column="0" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FFB13030" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                    </Grid.RowDefinitions>
 
 
-                <!--Här börjar höra fält-->
+                    <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
+
+                        <!-- Search with id -->
+                        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="8*"/>
+                                <ColumnDefinition Width="1*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="55">
+                                <TextBox x:Name="tb_sc_search_Boo" Text="-- Ange bok Id --" TextWrapping="Wrap" Width="413" Height="55" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" >
+                                    <TextBox.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FF434343" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </TextBox.Background>
+                                </TextBox>
+
+                            </StackPanel>
+                            <StackPanel Grid.Column="0" Margin="5,5,5,5">
+                                <Button x:Name="search_bt"  HorizontalAlignment="Right" Width="35" Height="45" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5" IsDefault="True" Click="search_bt_Click"  >
+                                    <Button.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform/>
+                                            <SkewTransform/>
+                                            <RotateTransform Angle="181.025"/>
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Button.RenderTransform>
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/Login/Login-02.png"/>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
 
 
-                <TextBox Grid.Row="0" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
+                    <!-- Category -->
 
-                <TextBox Grid.Row="1" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
+                    <StackPanel  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ComboBox x:Name="cb_Category" Width="400" Height="35" DisplayMemberPath="CategoryName" SelectedValuePath="ID" Text="-- Kategori --" IsEditable="True" IsReadOnly="True" FontFamily="Agency FB" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_Category_SelectionChanged">
 
-                <TextBox Grid.Row="2" Grid.Column="2"  TextWrapping="Wrap" Width="400" Height="35" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right" VerticalAlignment="Center">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <Button Content="Spara" Grid.Row="3" Height="30" Width="93" HorizontalAlignment="Right"  Foreground="White" FontWeight="Bold" FontSize="14" Margin="257,4,0,4" Grid.Column="2" RenderTransformOrigin="0.5,0.5" >
-                    <Button.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </Button.RenderTransform>
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF1B9F47" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
+                        </ComboBox>
+                    </StackPanel>
 
 
+                    <!-- Title -->
+                    <StackPanel  x:Name="Sp_sc_Title" Grid.Row="2" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_Title"  TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- Titel --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+
+                    <!-- Author -->
+                    <StackPanel  x:Name="Sp_sc_Author" Grid.Row="3" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_Author"  TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- Författare --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+
+
+                    <!-- Publisher -->
+                    <StackPanel  x:Name="Sp_sc_Publisher" Grid.Row="4" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_Publisher" TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- Förlag --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+                    <!-- Price -->
+                    <StackPanel  x:Name="Sp_sc_Price" Grid.Row="5" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_Price"  TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- Pris --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+
+
+
+                    <!-- ISBN -->
+                    <StackPanel  x:Name="Sp_sc_ISBN" Grid.Row="6" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_ISBN"  TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- ISBN --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+                    <!--DDC-->
+
+                    <StackPanel  x:Name="Sp_DDC" Grid.Row="7" Visibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Margin="5,5,5,5">
+                        <TextBox x:Name="tb_sc_DDC"  TextWrapping="Wrap" Width="450" Height="35" HorizontalContentAlignment="Center" Text="-- DDC --" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBox.Background>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="Black"/>
+                                    <GradientStop Color="#FF434343" Offset="1"/>
+                                </LinearGradientBrush>
+                            </TextBox.Background>
+                        </TextBox>
+                    </StackPanel>
+
+                    <!-- ändra tabort knapp -->
+                    <StackPanel x:Name="Bt_Add_remove_mekanik" Grid.Row="8" Visibility="Visible">
+                        <Grid x:Name="Sp_SC_bt_add_remove"   HorizontalAlignment="Center" Width="350" Height="59">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="50" HorizontalAlignment="Left">
+                                <Button x:Name="Bt_remove_book" Content="Ta bort" Height="45" Width="90" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="18" Click="Bt_remove_book_Click" >
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FFB13030" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" Height="50" HorizontalAlignment="Left" Margin="95,0,0,0">
+                                <Button x:Name="Bt_edit_book" Content="Ändra" Height="45" Width="90" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="18" Click="Bt_edit_book_Click"   >
+                                    <Button.Background>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="Black"/>
+                                            <GradientStop Color="#FF1B9F47" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Button.Background>
+                                </Button>
+                            </StackPanel>
+
+                        </Grid>
+
+                    </StackPanel>
+
+
+
+
+
+
+
+
+
+
+                </Grid>
+            </GroupBox>
+
+            <!-- Error message-->
+            <Grid Grid.Row="2" Grid.ColumnSpan="2" VerticalAlignment="Top">
+                <Label x:Name="Error_msg" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Agency FB" FontSize="20" FontWeight="Bold" FontStyle="Normal"/>
             </Grid>
         </StackPanel>
-        <Label x:Name="MessageDisplay" Grid.Row="2" HorizontalAlignment="Left" Content="This is error Msg" VerticalAlignment="Top" Foreground="White" FontFamily="Vani" FontSize="14" Padding="0,5,0,0" FontStyle="Normal" Height="38" Margin="381,176,0,0" Grid.RowSpan="2"/>
-
-
     </Grid>
+
 </Page>
