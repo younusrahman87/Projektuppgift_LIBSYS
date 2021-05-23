@@ -79,7 +79,6 @@ namespace GUI.Staff
                 MessageDisplay.Content = Error;
                 return;
             }
-
             else if (tb_DDC.Text == string.Empty && !Decimal.TryParse(tb_DDC.Text, out DDC))
             {
                 MessageDisplay.Content = Error;
