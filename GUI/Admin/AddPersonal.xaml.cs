@@ -73,7 +73,7 @@ namespace GUI.Admin
                 //--------------------------------------------------------Valedering av korrekt inmatning saknas
 
 
-                if (validation.AvailableEmail(email.Text))
+                if (validation.AvailableEmail(email.Text)&& validation.AvailableSocialSecurityNumber(PersonNr.Text))
                 {
                     personal.FirstName = firstName.Text;
                     personal.LastName = lastName.Text;

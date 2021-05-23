@@ -91,7 +91,7 @@ namespace GUI.Admin
                 //--------------------------------------------------------Valedering av korrekt inmatning saknas
 
 
-                if (validation.AvailableEmail(tb_email.Text))
+                if (validation.AvailableEmail(tb_email.Text)&& validation.AvailableSocialSecurityNumber(PersonNr.Text))
                 {
                     user.FirstName = tb_firstname.Text;
                     user.LastName = tb_lastname.Text;
@@ -99,6 +99,7 @@ namespace GUI.Admin
                     if (cb_card_have.SelectedIndex.Equals(0)) { user.LibraryCard = true; }
                     else { user.LibraryCard = false; }
                     user.Password = tb_password.Password;
+                    user.SocialSecurityNumber = PersonNr.Text;
                     service.AddUser(user);
 
                     MessageBox.Show("Användare är tillagd", "Användare", MessageBoxButton.OK);

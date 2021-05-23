@@ -26,6 +26,7 @@
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Förnamn" DisplayMemberBinding="{Binding FirstName}"/>
                         <GridViewColumn Header="Efternamn" DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn Header="Personnummer" DisplayMemberBinding="{Binding SocialSecurityNumber}"/>
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}"/>
                         <GridViewColumn Header="Title" DisplayMemberBinding="{Binding JobTitle}"/>
                     </GridView>
@@ -52,7 +53,7 @@
                     <ColumnDefinition Width="4.5*"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Row="0" Grid.Column="0" x:Name="id"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
+                <TextBox IsReadOnly="True" Grid.Row="0" Grid.Column="0" x:Name="id"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -80,7 +81,7 @@
                 </TextBox>
 
 
-                <TextBox x:Name="PersonNr" Grid.Row="3" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24"  FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <TextBox x:Name="PersonNr" Grid.Row="3" IsReadOnly="True" Grid.Column="0"  TextWrapping="Wrap" Width="400" Height="45" FontSize="24"  FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <TextBox.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>

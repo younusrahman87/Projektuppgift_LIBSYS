@@ -58,6 +58,7 @@ namespace GUI.Admin
                 email.Text = user.Email.ToString();
                 password.Password = user.Password.ToString();
                 libraryCard.Text = user.LibraryCard.ToString();
+                PersonNr.Text = user.SocialSecurityNumber.ToString();
             }
         }
 
@@ -70,7 +71,7 @@ namespace GUI.Admin
                 {
                     user.FirstName = firstName.Text;
                     user.LastName = lastName.Text;
-
+                    user.SocialSecurityNumber = PersonNr.Text;
                     user.Email = email.Text;
                     user.Password = password.Password;
                     service.UpdateUser(user);

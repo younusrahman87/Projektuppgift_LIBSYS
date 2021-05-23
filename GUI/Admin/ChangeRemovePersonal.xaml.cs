@@ -51,6 +51,7 @@ namespace GUI.Admin
                 lastName.Text = personal.LastName.ToString();
                 email.Text = personal.Email.ToString();
                 password.Password = personal.Password.ToString();
+                PersonNr.Text = personal.SocialSecurityNumber.ToString();
                 jobtitle.Text = personal.JobTitle.ToString();
             }
         }
@@ -91,6 +92,7 @@ namespace GUI.Admin
                     personal.JobTitle = jobtitle.Text;
                     personal.Email = email.Text;
                     personal.Password = password.Password;
+                    personal.SocialSecurityNumber = PersonNr.Text;
                     service.UpdatePersonal(personal);
 
                     MessageBox.Show("Personal är nu uppdaterad", "Användare", MessageBoxButton.OK);

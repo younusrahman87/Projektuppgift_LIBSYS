@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using GUI.Models;
 
 
@@ -46,7 +47,39 @@ namespace Logic
 
         }
 
-     
+        public bool AvailableSocialSecurityNumber(string socialSecurityNumber)
+        {
+          
+
+
+
+                if (Regex.IsMatch(socialSecurityNumber, @"^(\d{6}|\d{8})-\d{4}$"))
+               {
+                IEnumerable<UserDb> objListUser = getData.GetUser();
+                IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
+
+                foreach (var itemUser in objListUser)
+                {
+                    if (itemUser.SocialSecurityNumber == socialSecurityNumber)
+                    {
+                        return false;
+                    }
+
+                }
+                foreach (var itemPersonal in objListPersonal)
+                {
+                    if (itemPersonal.SocialSecurityNumber == socialSecurityNumber)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+
+            return false;
+        }
 
         public bool RemoveEmailPersonal(string email)
         {
