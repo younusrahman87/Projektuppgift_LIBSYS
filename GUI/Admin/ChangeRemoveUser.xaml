@@ -91,7 +91,7 @@
                 </TextBox>
 
 
-                <Button Click="Button_Click_1" Content="Ta bort" Grid.Row="4" Grid.Column="0" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
+                <Button x:Name="RemoveUserBT" Click="Button_Click_1" Content="Ta bort" Grid.Row="4" Grid.Column="0" Height="30" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" FontSize="14" >
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
