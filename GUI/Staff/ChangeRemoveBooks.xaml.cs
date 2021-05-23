@@ -2,16 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI.Staff
 {
@@ -37,8 +29,9 @@ namespace GUI.Staff
         {
             using var dbContex = new librarysystemdbContext();
             books = dbContex.BookDbs.ToList();
-            books.ForEach(b => b.Category = categorys.Where(c => c.ID == b.CategoryID).FirstOrDefault());
+            books.ForEach(b => b.Category = categorys.Where(c => c.Id == b.CategoryId).FirstOrDefault());
             lb_books.ItemsSource = books;
+            Error_msg.Visibility = Visibility.Hidden;
         }
 
         private void Bt_edit_book_Click(object sender, RoutedEventArgs e)
@@ -80,13 +73,20 @@ namespace GUI.Staff
                         newBook.Title = tb_sc_Title.Text;
                         newBook.Author = tb_sc_Author.Text;
                         newBook.Publisher = tb_sc_Publisher.Text;
-                        newBook.CategoryID = categoryItem.ID;
-                        newBook.DDC = DDC;
-                        newBook.ISBN = tb_sc_ISBN.Text;
+                        newBook.CategoryId = categoryItem.Id;
+                        newBook.Ddc = DDC;
+                        newBook.Isbn = tb_sc_ISBN.Text;
 
                         dbContex.SaveChanges();
                         MessageBox.Show("Bok updaterad!");
                         UpdateBookList();
+
+                        tb_sc_Title.Text = "-- Titel --";
+                        tb_sc_Author.Text = "-- Författare --";
+                        tb_sc_Publisher.Text = "-- Förlag --";
+                        tb_sc_Price.Text = "-- Pris --";
+                        tb_sc_ISBN.Text = "-- ISBN --";
+                        tb_sc_DDC.Text = "-- DDC --";
                     }
             }
             catch
@@ -106,7 +106,6 @@ namespace GUI.Staff
                 dbContex.SaveChanges();
                 MessageBox.Show("Bok raderad!");
                 UpdateBookList();
-
                 
                 tb_sc_Title.Text = "-- Titel --";
                 tb_sc_Author.Text = "-- Författare --";
@@ -114,8 +113,6 @@ namespace GUI.Staff
                 tb_sc_Price.Text = "-- Pris --";
                 tb_sc_ISBN.Text = "-- ISBN --";
                 tb_sc_DDC.Text = "-- DDC --";
-
-
             }
             else
             {
@@ -141,9 +138,8 @@ namespace GUI.Staff
             tb_sc_Author.Text = selectedBook.Author;
             tb_sc_Publisher.Text = selectedBook.Publisher;
             tb_sc_Price.Text = selectedBook.Price.ToString();
-            tb_sc_ISBN.Text = selectedBook.ISBN;
-            tb_sc_DDC.Text = selectedBook.DDC.ToString();
-
+            tb_sc_ISBN.Text = selectedBook.Isbn;
+            tb_sc_DDC.Text = selectedBook.Ddc.ToString();
         }
 
         private void lb_books_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -157,8 +153,8 @@ namespace GUI.Staff
                 tb_sc_Author.Text = selectedBook.Author;
                 tb_sc_Publisher.Text = selectedBook.Publisher;
                 tb_sc_Price.Text = selectedBook.Price.ToString();
-                tb_sc_ISBN.Text = selectedBook.ISBN;
-                tb_sc_DDC.Text = selectedBook.DDC.ToString();
+                tb_sc_ISBN.Text = selectedBook.Isbn;
+                tb_sc_DDC.Text = selectedBook.Ddc.ToString();
                 tb_sc_search_Boo.Text = selectedBook.Id.ToString();
             }
         }
