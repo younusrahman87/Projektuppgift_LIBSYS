@@ -92,19 +92,19 @@ namespace GUI.Staff
 
             else
             {
-                //var book = new BookDb
-                //{
-                //    Price = price,
-                //    Title = tb_Title.Text,
-                //    Author = tb_Author.Text,
-                //    Publisher = tb_Publisher.Text,
-                //    CategoryID = categoryItem.ID,
-                //    DDC = DDC,
-                //    ISBN = tb_ISBN.Text,
-                //};
+                var book = new BookDb
+                {
+                    Price = price,
+                    Title = tb_Title.Text,
+                    Author = tb_Author.Text,
+                    Publisher = tb_Publisher.Text,
+                    CategoryId = categoryItem.Id,
+                    Ddc = DDC,
+                    Isbn = tb_ISBN.Text,
+                };
 
                 using var dbContex = new librarysystemdbContext();
-                //dbContex.BookDbs.Add(book);
+                dbContex.BookDbs.Add(book);
 
                 dbContex.SaveChanges();
 
