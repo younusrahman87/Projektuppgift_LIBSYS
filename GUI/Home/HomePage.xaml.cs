@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GUI.Admin;
+using GUI.Models;
 
 namespace GUI.Home
 {
@@ -27,6 +28,8 @@ namespace GUI.Home
         string Bt_name_user = "Användare";
         string bt_seminarier = "Personal";
 
+        public static UserDb currentUser;
+        public static PersonalDb currentPersonalDb;
 
 
 
@@ -43,7 +46,7 @@ namespace GUI.Home
 
         private void DEMO_Panel()
         {
-            var ans = MessageBox.Show("Log in as Stuff?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
+            var ans = MessageBox.Show("Log in as Staff?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
 
             if (ans.ToString() == "Yes")
             {

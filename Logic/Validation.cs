@@ -111,6 +111,56 @@ namespace Logic
 
             return false;
         }
+
+        public bool checkIfValidUser(string email, string password)
+        {
+
+            IEnumerable<UserDb> objListUser = getData.GetUser();
+        
+            foreach (var user in objListUser)
+            {
+                if (email==user.Email && password==user.Password)
+                {
+                    return true;
+
+                }
+            }
+            return false;
+        }
+        public bool checkIfValidPersonal(string email, string password)
+        {
+            IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
+            foreach (var personal in objListPersonal)
+            {
+                if (email == personal.Email && password == personal.Password)
+                {
+                    return true;
+
+                }
+            }
+            return false;
+        }
+        public bool checkIfAdmin(string email, string password)
+        {
+            IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
+            foreach (var admin in objListPersonal)
+            {
+                if (email == admin.Email && password == admin.Password)
+                {
+                    if (admin.JobTitle.ToLower() == "admin")
+                    {
+                        return true;
+
+                    }
+                    return false;
+                }
+            }
+            return false;
+
+
+
+
+        }
     }
  }
 

@@ -24,7 +24,7 @@ namespace GUI.Login
     {
         private dynamic _loginService;
         string search_text = "Skriv title, författare eller annat sökord";
-
+        IValidation validation = new Logic.Validation();
         public LoginPage()
         {
 
@@ -46,8 +46,30 @@ namespace GUI.Login
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
+            if (validation.checkIfValidUser(tbUsernam.Text, pbPassword.Password))
+            {
+                NavigationService.Navigate(new HomePage());
+            } 
+            else if (validation.checkIfValidPersonal(tbUsernam.Text, pbPassword.Password))
+            {
+                if (validation.checkIfAdmin(tbUsernam.Text, pbPassword.Password))
+                {
+                    // admin
+                    NavigationService.Navigate(new HomePage());
+                }
+                // Personal
+                NavigationService.Navigate(new HomePage());
+            }
+            else
+            {
+                MessageBox.Show("Felaktig inmating av användarnamn eller lösenord", "Error", MessageBoxButton.OK);
+            }
 
-            NavigationService.Navigate(new HomePage());
+            
+
+
+
+
 
         }
 

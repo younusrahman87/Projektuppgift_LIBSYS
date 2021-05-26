@@ -10,8 +10,9 @@
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="163*"/>
+            <RowDefinition Height="370*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.5*"/>
@@ -19,7 +20,7 @@
         </Grid.ColumnDefinitions>
 
 
-        <Grid Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="44">
+        <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Height="44">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
@@ -70,7 +71,7 @@
         <!--här börjar menu-->
 
 
-        <StackPanel x:Name="PersonalPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,0,136"  Visibility="Collapsed">
+        <StackPanel x:Name="PersonalPanel" Grid.Row="1" Grid.Column="0" Margin="15,135,909,136"  Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2">
 
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Width="117"  >
@@ -120,17 +121,17 @@
 
 
 
-        <StackPanel Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" Height="72" Margin="5,461,0,0">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Top" Height="72" Margin="5,298,909,0" Grid.ColumnSpan="2">
             <Image Source="/Image/Exit.png" Width="30" Margin="20,0,5,0" VerticalAlignment="Top"/>
             <Button x:Name="ExitUser" BorderThickness="0" Content="Logga ut" Foreground="White" FontWeight="Bold" Click="ExitUser_Click"  HorizontalContentAlignment="Center" Height="26" VerticalAlignment="Top" FontFamily="Garamond" Width="68" Background="{x:Null}" FontSize="16" Padding="0,5,0,0"/>
         </StackPanel>
 
 
-        <StackPanel Grid.Row="1" Grid.Column="1">
+        <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
 
             <Frame x:Name="Menubar_frame" Content="Frame" Height="563" Source="/User/Profile.xaml" NavigationUIVisibility="Hidden" FontWeight="Bold"/>
         </StackPanel>
-        
+
 
 
     </Grid>
