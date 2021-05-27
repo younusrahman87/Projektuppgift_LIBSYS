@@ -21,6 +21,7 @@ namespace GUI.Staff
     public partial class AddItem : Page
     {
         public List<CategoryDb> categorys = new List<CategoryDb>();
+        public List<BookDb> newBooks = new List<BookDb>();
         //---------------------------------------------------
         private readonly string Title = "-- Titel --";
         private readonly string Author = "-- Författare --";
@@ -107,14 +108,16 @@ namespace GUI.Staff
                 dbContex.BookDbs.Add(book);
 
                 dbContex.SaveChanges();
+                newBooks.Add(book);
+                UpdateNewBookList();
 
                 MessageDisplay.Content = Saved;
-
-
             }
+        }
 
-
-
+        private void UpdateNewBookList()
+        {
+            lb_new_books.ItemsSource = newBooks;
         }
 
         private void Add_Category_Click(object sender, RoutedEventArgs e)
