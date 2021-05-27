@@ -14,7 +14,7 @@
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" VerticalAlignment="Center">
-            <Label Content="::. Välkommen Bosse .::" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
+            <Label Content="::. Välkommen Admin .::" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
             <Label x:Name="Tb_date_today" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
 
         </StackPanel>

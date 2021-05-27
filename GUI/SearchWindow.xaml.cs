@@ -1,7 +1,9 @@
 ﻿using GUI.Home;
 using GUI.Models;
+using GUI.Pages;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -21,27 +23,17 @@ namespace GUI
     /// </summary>
     public partial class SearchWindow : Window
     {
+        List<BookDb> searchResult = new List<BookDb>();
 
-
-        public SearchWindow(List<BookDb> searchResult)
+        public SearchWindow(List<BookDb> list)
         {
 
             InitializeComponent();
 
+            
+            searchResult = list;
             SearchResults.ItemsSource = searchResult;
 
-            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
-
-            MessageBox.Show(
-                $"Titel: {selectedBook.Title} \n" +
-                $"Författare: {selectedBook.Author} \n" +
-                $"Förlag: {selectedBook.Publisher} \n" +
-                $"Pris: {selectedBook.Price} \n" +
-                $"Kategori: {selectedBook.Category.CategoryName} \n" +
-                $"ISBN: {selectedBook.Isbn} \n" +
-                $"DDC: {selectedBook.Ddc} \n" +
-                $"Id: {selectedBook.Id} \n"
-                );
 
         }
 
@@ -63,7 +55,54 @@ namespace GUI
 
         private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
+            MessageBox.Show(
+                $"Titel: {selectedBook.Title} \n" +
+                $"Författare: {selectedBook.Author} \n" +
+                $"Förlag: {selectedBook.Publisher} \n" +
+                $"Pris: {selectedBook.Price} \n" +
+                $"Kategori: {selectedBook.Category.CategoryName} \n" +
+                $"ISBN: {selectedBook.Isbn} \n" +
+                $"DDC: {selectedBook.Ddc} \n" +
+                $"Id: {selectedBook.Id} \n"
+                );
+        }
+
+        private void RemoveBook_Click(object sender, RoutedEventArgs e)
+        {
+            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
+            using var dbContex = new librarysystemdbContext();
+            if (selectedBook != null)
+            {
+                dbContex.BookDbs.Remove(selectedBook);
+                dbContex.SaveChanges();
+                MessageBox.Show("Bok raderad!");
+                searchResult.Remove(searchResult.Where(b => b.Id == selectedBook.Id).First());
+                SearchResults.ItemsSource = searchResult;
+
+            }
+            else
+            {
+                MessageBox.Show("Error! Kunde inte radera bok");
+            }
+        }
+
+            private void ReturnBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoanBook_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Return_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            
+            //NavigationService.Navigate(new HomePage);
         }
     }
 }

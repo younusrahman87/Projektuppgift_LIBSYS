@@ -214,14 +214,14 @@ namespace GUI.Home
             SearchWindow search_obj = new SearchWindow(searchResult);
 
             search_obj.Show();
-            var mainwin = Application.Current.MainWindow;
+            //var mainwin = Application.Current.MainWindow;
             //UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
             //BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
             //personalBT.BorderThickness = new Thickness(0, 0, 0, 0);
             //Usermenu.Visibility = Visibility.Collapsed;
             //Bookmenu.Visibility = Visibility.Collapsed;
             //personalmenu.Visibility = Visibility.Collapsed;
-            mainwin.Hide();
+            //mainwin.Hide();
 
             
 

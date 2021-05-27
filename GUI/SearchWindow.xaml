@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-             Title="Search results" Height="501" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+             Title="Search results" Height="531" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FF434343" Offset="1"/>
@@ -41,5 +41,9 @@
                 
             </StackPanel>
         </Grid>
+        <Button x:Name="RemoveBook" Content="Ta bort" Click="RemoveBook_Click"/>
+        <Button x:Name="ReturnBook" Content="Lämna tillbaka bok" Click="ReturnBook_Click"/>
+        <Button x:Name="LoanBook" Content="Boka" Click="LoanBook_Click"/>
+        <Button x:Name="Return" Content="Gå tillbaka" Click="Return_Click"/>
     </StackPanel>
 </Window>
