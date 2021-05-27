@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Logic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace GUI.Login
 {
@@ -23,9 +24,7 @@ namespace GUI.Login
     /// </summary>
     public partial class LoginPage : Page
     {
-        public List<BookDb> books = new List<BookDb>();
-        public List<CategoryDb> categorys = new List<CategoryDb>();
-       // public List<BookDb> resultList = new List<BookDb>();
+        public List<BookDb> searchResult = new List<BookDb>();
 
         private dynamic _loginService;
         string search_text = "Skriv title, författare eller annat sökord";
@@ -36,10 +35,7 @@ namespace GUI.Login
             InitializeComponent();
             this.tbUsernam.Focus();
             searchbox.Text = search_text;
-            using var dbContex = new librarysystemdbContext();            
-            categorys = dbContex.CategoryDbs.ToList();
-            books = dbContex.BookDbs.ToList();
-            books.ForEach(b => b.Category = categorys.Where(c => c.Id == b.CategoryId).FirstOrDefault());
+            
 
         }
 
@@ -83,12 +79,21 @@ namespace GUI.Login
 
         private void Search_BT_Click(object sender, RoutedEventArgs e)
         {
-            if (SearchDetailsFount.Visibility == Visibility.Collapsed) { SearchDetailsFount.Visibility = Visibility.Visible; logoimage.Visibility = Visibility.Collapsed; }
-            else { SearchDetailsFount.Visibility = Visibility.Collapsed; logoimage.Visibility = Visibility.Visible; }
+            //if (SearchDetailsFount.Visibility == Visibility.Collapsed) { SearchDetailsFount.Visibility = Visibility.Visible; logoimage.Visibility = Visibility.Collapsed; }
+            //else { SearchDetailsFount.Visibility = Visibility.Collapsed; logoimage.Visibility = Visibility.Visible; }
 
-            var resultList = books.Where(b => b.Author.Contains(searchbox.Text) || b.Category.CategoryName.Contains(searchbox.Text) || b.Title.Contains(searchbox.Text) || b.Isbn.Contains(searchbox.Text));
-            
-            
+            //var resultList = books.Where(b => b.Author.Contains(searchbox.Text) || b.Category.CategoryName.Contains(searchbox.Text) || b.Title.Contains(searchbox.Text) || b.Isbn.Contains(searchbox.Text));
+
+            using var dbContex = new librarysystemdbContext();
+
+            searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
+            b.Isbn.Contains(searchbox.Text) ||
+            b.Title.Contains(searchbox.Text) ||
+            b.Category.CategoryName.Contains(searchbox.Text))
+                .Include(b => b.Category)
+                .ToList();
+
+            SearchResults.ItemsSource = searchResult;
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
@@ -105,9 +110,20 @@ namespace GUI.Login
 
         }
 
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
+            MessageBox.Show(
+                $"Titel: {selectedBook.Title} \n" +
+                $"Författare: {selectedBook.Author} \n" +
+                $"Förlag: {selectedBook.Publisher} \n" +
+                $"Pris: {selectedBook.Price} \n" +
+                $"Kategori: {selectedBook.Category.CategoryName} \n" +
+                $"ISBN: {selectedBook.Isbn} \n" +
+                $"DDC: {selectedBook.Ddc} \n" +
+                $"Id: {selectedBook.Id} \n"
+                );
         }
 
         private void searchbox_TextChanged(object sender, TextChangedEventArgs e)

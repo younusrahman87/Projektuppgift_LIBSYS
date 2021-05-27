@@ -143,9 +143,9 @@
         </StackPanel>
 
 
-        <!-- Längsner row. För visa error message -->
+        <!-- Längsner row. För visa error message och add category button-->
 
         <Label Grid.Row="1" x:Name="MessageDisplay"  Padding="5,0,15,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontFamily="Vani" FontSize="14" FontWeight="Bold" FontStyle="Normal"/>
-
+        
     </Grid>
 </Page>

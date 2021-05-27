@@ -241,12 +241,25 @@
 
             </StackPanel>
             <Image x:Name="logoimage" Source="pngegg.png" RenderTransformOrigin="0.509,0.474" Margin="2,10,32,359" Grid.RowSpan="2" />
-            <ListView x:Name="SearchResults" Grid.Row="1" Margin="60,163,59,65" SelectionChanged="ListView_SelectionChanged">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
+            <ListView x:Name="SearchResults" Grid.Row="1" Margin="60,163,59,65" SelectionChanged="SearchResults_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="0,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Title}" />
+                                <TextBlock Text="{Binding Author}"/>
+                                <TextBlock Text="{Binding Category.CategoryName}"/>
+                                <TextBlock Text="{Binding Isbn}"/>
+                            </StackPanel>
+
+                            <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Id}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListView>
 
         </Grid>

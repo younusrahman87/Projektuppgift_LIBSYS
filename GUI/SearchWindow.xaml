@@ -5,206 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-             Title="Bosses bilverkstad" Height="501" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
+             Title="Search results" Height="501" Width="377" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Foreground="White">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF434343" Offset="1"/>
             <GradientStop Color="#FF434343" Offset="0"/>
         </LinearGradientBrush>
     </Window.Background>
-    <GroupBox Header="Sök" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Vani" FontSize="20" Width="377" Height="501">
 
-        <Grid x:Name="FindBok">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="1*"/>
+    <StackPanel>
+    <Grid Height="450">
+        <StackPanel Grid.Row="0">
+                <GroupBox Header="Sökresultat" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="AliceBlue" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Vani" FontSize="20" Width="377" Height="450">
+                    <ListView x:Name="SearchResults" Grid.Row="1" Margin="0,0,-2,0" SelectionChanged="SearchResults_SelectionChanged" Height="466" RenderTransformOrigin="0.49,0.397">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Title}" />
+                                        <TextBlock Text="{Binding Author}"/>
+                                        <TextBlock Text="{Binding Category.CategoryName}"/>
+                                        <TextBlock Text="{Binding Isbn}"/>
+                                    </StackPanel>
 
-
-            </Grid.RowDefinitions>
-
-            <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,5,5,5">
-                <ComboBox x:Name="cb_borrowed_book" IsEnabled="False" Text="-- Välj bok --" Width="350" Height="35" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14"  HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom" SelectionChanged="cb_borrowed_book_SelectionChanged" >
-                </ComboBox>
+                                    <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Id}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListView>
+                </GroupBox>
+                
             </StackPanel>
-
-
-
-
-            <!-- Fordonreg ärande 1-->
-            <StackPanel Grid.Row="1" Margin="5,5,5,5">
-                <TextBox x:Name="tb_BookID" Text="-- Bok Id --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FFB13030" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-
-            <!-- fordontyp ärande 1-->
-            <StackPanel Grid.Row="2" Margin="5,5,5,5">
-                <TextBox x:Name="tb_Title" Text="-- Bok Title --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-            <!-- fordonmärke ärande 1-->
-            <StackPanel Grid.Row="3" Margin="5,5,5,5">
-                <TextBox x:Name="tb_book_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-            <!-- fordonmodel ärande 1-->
-            <StackPanel Grid.Row="4" Margin="5,5,5,5">
-                <TextBox x:Name="tb_Language" Text="-- Språk --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-
-
-            <!-- fordonärandenummer ärande 1-->
-            <StackPanel Grid.Row="5" Margin="5,5,5,5">
-                <TextBox x:Name="tb_PublicationDate" Text="-- Publiceringsdatum --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-            <!-- Fordon issu-->
-            <StackPanel Grid.Row="6" Margin="5,5,5,5">
-                <TextBox x:Name="tb_Ebook" Text="-- E-bok ISBN --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-
-            <!--retur tid-->
-            <StackPanel x:Name="sp_returnTime"  Grid.Row="7" Margin="5,5,5,5" Visibility="Visible">
-                <TextBox x:Name="tb_returnTime" Text="-- UtLånad: --" TextWrapping="Wrap" Width="350" Height="35" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"  Foreground="White" IsReadOnly="True" FontSize="14" >
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-            </StackPanel>
-
-
-
-
-
-
-            <!-- Lämna tillbaka eller låna-->
-            <StackPanel Grid.Row="8" Visibility="Hidden" VerticalAlignment="Center" Height="30" HorizontalAlignment="Center" Width="432">
-                <Button x:Name="Bt_borrowed" Content="Låna" Height="30" Width="350" HorizontalAlignment="Center" Foreground="White"  FontSize="14"   >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF1B9F47" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
-
-            <StackPanel Grid.Row="8" Visibility="Visible" VerticalAlignment="Center" Height="30" HorizontalAlignment="Center" Width="432">
-                <Button x:Name="Bt_Return" Content="Lämna tillbaka" Height="30" Width="350" HorizontalAlignment="Center" Foreground="White"  FontSize="14"   >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="Red" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
-
-
-            <StackPanel Grid.Row="9" VerticalAlignment="Center" Height="30" HorizontalAlignment="Left" Margin="5,5,5,5">
-                <Button x:Name="Goback" Content="Gå Tillbaka" Height="30" Width="350" HorizontalAlignment="Center" Foreground="White"  FontSize="14" Click="BT_goBack_Click"  >
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF1B9F47" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackPanel>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- här slut delat row ärande 1-->
         </Grid>
-
-
-    </GroupBox>
-
-
-
-
-
+    </StackPanel>
 </Window>

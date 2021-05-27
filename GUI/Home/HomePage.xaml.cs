@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GUI.Admin;
 using GUI.Models;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace GUI.Home
 {
@@ -30,6 +32,7 @@ namespace GUI.Home
 
         public static UserDb currentUser;
         public static PersonalDb currentPersonalDb;
+        public List<BookDb> searchResult = new List<BookDb>();
 
 
 
@@ -199,17 +202,30 @@ namespace GUI.Home
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            SearchWindow search_obj = new SearchWindow();
+            using var dbContex = new librarysystemdbContext();
+
+            searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
+            b.Isbn.Contains(searchbox.Text) ||
+            b.Title.Contains(searchbox.Text) ||
+            b.Category.CategoryName.Contains(searchbox.Text))
+                .Include(b => b.Category)
+                .ToList();
+
+            SearchWindow search_obj = new SearchWindow(searchResult);
 
             search_obj.Show();
             var mainwin = Application.Current.MainWindow;
-            UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            personalBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            Usermenu.Visibility = Visibility.Collapsed;
-            Bookmenu.Visibility = Visibility.Collapsed;
-            personalmenu.Visibility = Visibility.Collapsed;
+            //UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            //BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            //personalBT.BorderThickness = new Thickness(0, 0, 0, 0);
+            //Usermenu.Visibility = Visibility.Collapsed;
+            //Bookmenu.Visibility = Visibility.Collapsed;
+            //personalmenu.Visibility = Visibility.Collapsed;
             mainwin.Hide();
+
+            
+
+            //SearchResults.ItemsSource = searchResult;
         }
 
 
