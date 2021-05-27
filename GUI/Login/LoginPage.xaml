@@ -49,12 +49,12 @@
                             <TextBox.BorderBrush>
                                 <RadialGradientBrush>
                                     <GradientStop Color="Black" Offset="0"/>
-                                    
+
                                     <GradientStop Color="#FF4C4B4B" Offset="1"/>
                                 </RadialGradientBrush>
                             </TextBox.BorderBrush>
                         </TextBox>
-                        
+
                     </StackPanel>
                     <StackPanel Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                         <TextBlock Text="Lösenord" TextWrapping="Wrap" HorizontalAlignment="Center" Width="67" Foreground="White" FontSize="18" FontFamily="Bahnschrift SemiLight SemiCondensed" FontWeight="Bold" Height="28">
@@ -106,9 +106,7 @@
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.ColumnSpan="2" Margin="35,87,-35,-87">
 
-                        <StackPanel Grid.Row="1">
-                            <Image x:Name="logoimage" Source="pngegg.png" Height="159" Width="505" />
-                        </StackPanel>
+                        <StackPanel Grid.Row="1"/>
                         <Grid Grid.Row="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="2*"/>
@@ -116,14 +114,22 @@
                             </Grid.RowDefinitions>
 
 
-                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Height="44" Width="340">
+                            <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Height="44" Width="340" Margin="43,19,0,0" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="147*"/>
+                                    <ColumnDefinition Width="172*"/>
+                                    <ColumnDefinition Width="21*"/>
+                                </Grid.ColumnDefinitions>
 
 
 
 
 
 
-                                <TextBox x:Name="searchbox" Padding="20,0,45,0"  VerticalContentAlignment="Center" FontSize="13" HorizontalContentAlignment="Center" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" BorderThickness="0" Margin="10,0,0,0" GotFocus="SearchBox_GotFocus" LostFocus="searchBox_LostFocus">
+                                <TextBox x:Name="searchbox" Padding="20,0,45,0"  VerticalContentAlignment="Center" FontSize="13" HorizontalContentAlignment="Center" FontWeight="SemiBold" Background="#EFF2F8" Foreground="#FF555E5E" BorderThickness="0" Margin="5,0,5,0" GotFocus="SearchBox_GotFocus" LostFocus="searchBox_LostFocus" Grid.ColumnSpan="3" TextChanged="searchbox_TextChanged">
                                     <TextBox.Resources>
                                         <!--to make the border corner round-->
                                         <Style TargetType="{x:Type Border}">
@@ -131,7 +137,7 @@
                                         </Style>
                                     </TextBox.Resources>
                                 </TextBox>
-                                <Button HorizontalAlignment="Left" Width="25" BorderThickness="0" Background="Transparent" Margin="298,9,0,10" IsDefault="True" Click="Search_BT_Click">
+                                <Button HorizontalAlignment="Left" Width="25" BorderThickness="0" Background="Transparent" Margin="152,9,0,10" IsDefault="True" Click="Search_BT_Click" Grid.Column="1" Grid.ColumnSpan="2">
                                     <Image Source="/Image/Search.png" Width="114"/>
                                 </Button>
                             </Grid>
@@ -234,6 +240,14 @@
                 </Grid>
 
             </StackPanel>
+            <Image x:Name="logoimage" Source="pngegg.png" RenderTransformOrigin="0.509,0.474" Margin="2,10,32,359" Grid.RowSpan="2" />
+            <ListView x:Name="SearchResults" Grid.Row="1" Margin="60,163,59,65" SelectionChanged="ListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
 
         </Grid>
 
