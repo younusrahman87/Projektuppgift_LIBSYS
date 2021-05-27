@@ -5,24 +5,41 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:GUI.Staff"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddItem">
+      d:DesignHeight="450"
+      Title="AddItem" Width="944">
 
     <Grid HorizontalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition Height="8*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-            <!--############################ Här börjar höger tabel #######-->
+        <!--############################ Här börjar höger tabel #######-->
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <!--this is listview-->
             <!--<GroupBox Header="Recently added" FontWeight="ExtraBold" Foreground="White" FontSize="14" Padding="0,5,0,0" Grid.Row="1" Margin="0,0,50,35" BorderThickness="2,2,2,2" >-->
-            <GroupBox Header=" Nyligen tillagd böcker" Grid.Row="0" FontWeight="Medium" BorderThickness="2,2,2,2" Margin="0,0,50,8" Foreground="White" BorderBrush="Black" FontFamily="Vani" FontSize="18" Padding="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <GroupBox Header=" Tillagda böcker" Grid.Row="0" FontWeight="Medium" BorderThickness="2,2,2,2" Margin="0,0,50,8" Foreground="White" BorderBrush="Black" FontFamily="Vani" FontSize="18" Padding="0,5,0,0" HorizontalAlignment="Center" VerticalAlignment="Center">
 
 
-                    <ListViewItem Padding="10,10,10,10" Background="Transparent" Foreground="White" Width="400" Height="400" Content="This is ListView" HorizontalContentAlignment="Center" VerticalAlignment="Top" >
-                </ListViewItem>
-  
+                <ListBox Name="lb_new_books" Padding="10,10,10,10" Background="Transparent" Foreground="White" Width="400" Height="400" HorizontalContentAlignment="Center" VerticalAlignment="Top" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="0,2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Title}" />
+                                    <TextBlock Text="{Binding Author}"/>
+                                    <TextBlock Text="{Binding Id}"/>
+                                </StackPanel>
+
+                                <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Id}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
             </GroupBox>
 
 
@@ -32,38 +49,14 @@
             <GroupBox Header=" Lägga till böcker" Grid.Row="0" FontWeight="Medium" BorderThickness="2,2,2,2" Margin="0,0,50,0" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" FontFamily="Vani" FontSize="18"  HorizontalAlignment="Center" Padding="10,10,10,0">
 
                 <StackPanel>
-                <StackPanel  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <ComboBox x:Name="cb_Category" Width="350" Height="35" DisplayMemberPath="CategoryName" SelectedValuePath="ID" Text="-- Kategori --" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14" Padding="0,5,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_choose_book_typ_SelectionChanged">
-
-                    </ComboBox>
-                </StackPanel>
-
-
-                <!-- Titel -->
-                <TextBox x:Name="tb_Title" Text="-- Titel --" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="1" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse" > 
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <!-- Författare -->
-
-                <TextBox x:Name="tb_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="2" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
-                    <TextBox.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF434343" Offset="1"/>
-                        </LinearGradientBrush>
-                    </TextBox.Background>
-                </TextBox>
+                    <StackPanel  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <ComboBox x:Name="cb_Category" Width="350" Height="35" DisplayMemberPath="CategoryName" SelectedValuePath="Id" Text="-- Kategori --" IsEditable="True" IsReadOnly="True" FontFamily="Vani" FontSize="14" Padding="0,5,0,0" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionChanged="cb_choose_book_typ_SelectionChanged">
+                        </ComboBox>
+                    </StackPanel>
 
 
-                <!-- Förlag -->
-
-                <TextBox x:Name="tb_Publisher" Text="-- Förlag --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="3" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                    <!-- Titel -->
+                    <TextBox x:Name="tb_Title" Text="-- Titel --" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="1" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse" >
                         <TextBox.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black"/>
@@ -71,22 +64,10 @@
                             </LinearGradientBrush>
                         </TextBox.Background>
                     </TextBox>
-               
 
-                <!-- Pris -->
+                    <!-- Författare -->
 
-                <TextBox x:Name="tb_Price" Text="-- Pris --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="4" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
-                        <TextBox.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black"/>
-                                <GradientStop Color="#FF434343" Offset="1"/>
-                            </LinearGradientBrush>
-                        </TextBox.Background>
-                    </TextBox>
-         
-                <!-- ISBN -->
-
-                <TextBox x:Name="tb_ISBN" Text="-- ISBN --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="5" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                    <TextBox x:Name="tb_Author" Text="-- Författare --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="2" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                         <TextBox.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black"/>
@@ -96,19 +77,55 @@
                     </TextBox>
 
 
-                <!--DDC-->
+                    <!-- Förlag -->
 
-                <TextBox x:Name="tb_DDC" Text="-- DDC --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="6" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                    <TextBox x:Name="tb_Publisher" Text="-- Förlag --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="3" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                         <TextBox.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black"/>
                                 <GradientStop Color="#FF434343" Offset="1"/>
                             </LinearGradientBrush>
                         </TextBox.Background>
-                </TextBox>
-          
+                    </TextBox>
 
-              
+
+                    <!-- Pris -->
+
+                    <TextBox x:Name="tb_Price" Text="-- Pris --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="4" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF434343" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <!-- ISBN -->
+
+                    <TextBox x:Name="tb_ISBN" Text="-- ISBN --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="5" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF434343" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+                    <!--DDC-->
+
+                    <TextBox x:Name="tb_DDC" Text="-- DDC --" TextWrapping="Wrap" Width="350" Height="40" Grid.Row="6" FontSize="14" Padding="0,5,0,0" Margin="0,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF434343" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+
+                    <!--Add button-->
                     <Button x:Name="bt_add_book" Content="Lägga till . ." Width="97" Visibility="Visible" HorizontalAlignment="Right" VerticalAlignment="Top" Height="35" Margin="0,10,0,10" FontFamily="Vani" FontSize="12" Padding="0,8,0,0" FontWeight="Bold" Foreground="White" BorderBrush="Black" Click="bt_add_book_Click">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -118,13 +135,15 @@
                         </Button.Background>
                     </Button>
 
+                    <Button x:Name="Add_Category" Content="Lägg till ny kategori" Click="Add_Category_Click">
+                    </Button>
 
-            </StackPanel>
-          </GroupBox>
+                </StackPanel>
+            </GroupBox>
         </StackPanel>
-            
 
-        <!-- Längsner row. För visa error message och lägga till knapp -->
+
+        <!-- Längsner row. För visa error message -->
 
         <Label Grid.Row="1" x:Name="MessageDisplay"  Padding="5,0,15,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White" FontFamily="Vani" FontSize="14" FontWeight="Bold" FontStyle="Normal"/>
 
