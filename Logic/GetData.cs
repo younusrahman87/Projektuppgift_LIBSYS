@@ -29,7 +29,6 @@ namespace Logic
 
             return obj.Select(x => x).Where(x => x.Email == email);
 
-
         }
         public async void AddUserAsync(UserDb users)
         {

@@ -30,38 +30,29 @@ namespace GUI.Home
         string Bt_name_user = "Användare";
         string bt_seminarier = "Personal";
 
-        public static UserDb currentUser;
-        public static PersonalDb currentPersonalDb;
         public List<BookDb> searchResult = new List<BookDb>();
 
 
 
-        public HomePage()
+       
+        public HomePage(string current)
         {
 
 
             InitializeComponent();
             searchbox.Text = search_text;
 
-            DEMO_Panel();
+            DEMO_Panel(current);
 
         }
 
-        private void DEMO_Panel()
+        private void DEMO_Panel(string current)
         {
-            var ans = MessageBox.Show("Log in as Staff?", "Welcome To Demo Panel", MessageBoxButton.YesNo);
+           
 
-            if (ans.ToString() == "Yes")
+            if (current == "personal")
             {
-                var PersonalOradmin = MessageBox.Show("Yes = AdminPanel\n\nNo = PersonalPanel", "Hello Developer", MessageBoxButton.YesNo);
-                if (PersonalOradmin.ToString() == "Yes")
-                {
-                    Menubar_frame.Navigate(new AdminProfile());
-                    PersonalPanel.Visibility = Visibility.Visible;
-                    AdminPanel.Visibility = Visibility.Visible;
-                    return;
-                }
-
+    
                 Menubar_frame.Navigate(new AdminProfile());
                 PersonalPanel.Visibility = Visibility.Visible;
                 AdminPanel.Visibility = Visibility.Collapsed;
@@ -69,7 +60,14 @@ namespace GUI.Home
 
 
             }
-            else
+           else if (current == "admin")
+            {
+                Menubar_frame.Navigate(new AdminProfile());
+                PersonalPanel.Visibility = Visibility.Visible;
+                AdminPanel.Visibility = Visibility.Visible;
+                return;
+            }
+            else if(current=="user")
             {
                 Menubar_frame.Navigate(new Profile());
                 AdminPanel.Visibility = Visibility.Collapsed;
@@ -197,7 +195,7 @@ namespace GUI.Home
 
 
 
-            DEMO_Panel();
+          
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)

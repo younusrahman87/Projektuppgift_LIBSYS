@@ -1,5 +1,6 @@
 ﻿using GUI.Home;
 using GUI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,77 +20,78 @@ namespace GUI.Pages
     /// <summary>
     /// Interaction logic for Profile.xaml
     /// </summary>
+    /// 
     public partial class Profile : Page
     {
-
+        string search_text = "Skriv title, författare eller annat sökord";
+        public List<BookDb> searchResult = new List<BookDb>();
         public  Profile()
         {
             InitializeComponent();
-
-
-            //var curentuser = (User)HomePage._GCU[2];
-
-            //if (!curentuser.UserType.Equals(Enum.GetName(typeof(IUserDataAccess.TypeOfUser), 1))) { Userinfo(); Userskills(); }     
-
-
-            //if (_closedC.Where(x=>x.Value.Mechanic_ID.Equals(HomePage._GCU[1])).Count() > 0) { cb_finshed_case.IsEnabled = true; cb_finshed_case.ItemsSource = _closedC.Where(x => x.Value.Mechanic_ID.Equals(HomePage._GCU[1])).Select(x => x.Key); }
-
-        }
-
-
-
-        private void Userinfo()
-        {
-            //_mechanicdb.TryGetValue(HomePage._GCU[1].ToString(), out Mechanic mkObj);
-            //tb_username.Content = mkObj.Namn;
-            //tb_useremail.Content = _userdb.Where(x => x.Value.UserId.Equals(HomePage._GCU[1].ToString())).Select(x => x.Key).ToArray()[0];
-            //tb_userbirth.Content = mkObj.Birthdate;
-            ////tb_usertotal_case.Content = _closedC.Where(x => x.Value.Mechanic_ID.Equals(HomePage._GCU[1])).Count();
-            //tb_resignmentdate.Content = mkObj.LastDate;
-
-            ////tb_case1_Info.Content = mkObj.Vehicles_case[0];
-            ////tb_case2_Info.Content = mkObj.Vehicles_case[1];
-        }
-
-        private void Userskills()
-        {
-            //_mechanicdb.TryGetValue(HomePage._GCU[1].ToString(), out Mechanic _mekObj);
+            GetListview();
 
 
 
         }
 
-        private void BT_chnageSkills_Click(object sender, RoutedEventArgs e)
+        public void GetListview()
         {
-            //_mechanicdb.TryGetValue(HomePage._GCU[1].ToString(), out Mechanic _mekObj);
+            using var dbContex = new librarysystemdbContext();
+            searchResult = dbContex.BookDbs.ToList();
 
-            string msg = $"Vill du ändra dina kompetens ?";
-            string result = MessageBox.Show(msg, "Bekräftelse", MessageBoxButton.YesNo, MessageBoxImage.Question).ToString();
+            SearchResults.ItemsSource = searchResult;
+        }
+        private void Search_BT_Click(object sender, RoutedEventArgs e)
+        {
+            
 
-
-
-            if (result.Equals("Yes"))
+            using var dbContex = new librarysystemdbContext();
+            if (searchbox.Text == "Skriv title, författare eller annat sökord" || searchbox.Text == string.Empty)
             {
+                GetListview();
+            }
+            else 
+            
+            {
+               searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
+              b.Isbn.Contains(searchbox.Text) ||
+              b.Title.Contains(searchbox.Text) ||
+              b.Category.CategoryName.Contains(searchbox.Text))
+                  .Include(b => b.Category)
+                  .ToList();
 
 
-                //_mechanicdb.Remove(HomePage._GCU[1].ToString());
-
-                //_mechanicdb.Add(HomePage._GCU[1].ToString(), _mekObj);
-
-                //IUserDataAccess.Write<string, Mechanic>(_mechanicdb, Enum.GetName(typeof(IUserDataAccess.File_Type), 2));
+                SearchResults.ItemsSource = searchResult;
 
             }
 
 
+        }
 
+        private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (searchbox.Text == search_text) searchbox.Text = string.Empty; return;
 
+            searchbox.Text = search_text;
+        }
+
+        private void searchBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (searchbox.Text == string.Empty) searchbox.Text = search_text; return;
 
 
         }
 
-        private void cb_borrowed_book_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        //info om bok?
+        }
+
+        private void searchbox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
+
+        
     }
 }

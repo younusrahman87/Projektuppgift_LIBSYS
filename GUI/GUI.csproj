@@ -49,6 +49,7 @@
     <Resource Include="Login\Login-02.png" />
     <Resource Include="Login\login.png" />
     <Resource Include="Login\pngegg.png" />
+    <Resource Include="User\pngegg.png" />
     <Resource Include="Login\shoutdown.png" />
     <Resource Include="Login\unnamed.png" />
   </ItemGroup>

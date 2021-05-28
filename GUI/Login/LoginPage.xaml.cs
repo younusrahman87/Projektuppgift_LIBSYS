@@ -26,9 +26,12 @@ namespace GUI.Login
     {
         public List<BookDb> searchResult = new List<BookDb>();
 
+        public static IEnumerable<UserDb> currentUser;
+        public static IEnumerable<PersonalDb> currentPersonal;
         private dynamic _loginService;
         string search_text = "Skriv title, författare eller annat sökord";
         IValidation validation = new Logic.Validation();
+        private FuncService service = new Service();
         public LoginPage()
         {
 
@@ -52,17 +55,22 @@ namespace GUI.Login
         {
             if (validation.checkIfValidUser(tbUsernam.Text, pbPassword.Password))
             {
-                NavigationService.Navigate(new HomePage());
+                currentUser = service.GetUserInfo(tbUsernam.Text);
+                NavigationService.Navigate(new HomePage("user"));
             } 
             else if (validation.checkIfValidPersonal(tbUsernam.Text, pbPassword.Password))
             {
                 if (validation.checkIfAdmin(tbUsernam.Text, pbPassword.Password))
                 {
-                    // admin
-                    NavigationService.Navigate(new HomePage());
+
+                    NavigationService.Navigate(new HomePage("admin"));
+
                 }
-                // Personal
-                NavigationService.Navigate(new HomePage());
+                else
+                {
+                    currentPersonal = service.GetPersonalInfo(tbUsernam.Text);
+                    NavigationService.Navigate(new HomePage("personal"));
+                }
             }
             else
             {
@@ -70,10 +78,6 @@ namespace GUI.Login
             }
 
             
-
-
-
-
 
         }
 
