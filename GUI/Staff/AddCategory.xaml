@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI.Staff"
         mc:Ignorable="d"
-        Title="AddCategory" Height="156" Width="297">
-    <Grid Margin="0,0,339,0">
-        <StackPanel>
+        Title="AddCategory" Height="88" Width="239">
+    <Grid Background="DarkGray" Margin="0,0,-5,-6">
+        <StackPanel Margin="5,0,7,7">
             <TextBlock Text="Ny kategori:"></TextBlock>
             <TextBox x:Name="tb_NewCategory"></TextBox>
-            <Button x:Name="AddCategoryButton" Content="Lägg till" Click="AddCategoryButton_Click"></Button>
+            <Button x:Name="AddCategoryButton" Content="Lägg till" Click="AddCategoryButton_Click" Height="33" Width="226"/>
         </StackPanel>
     </Grid>
 </Window>
