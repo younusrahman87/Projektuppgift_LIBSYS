@@ -122,7 +122,8 @@ namespace GUI.Staff
 
         private void Add_Category_Click(object sender, RoutedEventArgs e)
         {
-            
+            AddCategory addCategoryWindow = new AddCategory();
+            addCategoryWindow.Show();
         }
 
 

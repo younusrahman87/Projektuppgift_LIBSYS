@@ -42,9 +42,6 @@ namespace GUI.Login
 
         }
 
-
-
-
         private void Shoutdown_BT_Click(object sender, RoutedEventArgs e)
         {
             App.Current.MainWindow.Close();
@@ -77,7 +74,6 @@ namespace GUI.Login
                 MessageBox.Show("Felaktig inmating av användarnamn eller lösenord", "Error", MessageBoxButton.OK);
             }
 
-            
 
         }
 
@@ -88,14 +84,8 @@ namespace GUI.Login
 
             //var resultList = books.Where(b => b.Author.Contains(searchbox.Text) || b.Category.CategoryName.Contains(searchbox.Text) || b.Title.Contains(searchbox.Text) || b.Isbn.Contains(searchbox.Text));
 
-            using var dbContex = new librarysystemdbContext();
-
-            searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
-            b.Isbn.Contains(searchbox.Text) ||
-            b.Title.Contains(searchbox.Text) ||
-            b.Category.CategoryName.Contains(searchbox.Text))
-                .Include(b => b.Category)
-                .ToList();
+            Service service = new Service();
+            searchResult = service.SearchBooks(searchbox.Text);
 
             SearchResults.ItemsSource = searchResult;
         }

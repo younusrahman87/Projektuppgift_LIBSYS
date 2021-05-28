@@ -1,6 +1,8 @@
 ﻿using GUI.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Logic
@@ -55,6 +57,21 @@ namespace Logic
         {
             return getData.GetPersonalinfo(email);
          
+        }
+
+        public List<BookDb> SearchBooks(string searchWord)
+        {
+            List<BookDb> searchResult = new List<BookDb>();
+            using var dbContex = new librarysystemdbContext();
+
+            searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchWord) ||
+            b.Isbn.Contains(searchWord) ||
+            b.Title.Contains(searchWord) ||
+            b.Category.CategoryName.Contains(searchWord))
+                .Include(b => b.Category)
+                .ToList();
+
+            return searchResult;
         }
     }
 }
