@@ -52,7 +52,11 @@ namespace GUI.Login
         {
             if (validation.checkIfValidUser(tbUsernam.Text, pbPassword.Password))
             {
+                //Hämtar rätt användare
                 currentUser = service.GetUserInfo(tbUsernam.Text);
+               
+
+
                 NavigationService.Navigate(new HomePage("user"));
             } 
             else if (validation.checkIfValidPersonal(tbUsernam.Text, pbPassword.Password))

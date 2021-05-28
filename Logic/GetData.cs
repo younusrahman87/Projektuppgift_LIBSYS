@@ -19,7 +19,7 @@ namespace Logic
         {
              var obj = GetUser();
 
-             return obj.Select(x => x).Where(x=> x.Email == email);
+             return obj.Select(x => x).Where(x=> x.Email == email).ToList();
            
             
         }
