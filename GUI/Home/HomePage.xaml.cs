@@ -17,6 +17,7 @@ using GUI.Admin;
 using GUI.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Logic;
 
 namespace GUI.Home
 {
@@ -202,30 +203,13 @@ namespace GUI.Home
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            using var dbContex = new librarysystemdbContext();
-
-            searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
-            b.Isbn.Contains(searchbox.Text) ||
-            b.Title.Contains(searchbox.Text) ||
-            b.Category.CategoryName.Contains(searchbox.Text))
-                .Include(b => b.Category)
-                .ToList();
+            Service service = new Service();
+            searchResult = service.SearchBooks(searchbox.Text);
 
             SearchWindow search_obj = new SearchWindow(searchResult);
 
             search_obj.Show();
-            //var mainwin = Application.Current.MainWindow;
-            //UserBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            //BookMenuBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            //personalBT.BorderThickness = new Thickness(0, 0, 0, 0);
-            //Usermenu.Visibility = Visibility.Collapsed;
-            //Bookmenu.Visibility = Visibility.Collapsed;
-            //personalmenu.Visibility = Visibility.Collapsed;
-            //mainwin.Hide();
-
             
-
-            //SearchResults.ItemsSource = searchResult;
         }
 
 
