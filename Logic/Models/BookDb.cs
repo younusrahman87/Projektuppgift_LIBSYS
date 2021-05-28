@@ -15,6 +15,7 @@ namespace GUI.Models
         public int Price { get; set; }
         public decimal? Ddc { get; set; }
         public string Author { get; set; }
+        public int? UserId { get; set; }
 
         public virtual CategoryDb Category { get; set; }
     }

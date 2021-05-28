@@ -163,7 +163,7 @@
 
             </StackPanel>
 
-            <ListView x:Name="SearchResults" Grid.Row="1" Margin="10,163,64,150" SelectionChanged="SearchResults_SelectionChanged">
+            <ListView x:Name="lb_SearchResults" Grid.Row="1" Margin="10,163,64,150" SelectionChanged="lb_SearchResults_SelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid Margin="0,2">
@@ -204,7 +204,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button  Content="Låna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="385,329,64,105" Grid.Row="1" >
+            <Button  Content="Låna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="385,329,64,105" Grid.Row="1" Click="Button_Click" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>

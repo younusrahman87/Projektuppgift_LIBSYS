@@ -1,5 +1,7 @@
 ﻿using GUI.Home;
+using GUI.Login;
 using GUI.Models;
+using Logic;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,47 +27,37 @@ namespace GUI.Pages
     {
         string search_text = "Skriv title, författare eller annat sökord";
         public List<BookDb> searchResult = new List<BookDb>();
+        public UserDb current = new UserDb();
         public  Profile()
         {
             InitializeComponent();
             GetListview();
 
-
+            current = (UserDb)LoginPage.currentUser.First();
 
         }
 
         public void GetListview()
         {
             using var dbContex = new librarysystemdbContext();
-            searchResult = dbContex.BookDbs.ToList();
+            searchResult = dbContex.BookDbs.Where(x => x.UserId == null).ToList();
 
-            SearchResults.ItemsSource = searchResult;
+            lb_SearchResults.ItemsSource = searchResult;
         }
         private void Search_BT_Click(object sender, RoutedEventArgs e)
         {
             
-
-            using var dbContex = new librarysystemdbContext();
             if (searchbox.Text == "Skriv title, författare eller annat sökord" || searchbox.Text == string.Empty)
             {
                 GetListview();
             }
             else 
-            
             {
-               searchResult = dbContex.BookDbs.Where(b => b.Author.Contains(searchbox.Text) ||
-              b.Isbn.Contains(searchbox.Text) ||
-              b.Title.Contains(searchbox.Text) ||
-              b.Category.CategoryName.Contains(searchbox.Text))
-                  .Include(b => b.Category)
-                  .ToList();
+                Service service = new Service();
+                searchResult = service.SearchBooks(searchbox.Text);
 
-
-                SearchResults.ItemsSource = searchResult;
-
+                lb_SearchResults.ItemsSource = searchResult;
             }
-
-
         }
 
         private void SearchBox_GotFocus(object sender, RoutedEventArgs e)
@@ -82,7 +74,7 @@ namespace GUI.Pages
 
         }
 
-        private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lb_SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         //info om bok?
         }
@@ -92,6 +84,17 @@ namespace GUI.Pages
 
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BookDb book = (BookDb)lb_SearchResults.SelectedItem;
+            using var dbContex = new librarysystemdbContext();
+            var updatedBook = dbContex.BookDbs.Find(book.Id);
+
+            if (updatedBook.UserId == null)
+            {
+                updatedBook.UserId = current.Id;
+                dbContex.SaveChanges();
+            }
+        }
     }
 }
