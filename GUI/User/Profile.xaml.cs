@@ -1,6 +1,7 @@
 ﻿using GUI.Home;
 using GUI.Login;
 using GUI.Models;
+using GUI.User;
 using Logic;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -89,12 +90,26 @@ namespace GUI.Pages
             BookDb book = (BookDb)lb_SearchResults.SelectedItem;
             using var dbContex = new librarysystemdbContext();
             var updatedBook = dbContex.BookDbs.Find(book.Id);
-
-            if (updatedBook.UserId == null)
+            if (MessageBox.Show("Är du säker på att du vill låna denna bok?", "Låna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                updatedBook.UserId = current.Id;
-                dbContex.SaveChanges();
+                if (updatedBook.UserId == null)
+                {
+                    updatedBook.UserId = current.Id;
+                    dbContex.SaveChanges();
+                }
+
             }
+            NavigationService.Navigate(new Profile());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UserProfile());
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new UserBooksInfo());
         }
     }
 }
