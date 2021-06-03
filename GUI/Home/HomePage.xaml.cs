@@ -30,6 +30,7 @@ namespace GUI.Home
         string Bt_name_bok = "Böcker";
         string Bt_name_user = "Användare";
         string bt_seminarier = "Personal";
+        string currentTypeOfUser;
 
         public List<BookDb> searchResult = new List<BookDb>();
 
@@ -49,7 +50,7 @@ namespace GUI.Home
 
         private void DEMO_Panel(string current)
         {
-           
+            currentTypeOfUser = current;
 
             if (current == "personal")
             {
@@ -204,7 +205,7 @@ namespace GUI.Home
             Service service = new Service();
             searchResult = service.SearchBooks(searchbox.Text);
 
-            SearchWindow search_obj = new SearchWindow(searchResult);
+            SearchWindow search_obj = new SearchWindow(searchResult, currentTypeOfUser);
 
             search_obj.Show();
             

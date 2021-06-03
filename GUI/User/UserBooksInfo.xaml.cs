@@ -45,14 +45,14 @@ namespace GUI.User
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Profile_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new UserProfile());
         }
 
     
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Loan_Click(object sender, RoutedEventArgs e)
         {
 
             NavigationService.Navigate(new Profile());
@@ -65,7 +65,7 @@ namespace GUI.User
            book = (BookDb)booksListview.SelectedItem;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ReturnBook_Click(object sender, RoutedEventArgs e)
         {
             try
             {

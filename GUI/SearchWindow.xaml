@@ -43,7 +43,7 @@
         </Grid>
         <Button x:Name="RemoveBook" Content="Ta bort" Click="RemoveBook_Click"/>
         <Button x:Name="ReturnBook" Content="Lämna tillbaka bok" Click="ReturnBook_Click"/>
-        <Button x:Name="LoanBook" Content="Boka" Click="LoanBook_Click"/>
+        <Button x:Name="LoanBook" Content="Låna" Click="LoanBook_Click"/>
         <Button x:Name="Return" Content="Gå tillbaka" Click="Return_Click"/>
     </StackPanel>
 </Window>

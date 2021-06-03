@@ -25,7 +25,7 @@ namespace GUI
     {
         List<BookDb> searchResult = new List<BookDb>();
 
-        public SearchWindow(List<BookDb> list)
+        public SearchWindow(List<BookDb> list, string current)
         {
 
             InitializeComponent();
@@ -34,11 +34,19 @@ namespace GUI
             searchResult = list;
             SearchResults.ItemsSource = searchResult;
 
-
+            if(current == "personal" || current == "admin")
+            {
+                RemoveBook.Visibility = Visibility.Visible;
+                ReturnBook.Visibility = Visibility.Hidden;
+                LoanBook.Visibility = Visibility.Hidden;
+            }
+            else if(current == "user")
+            {
+                RemoveBook.Visibility = Visibility.Hidden;
+                ReturnBook.Visibility = Visibility.Visible;
+                LoanBook.Visibility = Visibility.Visible;
+            }
         }
-
-
-
 
         private void BT_goBack_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +96,7 @@ namespace GUI
             }
         }
 
-            private void ReturnBook_Click(object sender, RoutedEventArgs e)
+        private void ReturnBook_Click(object sender, RoutedEventArgs e)
         {
 
         }

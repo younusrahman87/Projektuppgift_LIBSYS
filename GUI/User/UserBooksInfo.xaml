@@ -149,7 +149,7 @@
 
 
             </StackPanel>
-            <Button Click="Button_Click" Content="Profil" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="0,-4,449,30" >
+            <Button Name="Profile" Click="Profile_Click" Content="Profil" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="0,-4,449,30" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Transparent"/>
@@ -157,7 +157,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Click="Button_Click_2" Content="Låna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="95,-4,301,30" >
+            <Button x:Name="Loan" Click="Loan_Click" Content="Låna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="95,-4,301,30" >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Transparent"/>
@@ -165,7 +165,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Click="Button_Click_1" Content="Återlämna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="371,329,64,105" Grid.Row="1"  >
+            <Button Name="ReturnBook" Click="ReturnBook_Click" Content="Återlämna" Foreground="White" FontWeight="Bold" FontSize="18"  Margin="371,329,64,105" Grid.Row="1"  >
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
