@@ -1,10 +1,12 @@
 ﻿using GUI.Login;
 using GUI.Models;
 using GUI.Pages;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -24,7 +26,7 @@ namespace GUI.User
     {
         BookDb book = new BookDb();
 
-
+        private FuncService service = new Service();
         public UserBooksInfo()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace GUI.User
         {
      
              using var dbContex = new librarysystemdbContext();
-             var books = dbContex.BookDbs.ToList();
+            var books = service.GetBooks();
              var current = (UserDb)LoginPage.currentUser.First();
             foreach (var item in books)
             {
@@ -71,17 +73,31 @@ namespace GUI.User
             {
                 if (MessageBox.Show("Är du säker på att du vill återlämmna denna bok?", "Återlämna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
-                    using var dbContex = new librarysystemdbContext();
-                    var books = dbContex.BookDbs.ToList();
+
+                    var books = service.GetBooks();
+
+                    BookDb updateBook = new BookDb();
                     foreach (var item in books)
                     {
                         if (book.UserId == item.UserId&& book.Id== item.Id)
                         {
-                            item.UserId = null;
+                            updateBook.UserId = null;
+                            updateBook.Author = item.Author;
+                            updateBook.Category = item.Category;
+                            updateBook.CategoryId = item.CategoryId;
+                            updateBook.Ddc = item.Ddc;
+                            updateBook.Id = item.Id;
+                            updateBook.Isbn = item.Isbn;
+                            updateBook.Price = item.Price;
+                            updateBook.Publisher = item.Publisher;
+                            updateBook.Title = item.Title;
+                            
                         }
 
                     }
-                            dbContex.SaveChanges();
+                    
+                    service.UpdateBook(updateBook);
+                    Task.Delay(2000);
                     NavigationService.Navigate(new UserBooksInfo());
 
 

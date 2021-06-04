@@ -13,9 +13,46 @@ namespace Logic
         private readonly librarysystemdbContext _db = new librarysystemdbContext();
         public IEnumerable<UserDb> GetUser() => _db.UserDbs;
         public IEnumerable<PersonalDb> GetPesonal() => _db.PersonalDbs;
-        public IEnumerable<PersonalDb> GetPersonalAdmin() => _db.PersonalDbs;
+        public IEnumerable<BookDb> GetBooks() => _db.BookDbs;
 
-     public IEnumerable<UserDb> GetUserinfo(string email)
+        public IEnumerable<BookDb> FindBook(int id)
+        {
+            var obj = GetBooks();
+
+           var book = obj.Where(x => x.Id == id);
+
+             return book;
+        }
+
+        
+
+        public  async void UpdateBook(BookDb updatedBook)
+        {
+            var obj = GetBooks();
+            IEnumerable<int> id = obj.Select(x => x).Where(x => x.Id == updatedBook.Id).Select(x => x.Id);
+
+
+            var book = _db.BookDbs.Find(id.First());
+            if (updatedBook.UserId != null)
+            {
+                book.UserId = updatedBook.UserId;
+            }
+            else 
+            {
+                book.UserId = null;
+            }
+
+            book.Title = updatedBook.Title;
+            book.Publisher = updatedBook.Publisher;
+            book.Author = updatedBook.Author;
+            book.Category = updatedBook.Category; 
+            book.Ddc = updatedBook.Ddc;
+
+            _db.BookDbs.Update(book);
+            await _db.SaveChangesAsync();
+
+        }
+        public IEnumerable<UserDb> GetUserinfo(string email)
         {
              var obj = GetUser();
 

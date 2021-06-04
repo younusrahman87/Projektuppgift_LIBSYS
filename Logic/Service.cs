@@ -12,6 +12,17 @@ namespace Logic
 
         GetData getData = new GetData();
 
+        void FuncService.UpdateBook(BookDb updatedBook)
+        {
+
+            getData.UpdateBook(updatedBook);
+        }
+      
+        public IEnumerable<BookDb> FindBook(int id) 
+        {
+          return  getData.FindBook(id); 
+        }
+        public IEnumerable<BookDb> GetBooks() => getData.GetBooks();
         public void AddUser(UserDb users)
         {
 
@@ -73,5 +84,7 @@ namespace Logic
 
             return searchResult;
         }
+
+       
     }
 }
