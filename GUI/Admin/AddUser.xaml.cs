@@ -27,7 +27,8 @@ namespace GUI.Admin
         private FuncService service = new Service();
         private IValidation validation = new Logic.Validation();
         private UserDb user { get; set; } = new UserDb();
-        private PersonalDb personal { get; set; } = new PersonalDb();
+        //Användes ej
+        //private PersonalDb personal { get; set; } = new PersonalDb();
         public AddUser()
         {
             InitializeComponent();

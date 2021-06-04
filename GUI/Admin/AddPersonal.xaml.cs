@@ -24,10 +24,12 @@ namespace GUI.Admin
         private readonly string Lastname = "-- Efternamn --";
         private readonly string Email = "-- E-Mail --";
         private readonly string JobTitle = "-- Job Title --";
-        private readonly string Wrong_msg = "** Fel inmatning **";
+        //Denna användes ej,
+        //private readonly string Wrong_msg = "** Fel inmatning **";
         private FuncService service = new Service();
         private IValidation validation = new Logic.Validation();
-        private UserDb user { get; set; } = new UserDb();
+        //Denna användes inte
+      //  private UserDb user { get; set; } = new UserDb();
         private PersonalDb personal { get; set; } = new PersonalDb();
 
         public AddPersonal()

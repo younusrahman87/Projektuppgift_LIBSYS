@@ -123,6 +123,7 @@ namespace GUI.Admin
           
         }
 
+        //Behöver koppla denna med lånefunktionen. LÅT VARA KVAR //Calle
         private void libraryCard_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (libraryCard.SelectedIndex == 1)

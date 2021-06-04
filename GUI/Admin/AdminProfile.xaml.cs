@@ -24,18 +24,18 @@ namespace GUI.Pages
         {
             InitializeComponent();
             Adminfo();
-            MekanikInfo();
+            //MekanikInfo();
        
         }
 
 
-        private void MekanikInfo()
-        {
+        //private void MekanikInfo()
+        //{
             
+        //Var inget här, går att tabort
 
 
-
-        }
+        //}
 
 
         private void Adminfo()
