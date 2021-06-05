@@ -119,7 +119,7 @@ namespace Logic
         
             foreach (var user in objListUser)
             {
-                if (email==user.Email && password==user.Password)
+                if (email.ToUpper() == user.Email.ToUpper() && password==user.Password)
                 {
                     return true;
 
@@ -132,7 +132,7 @@ namespace Logic
             IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
             foreach (var personal in objListPersonal)
             {
-                if (email == personal.Email && password == personal.Password)
+                if (email.ToUpper() == personal.Email.ToUpper() && password == personal.Password)
                 {
                     return true;
 
@@ -145,7 +145,7 @@ namespace Logic
             IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
             foreach (var admin in objListPersonal)
             {
-                if (email == admin.Email && password == admin.Password)
+                if (email.ToUpper() == admin.Email.ToUpper() && password == admin.Password)
                 {
                     if (admin.JobTitle.ToLower() == "admin")
                     {
@@ -156,9 +156,6 @@ namespace Logic
                 }
             }
             return false;
-
-
-
 
         }
     }

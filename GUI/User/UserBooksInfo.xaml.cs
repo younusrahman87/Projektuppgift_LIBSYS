@@ -90,21 +90,13 @@ namespace GUI.User
                             updateBook.Isbn = item.Isbn;
                             updateBook.Price = item.Price;
                             updateBook.Publisher = item.Publisher;
-                            updateBook.Title = item.Title;
-                            
+                            updateBook.Title = item.Title;   
                         }
-
                     }
-                    
                     service.UpdateBook(updateBook);
                     Task.Delay(2000);
                     NavigationService.Navigate(new UserBooksInfo());
-
-
                 }
-
-
-
             }
             catch (Exception ex)
             {
