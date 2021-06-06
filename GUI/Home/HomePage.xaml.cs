@@ -211,8 +211,6 @@ namespace GUI.Home
             
         }
 
-
-
         private void ChangepersonalBT_Click(object sender, RoutedEventArgs e)
         {
             Menubar_frame.Navigate(new ChangeRemovePersonal());

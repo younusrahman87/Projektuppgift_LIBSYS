@@ -24,41 +24,35 @@ namespace Logic
              return book;
         }
 
-        
-
         public  async void UpdateBook(BookDb updatedBook)
         {
-            var obj = GetBooks();
-            IEnumerable<int> id = obj.Select(x => x).Where(x => x.Id == updatedBook.Id).Select(x => x.Id);
+            //var obj = GetBooks();
+            //IEnumerable<int> id = obj.Select(x => x).Where(x => x.Id == updatedBook.Id).Select(x => x.Id);
 
+            //var book = _db.BookDbs.Find(id.First());
+            //if (updatedBook.UserId != null)
+            //{
+            //    book.UserId = updatedBook.UserId;
+            //}
+            //else 
+            //{
+            //    book.UserId = null;
+            //}
 
-            var book = _db.BookDbs.Find(id.First());
-            if (updatedBook.UserId != null)
-            {
-                book.UserId = updatedBook.UserId;
-            }
-            else 
-            {
-                book.UserId = null;
-            }
+            //book.Title = updatedBook.Title;
+            //book.Publisher = updatedBook.Publisher;
+            //book.Author = updatedBook.Author;
+            //book.Category = updatedBook.Category; 
+            //book.Ddc = updatedBook.Ddc;
 
-            book.Title = updatedBook.Title;
-            book.Publisher = updatedBook.Publisher;
-            book.Author = updatedBook.Author;
-            book.Category = updatedBook.Category; 
-            book.Ddc = updatedBook.Ddc;
-
-            _db.BookDbs.Update(book);
+            _db.BookDbs.Update(updatedBook);
             await _db.SaveChangesAsync();
-
         }
         public IEnumerable<UserDb> GetUserinfo(string email)
         {
              var obj = GetUser();
 
-             return obj.Select(x => x).Where(x=> x.Email == email).ToList();
-           
-            
+             return obj.Select(x => x).Where(x=> x.Email == email).ToList(); 
         }
         public IEnumerable<PersonalDb> GetPersonalinfo(string email)
         {
@@ -76,11 +70,9 @@ namespace Logic
         }
         public async void UpdateUserAsync(UserDb users)
         {
-
             var objlist = GetUser();
 
             IEnumerable<int> id = objlist.Select(x => x).Where(x => x.Email == users.Email).Select(x => x.Id);
-
 
             var user = _db.UserDbs.Find(id.First());
             user.FirstName = users.FirstName;
@@ -88,17 +80,14 @@ namespace Logic
             user.Password = users.Password;
             user.LibraryCard = users.LibraryCard;
 
-
             _db.UserDbs.Update(user);
             await _db.SaveChangesAsync();
         }
         public async void RemoveUserAsyc(string email)
         {
-
             var objlist = GetUser();
     
             IEnumerable<int> id =  objlist.Select(x => x).Where(x => x.Email == email).Select(x => x.Id);
-
 
             var user = _db.UserDbs.Find(id.First());
             _db.UserDbs.Remove(user);
@@ -107,10 +96,8 @@ namespace Logic
         }
         public async void AddPersonalAsync(PersonalDb personal)
         {
-
             await _db.PersonalDbs.AddAsync(personal);
             await _db.SaveChangesAsync();
-
         }
         public async void UpdatePersonalAsync(PersonalDb personal)
         {
@@ -118,14 +105,11 @@ namespace Logic
 
             IEnumerable<int> id = objlist.Select(x => x).Where(x => x.Email == personal.Email).Select(x => x.Id);
 
-
             var personals = _db.PersonalDbs.Find(id.First());
             personals.FirstName = personal.FirstName;
             personals.LastName = personal.LastName;
             personals.Password = personal.Password;
             personals.JobTitle = personal.JobTitle;
-
-
 
             _db.PersonalDbs.Update(personals);
             await _db.SaveChangesAsync();
@@ -139,7 +123,6 @@ namespace Logic
             var personal = _db.PersonalDbs.Find(id.First());
             _db.PersonalDbs.Remove(personal);
             await _db.SaveChangesAsync();
-
         }
 
     }

@@ -91,19 +91,19 @@ namespace GUI.Pages
         {
             BookDb book = (BookDb)lb_SearchResults.SelectedItem;
 
-            var obj = service.FindBook(book.Id);
-            BookDb updatedBook = obj.First();
+            //var obj = service.FindBook(book.Id);
+            //BookDb updatedBook = obj.First();
             if (MessageBox.Show("Är du säker på att du vill låna denna bok?", "Låna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                if (updatedBook.UserId == null)
+                if (book.UserId == null)
                 {
-                    updatedBook.UserId = current.Id;
-                    service.UpdateBook(updatedBook);
+                    book.UserId = current.Id;
+                    service.UpdateBook(book);
                    
                 }
 
             }
-            Task.Delay(2000);
+            //Task.Delay(2000);
             NavigationService.Navigate(new Profile());
         }
 

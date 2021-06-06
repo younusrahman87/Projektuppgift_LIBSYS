@@ -1,6 +1,8 @@
 ﻿using GUI.Home;
+using GUI.Login;
 using GUI.Models;
 using GUI.Pages;
+using Logic;
 using System;
 using System.Collections.Generic;
 using System.DirectoryServices;
@@ -24,6 +26,7 @@ namespace GUI
     public partial class SearchWindow : Window
     {
         List<BookDb> searchResult = new List<BookDb>();
+        GetData getData = new GetData();
 
         public SearchWindow(List<BookDb> list, string current)
         {
@@ -98,12 +101,40 @@ namespace GUI
 
         private void ReturnBook_Click(object sender, RoutedEventArgs e)
         {
+            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
+            var current = (UserDb)LoginPage.currentUser.First();
+
+            if (selectedBook.UserId == current.Id)
+            {
+                selectedBook.UserId = null;
+
+                getData.UpdateBook(selectedBook);
+            }
+            else
+            {
+                MessageBox.Show("Du kan inte lämna tillbaka den här boken eftersom du inte har lånat den!");
+            }
+            
         }
 
         private void LoanBook_Click(object sender, RoutedEventArgs e)
         {
+            BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
+            var current = (UserDb)LoginPage.currentUser.First();
+
+            if(selectedBook.UserId == null)
+            {
+                selectedBook.UserId = current.Id;
+
+                getData.UpdateBook(selectedBook);
+            }
+            else
+            {
+                MessageBox.Show("Boken är redan utlånad!");
+            }
+            
         }
 
         private void Return_Click(object sender, RoutedEventArgs e)

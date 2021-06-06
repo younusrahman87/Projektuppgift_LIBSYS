@@ -74,27 +74,29 @@ namespace GUI.User
                 if (MessageBox.Show("Är du säker på att du vill återlämmna denna bok?", "Återlämna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
 
-                    var books = service.GetBooks();
+                    //var books = service.GetBooks();
 
-                    BookDb updateBook = new BookDb();
-                    foreach (var item in books)
-                    {
-                        if (book.UserId == item.UserId&& book.Id== item.Id)
-                        {
-                            updateBook.UserId = null;
-                            updateBook.Author = item.Author;
-                            updateBook.Category = item.Category;
-                            updateBook.CategoryId = item.CategoryId;
-                            updateBook.Ddc = item.Ddc;
-                            updateBook.Id = item.Id;
-                            updateBook.Isbn = item.Isbn;
-                            updateBook.Price = item.Price;
-                            updateBook.Publisher = item.Publisher;
-                            updateBook.Title = item.Title;   
-                        }
-                    }
-                    service.UpdateBook(updateBook);
-                    Task.Delay(2000);
+                    //BookDb updateBook = new BookDb();
+                    //foreach (var item in books)
+                    //{
+                    //    if (book.UserId == item.UserId&& book.Id== item.Id)
+                    //    {
+                    //        updateBook.UserId = null;
+                    //        updateBook.Author = item.Author;
+                    //        updateBook.Category = item.Category;
+                    //        updateBook.CategoryId = item.CategoryId;
+                    //        updateBook.Ddc = item.Ddc;
+                    //        updateBook.Id = item.Id;
+                    //        updateBook.Isbn = item.Isbn;
+                    //        updateBook.Price = item.Price;
+                    //        updateBook.Publisher = item.Publisher;
+                    //        updateBook.Title = item.Title;   
+                    //    }
+                    //}
+                    BookDb updatedBook = (BookDb)booksListview.SelectedItem;
+                    updatedBook.UserId = null;
+                    service.UpdateBook(updatedBook);
+                    //Task.Delay(2000);
                     NavigationService.Navigate(new UserBooksInfo());
                 }
             }
