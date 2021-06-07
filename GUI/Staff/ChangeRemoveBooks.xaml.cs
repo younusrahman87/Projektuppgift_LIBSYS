@@ -64,7 +64,6 @@ namespace GUI.Staff
                     }
                     else if (tb_sc_ISBN.Text == string.Empty && tb_sc_ISBN.Text.Length != 17)
                     {
-                       
                         return;
                     }
                     else

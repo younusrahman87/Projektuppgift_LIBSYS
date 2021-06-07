@@ -19,8 +19,8 @@
 
 
         <!--this is listview-->
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="800" Height="108" VerticalAlignment="Top">
-            <ListView x:Name="listView" ItemsSource="{Binding PersonalDb}" SelectionChanged="listView_SelectionChanged">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Width="800" VerticalAlignment="Top">
+            <ListView x:Name="listView" SelectionChanged="listView_SelectionChanged" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>

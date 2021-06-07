@@ -3,6 +3,7 @@ using Logic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,14 +38,8 @@ namespace GUI.Admin
       
         public  void  GetListview()
         {
-           
-            var users = getData.GetUser();
-            
-            foreach (var item in  users)
-                {
-                    listView.Items.Add(item);
-
-                }
+            var users = getData.GetUsers();
+            listView.ItemsSource = users.ToArray();
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,8 +62,9 @@ namespace GUI.Admin
             //Ändra
             try
             {
-                if (validation.RemoveEmailUser(email.Text))
+                if (validation.UserExists(email.Text))
                 {
+                    user.Id = int.Parse(id.Text);
                     user.FirstName = firstName.Text;
                     user.LastName = lastName.Text;
                     user.SocialSecurityNumber = PersonNr.Text;
@@ -102,7 +98,7 @@ namespace GUI.Admin
            
             try
             {
-                if (validation.RemoveEmailUser(email.Text))
+                if (validation.UserExists(email.Text))
                 {
                     service.RemoveUser(email.Text);
 

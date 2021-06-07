@@ -26,8 +26,8 @@ namespace GUI.Login
     {
         public List<BookDb> searchResult = new List<BookDb>();
 
-        public static IEnumerable<UserDb> currentUser;
-        public static IEnumerable<PersonalDb> currentPersonal;
+        public static UserDb currentUser;
+        public static PersonalDb currentPersonal;
         private dynamic _loginService;
         string search_text = "Skriv title, författare eller annat sökord";
         IValidation validation = new Logic.Validation();

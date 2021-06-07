@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,7 +21,7 @@ namespace Logic
                 isValid = string.IsNullOrEmpty(address.DisplayName);
                 if (isValid)
                 {
-                    IEnumerable<UserDb> objListUser = getData.GetUser();
+                    IEnumerable<UserDb> objListUser = getData.GetUsers();
                     IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
 
                     foreach (var itemUser in objListUser)
@@ -49,13 +50,10 @@ namespace Logic
 
         public bool AvailableSocialSecurityNumber(string socialSecurityNumber)
         {
-          
-
-
 
                 if (Regex.IsMatch(socialSecurityNumber, @"^(\d{6}|\d{8})-\d{4}$"))
                {
-                IEnumerable<UserDb> objListUser = getData.GetUser();
+                IEnumerable<UserDb> objListUser = getData.GetUsers();
                 IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
 
                 foreach (var itemUser in objListUser)
@@ -81,82 +79,39 @@ namespace Logic
             return false;
         }
 
-        public bool RemoveEmailPersonal(string email)
+        public bool PersonalExists(string email)
         {
-
-            IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
-
-            foreach (var itemPersonal in objListPersonal)
-            {
-                if (itemPersonal.Email == email)
-                {
-                    return true;
-                }
-            }
-            return false;
-
+            return getData.GetPesonal().Any(p => p.Email == email);
         }
 
-        public bool RemoveEmailUser(string email)
+        public bool UserExists(string email)
         {
-            IEnumerable<UserDb> objListUser = getData.GetUser();
-            foreach (var itemUser in objListUser)
-            {
-                if (itemUser.Email == email)
-                {
-                    return true;
-                }
-
-            }
-
-            return false;
+            return getData
+                .GetUsers()
+                .Any(u => u.Email == email);
         }
 
         public bool checkIfValidUser(string email, string password)
         {
-
-            IEnumerable<UserDb> objListUser = getData.GetUser();
-        
-            foreach (var user in objListUser)
-            {
-                if (email.ToUpper() == user.Email.ToUpper() && password==user.Password)
-                {
-                    return true;
-
-                }
-            }
-            return false;
+            return getData
+                .GetUsers()
+                .Any(u => u.Email == email && u.Password == password);
         }
+
         public bool checkIfValidPersonal(string email, string password)
         {
-            IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
-            foreach (var personal in objListPersonal)
-            {
-                if (email.ToUpper() == personal.Email.ToUpper() && password == personal.Password)
-                {
-                    return true;
-
-                }
-            }
-            return false;
+            return getData
+               .GetPesonal()
+               .Any(u => u.Email == email && u.Password == password);
         }
+
         public bool checkIfAdmin(string email, string password)
         {
-            IEnumerable<PersonalDb> objListPersonal = getData.GetPesonal();
-            foreach (var admin in objListPersonal)
-            {
-                if (email.ToUpper() == admin.Email.ToUpper() && password == admin.Password)
-                {
-                    if (admin.JobTitle.ToLower() == "admin")
-                    {
-                        return true;
-
-                    }
-                    return false;
-                }
-            }
-            return false;
-
+            return getData
+                .GetPesonal()
+                .Where(u => u.JobTitle == "admin")
+                .Where(u => u.Email == email)
+                .Any(u => u.Password == password);
         }
     }
  }

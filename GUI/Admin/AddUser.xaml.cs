@@ -104,6 +104,8 @@ namespace GUI.Admin
                     user.SocialSecurityNumber = PersonNr.Text;
                     service.AddUser(user);
 
+                    user = new UserDb();
+
                     MessageBox.Show("Användare är tillagd", "Användare", MessageBoxButton.OK);
                 }
                 else

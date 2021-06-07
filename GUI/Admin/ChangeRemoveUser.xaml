@@ -22,7 +22,8 @@
 
         <!--this is listview-->
         <StackPanel Grid.Row="1" HorizontalAlignment="Center"  Margin="0,0,0,187" Grid.RowSpan="2" Width="800">
-            <ListView x:Name="listView" ItemsSource="{Binding UserDb}" SelectionChanged="listView_SelectionChanged">
+            
+            <ListView x:Name="listView"  SelectionChanged="listView_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Id" DisplayMemberBinding="{Binding Id}"/>

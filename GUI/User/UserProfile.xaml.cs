@@ -23,23 +23,19 @@ namespace GUI.User
         public UserProfile()
         {
             InitializeComponent();
-            foreach (var item in LoginPage.currentUser)
-            {
-                fName.Text = item.FirstName;
-                lName.Text = item.LastName;
-                email.Text = item.Email;
-                if (item.LibraryCard)
-                {
-                    libraryCard.Text = "Aktivt bibliotekskort";
-                }
-                else 
-                {
-                    libraryCard.Text = "Inaktivt bibliotekskort";
-                }
-            }  
-        }
 
-        
+            fName.Text = LoginPage.currentUser.FirstName;
+            lName.Text = LoginPage.currentUser.LastName;
+            email.Text = LoginPage.currentUser.Email;
+            if (LoginPage.currentUser.LibraryCard)
+            {
+                libraryCard.Text = "Aktivt bibliotekskort";
+            }
+            else
+            {
+                libraryCard.Text = "Inaktivt bibliotekskort";
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

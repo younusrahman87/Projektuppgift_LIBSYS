@@ -8,8 +8,8 @@ namespace Logic
     {
         bool AvailableSocialSecurityNumber(string socialSecurityNumber);
         bool AvailableEmail(string email);
-        bool RemoveEmailUser(string email);
-        bool RemoveEmailPersonal(string email);
+        bool UserExists(string email);
+        bool PersonalExists(string email);
         bool checkIfAdmin(string email, string password);
         bool checkIfValidPersonal(string email, string password);
         bool checkIfValidUser(string email, string password);

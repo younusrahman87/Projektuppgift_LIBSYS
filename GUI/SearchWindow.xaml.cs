@@ -1,22 +1,10 @@
-﻿using GUI.Home;
-using GUI.Login;
+﻿using GUI.Login;
 using GUI.Models;
-using GUI.Pages;
 using Logic;
-using System;
 using System.Collections.Generic;
-using System.DirectoryServices;
 using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI
 {
@@ -26,7 +14,7 @@ namespace GUI
     public partial class SearchWindow : Window
     {
         List<BookDb> searchResult = new List<BookDb>();
-        GetData getData = new GetData();
+        FuncService funcService = new Service();
 
         public SearchWindow(List<BookDb> list, string current)
         {
@@ -103,14 +91,13 @@ namespace GUI
         {
             BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
-            var current = (UserDb)LoginPage.currentUser.First();
+            var current = (UserDb)LoginPage.currentUser;
 
             if (selectedBook.UserId == current.Id)
             {
                 selectedBook.UserId = null;
 
-                using var dbContex = new librarysystemdbContext();
-                dbContex.SaveChanges();
+                funcService.UpdateBook(selectedBook);
 
                 MessageBox.Show("Bok återlämnad!");
             }
@@ -125,14 +112,13 @@ namespace GUI
         {
             BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
 
-            var current = (UserDb)LoginPage.currentUser.First();
+            var current = (UserDb)LoginPage.currentUser;
 
             if(selectedBook.UserId == null)
             {
                 selectedBook.UserId = current.Id;
 
-                using var dbContex = new librarysystemdbContext();
-                dbContex.SaveChanges();
+                funcService.UpdateBook(selectedBook);
 
                 MessageBox.Show("Bok lånad!");
             }

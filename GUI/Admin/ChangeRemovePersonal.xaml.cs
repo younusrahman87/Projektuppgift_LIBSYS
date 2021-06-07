@@ -1,17 +1,9 @@
 ﻿using GUI.Models;
 using Logic;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI.Admin
 {
@@ -31,14 +23,11 @@ namespace GUI.Admin
         }
         public void GetListview()
         {
+            var personal = getData
+                .GetPesonal()
+                .ToArray();
 
-            var personal = getData.GetPesonal();
-
-            foreach (var item in personal)
-            {
-                listView.Items.Add(item);
-
-            }
+            listView.ItemsSource = personal;
         }
 
         private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -61,7 +50,7 @@ namespace GUI.Admin
 
             try
             {
-                if (validation.RemoveEmailPersonal(email.Text))
+                if (validation.PersonalExists(email.Text))
                 {
                     service.RemovePersonal(email.Text);
 
@@ -85,7 +74,7 @@ namespace GUI.Admin
             //Ändra
             try
             {
-                if (validation.RemoveEmailPersonal(email.Text))
+                if (validation.PersonalExists(email.Text))
                 {
                     personal.FirstName = firstName.Text;
                     personal.LastName = lastName.Text;

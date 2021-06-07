@@ -1,23 +1,13 @@
-﻿using GUI.Home;
-using GUI.Login;
+﻿using GUI.Login;
 using GUI.Models;
 using GUI.User;
 using Logic;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace GUI.Pages
 {
@@ -36,7 +26,7 @@ namespace GUI.Pages
             InitializeComponent();
             GetListview();
 
-            current = (UserDb)LoginPage.currentUser.First();
+            current = (UserDb)LoginPage.currentUser;
 
         }
 
@@ -91,15 +81,12 @@ namespace GUI.Pages
         {
             BookDb book = (BookDb)lb_SearchResults.SelectedItem;
 
-            var obj = service.FindBook(book.Id);
-            BookDb updatedBook = obj.First();
             if (MessageBox.Show("Är du säker på att du vill låna denna bok?", "Låna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 if (book.UserId == null)
                 {
                     book.UserId = current.Id;
                     service.UpdateBook(book);
-                   
                 }
 
             }
