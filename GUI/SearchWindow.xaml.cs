@@ -109,7 +109,11 @@ namespace GUI
             {
                 selectedBook.UserId = null;
 
-                getData.UpdateBook(selectedBook);
+                using var dbContex = new librarysystemdbContext();
+                dbContex.BookDbs.Update(selectedBook);
+                dbContex.SaveChanges();
+
+                MessageBox.Show("Bok återlämnad!");
             }
             else
             {
@@ -128,7 +132,11 @@ namespace GUI
             {
                 selectedBook.UserId = current.Id;
 
-                getData.UpdateBook(selectedBook);
+                using var dbContex = new librarysystemdbContext();
+                dbContex.BookDbs.Update(selectedBook);
+                dbContex.SaveChanges();
+
+                MessageBox.Show("Bok lånad!");
             }
             else
             {
@@ -140,8 +148,6 @@ namespace GUI
         private void Return_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            
-            //NavigationService.Navigate(new HomePage);
         }
     }
 }
