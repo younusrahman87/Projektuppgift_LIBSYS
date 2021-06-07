@@ -46,7 +46,7 @@
 
 
             <!-- Kategori -->
-            <GroupBox Header=" Lägga till böcker" Grid.Row="0" FontWeight="Medium" BorderThickness="2,2,2,2" Margin="0,0,50,0" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" FontFamily="Vani" FontSize="18"  HorizontalAlignment="Center" Padding="10,10,10,0">
+            <GroupBox Header=" Lägga till böcker" Grid.Row="0" Height="452" FontWeight="Medium" BorderThickness="2,2,2,2" Margin="0,0,50,0" Foreground="White" BorderBrush="Black" VerticalAlignment="Center" FontFamily="Vani" FontSize="18"  HorizontalAlignment="Center" Padding="10,10,10,0">
 
                 <StackPanel>
                     <StackPanel  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -135,7 +135,13 @@
                         </Button.Background>
                     </Button>
 
-                    <Button x:Name="Add_Category" Content="Lägg till ny kategori" Click="Add_Category_Click">
+                    <Button x:Name="Add_Category" Content="Lägg till ny kategori" Foreground="White" Click="Add_Category_Click">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF1B9F47" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
                     </Button>
 
                 </StackPanel>

@@ -10,6 +10,7 @@
     <None Remove="Image\AllUser.png" />
     <None Remove="Image\book.png" />
     <None Remove="Image\Exit.png" />
+    <None Remove="Image\LIBSYSPic.png" />
     <None Remove="Image\outline_group_white_24dp.png" />
     <None Remove="Image\Personal.png" />
     <None Remove="Image\profile1.jpg" />
@@ -41,6 +42,9 @@
   <ItemGroup>
     <Resource Include="Image\book.png" />
     <Resource Include="Image\Exit.png" />
+    <Resource Include="Image\LIBSYSPic.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Image\Personal.png" />
     <Resource Include="Image\profile1.jpg" />
     <Resource Include="Image\Search.png" />

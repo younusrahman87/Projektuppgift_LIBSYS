@@ -9,6 +9,7 @@
       Title="AdminProfile">
 
     <Grid>
+
         <Grid.RowDefinitions>
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="2*"/>
@@ -18,96 +19,17 @@
             <Label x:Name="Tb_date_today" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Lucida Bright" FontWeight="Bold"/>
 
         </StackPanel>
-
         <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1.5*"/>
+
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <GroupBox Header="Biblioteket Info" Grid.Column="0" BorderThickness="2,2,2,2" Foreground="White" BorderBrush="Black" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Vani" FontSize="20" Width="450" Margin="20,0,15,0" Height="270">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel Grid.Row="0" Grid.Column="0">
-                            <Label Content="Totalt antal vanliga böcker :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="0" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-
-
-                        <StackPanel Grid.Row="1" Grid.Column="0">
-                            <Label Content="Totalt antal E-Bok :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="1" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_konto" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
+                <Image HorizontalAlignment="Center"  Name="MyImg" Height="205" Margin="0,100,0,0" Width="205" Source="/Image/LIBSYSPic.png"/>
 
 
 
-                        <StackPanel Grid.Row="2" Grid.Column="0">
-                            <Label Content="Antal seminarie :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="2" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_skill_broms" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="3" Grid.Column="0">
-                            <Label Content="Antal vanliga böcker utlånad :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="3" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_motor" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="4" Grid.Column="0">
-                            <Label Content="Antal e-böcker utlånad :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="4" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_Kaross" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-
-
-                        <StackPanel Grid.Row="5" Grid.Column="0">
-                            <Label Content="Antal staff :" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="5" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_Vindruta" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-
-                        <StackPanel Grid.Row="6" Grid.Column="0">
-                            <Label Content="Antal Admin:" Foreground="White" FontWeight="Bold" FontSize="14"></Label>
-
-                        </StackPanel>
-                        <StackPanel Grid.Row="6" Grid.Column="1">
-                            <Label x:Name="TB_Total_mekanik_wheel" Content="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,20,0" FontSize="14" Padding="0,5,0,0"></Label>
-
-                        </StackPanel>
-                    </Grid>
-                </GroupBox>
             </StackPanel>
 
             <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -115,4 +37,5 @@
         </Grid>
 
     </Grid>
+
 </Page>
