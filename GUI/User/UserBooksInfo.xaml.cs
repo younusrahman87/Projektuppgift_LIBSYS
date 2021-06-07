@@ -35,8 +35,8 @@ namespace GUI.User
         public void GetListview()
         {
      
-             using var dbContex = new librarysystemdbContext();
-            var books = service.GetBooks();
+             
+             var books = service.GetBooks();
              var current = (UserDb)LoginPage.currentUser.First();
             foreach (var item in books)
             {
@@ -74,14 +74,12 @@ namespace GUI.User
                 if (MessageBox.Show("Är du säker på att du vill återlämmna denna bok?", "Återlämna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
 
+                  
+
                     var books = service.GetBooks();
 
-
-                    //BookDb updatedBook = (BookDb)booksListview.SelectedItem;
-                    //updatedBook.UserId = null;
-                    //service.UpdateBook(updatedBook);
-
                     BookDb updateBook = new BookDb();
+
                     foreach (var item in books)
                     {
                         if (book.UserId == item.UserId&& book.Id== item.Id)
@@ -95,7 +93,7 @@ namespace GUI.User
                             updateBook.Isbn = item.Isbn;
                             updateBook.Price = item.Price;
                             updateBook.Publisher = item.Publisher;
-                            updateBook.Title = item.Title;   
+                            updateBook.Title = item.Title;
                         }
                     }
                     service.UpdateBook(updateBook);

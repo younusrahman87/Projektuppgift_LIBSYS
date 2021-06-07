@@ -30,22 +30,16 @@ namespace Logic
             IEnumerable<int> id = obj.Select(x => x).Where(x => x.Id == updatedBook.Id).Select(x => x.Id);
 
             var book = _db.BookDbs.Find(id.First());
-            if (updatedBook.UserId != null)
-            {
+         
                 book.UserId = updatedBook.UserId;
-            }
-            else
-            {
-                book.UserId = null;
-            }
-
+           
             book.Title = updatedBook.Title;
             book.Publisher = updatedBook.Publisher;
             book.Author = updatedBook.Author;
             book.Category = updatedBook.Category;
             book.Ddc = updatedBook.Ddc;
 
-            _db.BookDbs.Update(updatedBook);
+            _db.BookDbs.Update(book);
             await _db.SaveChangesAsync();
         }
         public IEnumerable<UserDb> GetUserinfo(string email)
