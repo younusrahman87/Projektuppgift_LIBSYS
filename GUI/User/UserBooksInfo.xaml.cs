@@ -76,6 +76,7 @@ namespace GUI.User
 
                     //var books = service.GetBooks();
 
+<<<<<<< Updated upstream
                     //BookDb updateBook = new BookDb();
                     //foreach (var item in books)
                     //{
@@ -97,6 +98,28 @@ namespace GUI.User
                     updatedBook.UserId = null;
                     service.UpdateBook(updatedBook);
                     //Task.Delay(2000);
+=======
+                    BookDb updateBook = new BookDb();
+                    foreach (var item in books)
+                    {
+                        if (book.UserId == item.UserId&& book.Id== item.Id)
+                        {
+                            updateBook.UserId = null;
+                            updateBook.Author = item.Author;
+                            updateBook.Category = item.Category;
+                            updateBook.CategoryId = item.CategoryId;
+                            updateBook.Ddc = item.Ddc;
+                            updateBook.Id = item.Id;
+                            updateBook.Isbn = item.Isbn;
+                            updateBook.Price = item.Price;
+                            updateBook.Publisher = item.Publisher;
+                            updateBook.Title = item.Title;   
+                        }
+                    }
+                    service.UpdateBook(updateBook);
+                    Task.Delay(2000);
+                    MessageBox.Show("Du har nu lämnat tillbaka boken", "Återlämna", MessageBoxButton.OK);
+>>>>>>> Stashed changes
                     NavigationService.Navigate(new UserBooksInfo());
                 }
             }

@@ -53,7 +53,7 @@ namespace GUI.Login
             if (validation.checkIfValidUser(tbUsernam.Text, pbPassword.Password))
             {
                 //Hämtar rätt användare
-                currentUser = service.GetUserInfo(tbUsernam.Text);
+                currentUser = service.GetUserInfo(tbUsernam.Text.ToUpper());
                
 
 
@@ -69,7 +69,7 @@ namespace GUI.Login
                 }
                 else
                 {
-                    currentPersonal = service.GetPersonalInfo(tbUsernam.Text);
+                    currentPersonal = service.GetPersonalInfo(tbUsernam.Text.ToUpper());
                     NavigationService.Navigate(new HomePage("personal"));
                 }
             }

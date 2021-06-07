@@ -103,7 +103,12 @@ namespace GUI.Pages
                 }
 
             }
+<<<<<<< Updated upstream
             //Task.Delay(2000);
+=======
+            Task.Delay(2000);
+            MessageBox.Show("Du har nu lånat boken", "Låna", MessageBoxButton.OK);
+>>>>>>> Stashed changes
             NavigationService.Navigate(new Profile());
         }
 
