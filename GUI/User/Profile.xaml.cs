@@ -91,8 +91,8 @@ namespace GUI.Pages
         {
             BookDb book = (BookDb)lb_SearchResults.SelectedItem;
 
-            //var obj = service.FindBook(book.Id);
-            //BookDb updatedBook = obj.First();
+            var obj = service.FindBook(book.Id);
+            BookDb updatedBook = obj.First();
             if (MessageBox.Show("Är du säker på att du vill låna denna bok?", "Låna", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 if (book.UserId == null)
@@ -103,12 +103,10 @@ namespace GUI.Pages
                 }
 
             }
-<<<<<<< Updated upstream
-            //Task.Delay(2000);
-=======
+
             Task.Delay(2000);
             MessageBox.Show("Du har nu lånat boken", "Låna", MessageBoxButton.OK);
->>>>>>> Stashed changes
+
             NavigationService.Navigate(new Profile());
         }
 
