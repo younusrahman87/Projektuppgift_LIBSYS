@@ -60,7 +60,6 @@ namespace GUI.Staff
                     }
                     else if (tb_sc_DDC.Text == string.Empty && !Decimal.TryParse(tb_sc_DDC.Text, out DDC))
                     {
-                        ;
                         return;
                     }
                     else if (tb_sc_ISBN.Text == string.Empty && tb_sc_ISBN.Text.Length != 17)

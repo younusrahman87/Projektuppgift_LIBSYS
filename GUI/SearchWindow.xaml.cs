@@ -110,7 +110,6 @@ namespace GUI
                 selectedBook.UserId = null;
 
                 using var dbContex = new librarysystemdbContext();
-                dbContex.BookDbs.Update(selectedBook);
                 dbContex.SaveChanges();
 
                 MessageBox.Show("Bok återlämnad!");
@@ -133,7 +132,6 @@ namespace GUI
                 selectedBook.UserId = current.Id;
 
                 using var dbContex = new librarysystemdbContext();
-                dbContex.BookDbs.Update(selectedBook);
                 dbContex.SaveChanges();
 
                 MessageBox.Show("Bok lånad!");
