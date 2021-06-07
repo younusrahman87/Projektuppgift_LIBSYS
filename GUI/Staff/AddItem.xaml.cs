@@ -19,8 +19,8 @@ namespace GUI.Staff
         private readonly string Author = "-- Författare --";
         private readonly string Publisher = "-- Förlag --";
         private readonly string Price = "-- Pris --";
-        private readonly string ISBN = "-- ISBN --";
-        private readonly string DDC = "-- DDC --";
+        private readonly string ISBN = "-- ISBN(13 siffror) --";
+        private readonly string DDC = "-- DDC(1,234) --";
 
         private readonly string Error = "** Fel inmatning **";
         private readonly string Saved = "** Sparad **";
@@ -71,7 +71,7 @@ namespace GUI.Staff
                 MessageDisplay.Content = Error;
                 return;
             }
-            else if (tb_ISBN.Text == string.Empty || tb_ISBN.Text.Length != 17)
+            else if (tb_ISBN.Text == string.Empty || tb_ISBN.Text.Length != 13)
             {
                 MessageDisplay.Content = Error;
                 return;

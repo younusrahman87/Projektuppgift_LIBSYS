@@ -145,7 +145,7 @@
 
             </Grid>
         </StackPanel>
-        <Label x:Name="MessageDisplay" Grid.Row="3" HorizontalAlignment="Left" Content="This is error Msg" VerticalAlignment="Top" Foreground="White" FontFamily="Vani" FontSize="14" Padding="0,5,0,0" FontStyle="Normal" Height="51" Margin="381,-38,0,0"/>
+        <Label x:Name="MessageDisplay" Grid.Row="3" HorizontalAlignment="Left" Content="" VerticalAlignment="Top" Foreground="White" FontFamily="Vani" FontSize="14" Padding="0,5,0,0" FontStyle="Normal" Height="51" Margin="381,-38,0,0"/>
 
 
 

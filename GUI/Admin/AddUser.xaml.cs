@@ -44,7 +44,8 @@ namespace GUI.Admin
         private readonly string Lastname = "-- Efternamn --";
         private readonly string Email = "-- E-Mail --";
         private readonly string JobTitle = "-- Job Title --";
-        private readonly string Wrong_msg = "** Fel inmatning **";
+       
+        //private readonly string Wrong_msg = "** Fel inmatning **";
 
 
 

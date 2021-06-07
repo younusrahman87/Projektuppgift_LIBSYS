@@ -27,7 +27,7 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <!-- Fordon Modell -->
+                
 
                 <TextBox x:Name="tb_lastname" Text="-- Efternamn --" Margin="0,10,0,0" TextWrapping="Wrap" Width="350" Height="45" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Foreground="White" GotFocus="Got_focuse" LostFocus="Lost_focuse">
                     <TextBox.Background>
