@@ -110,9 +110,15 @@ namespace GUI.Login
 
         private void SearchResults_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             BookDb selectedBook = (BookDb)SearchResults.SelectedItem;
-
-            MessageBox.Show(
+            if (selectedBook == null)
+            {
+                return;
+            }
+            else
+            {
+                MessageBox.Show(
                 $"Titel: {selectedBook.Title} \n" +
                 $"Författare: {selectedBook.Author} \n" +
                 $"Förlag: {selectedBook.Publisher} \n" +
@@ -122,6 +128,7 @@ namespace GUI.Login
                 $"DDC: {selectedBook.Ddc} \n" +
                 $"Id: {selectedBook.Id} \n"
                 );
+            }
         }
 
         private void searchbox_TextChanged(object sender, TextChangedEventArgs e)
