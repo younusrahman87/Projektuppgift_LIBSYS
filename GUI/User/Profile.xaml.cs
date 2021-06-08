@@ -27,7 +27,10 @@ namespace GUI.Pages
             GetListview();
 
             current = (UserDb)LoginPage.currentUser;
-
+            if(current.LibraryCard == false)
+            {
+                LoanBookUser.Visibility = Visibility.Hidden;
+            }
         }
 
         public void GetListview()

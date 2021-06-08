@@ -114,13 +114,17 @@ namespace GUI
 
             var current = (UserDb)LoginPage.currentUser;
 
-            if(selectedBook.UserId == null)
+            if(selectedBook.UserId == null && current.LibraryCard == true)
             {
                 selectedBook.UserId = current.Id;
 
                 funcService.UpdateBook(selectedBook);
 
                 MessageBox.Show("Bok lånad!");
+            }
+            else if(current.LibraryCard == false)
+            {
+                MessageBox.Show("Ditt lånekort är spärrat/inaktivt. Vänligen kontakta ditt bibliotek för mer detaljer.");
             }
             else
             {
