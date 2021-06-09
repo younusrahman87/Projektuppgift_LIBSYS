@@ -135,15 +135,6 @@
                         </Button.Background>
                     </Button>
 
-                    <!--<Button x:Name="Add_Category" Content="Lägg till ny kategori" Foreground="White" Click="Add_Category_Click">
-                        <Button.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="Black"/>
-                                <GradientStop Color="#FF1B9F47" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Button.Background>
-                    </Button>-->
-
                 </StackPanel>
             </GroupBox>
         </StackPanel>
