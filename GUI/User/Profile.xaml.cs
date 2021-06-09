@@ -95,7 +95,7 @@ namespace GUI.Pages
             }
 
             Task.Delay(2000);
-            MessageBox.Show("Du har nu lånat boken", "Låna", MessageBoxButton.OK);
+            //MessageBox.Show("Du har nu lånat boken", "Låna", MessageBoxButton.OK);
 
             NavigationService.Navigate(new Profile());
         }
